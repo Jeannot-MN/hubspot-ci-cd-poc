@@ -1,0 +1,60 @@
+<section class="lottie-section {{ module.background_colour }} version1.1 ">
+  <div class="page-center">
+    <div class="content-wrapper">
+      {% if module.lottie_link != '' %}
+      <div class="{{module.Width}} {{module.Width_mobile}} m-auto">
+        {# this should be added to the global footer references #}
+        <script
+          type="text/javascript"
+          src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/lottie-player.js"
+        ></script>
+        <lottie-player
+          src="{{ module.lottie_link }}"
+          {%
+          if
+          module.controls.bounce
+          %}
+          mode="bounce"
+          {%
+          endif
+          %}
+          background="transparent"
+          speed="{{ module.controls.speed }}"
+          {%
+          if
+          module.controls.loop
+          %}
+          loop
+          {%
+          endif
+          %}
+          {%
+          if
+          module.controls.enable_controls
+          %}
+          controls
+          {%
+          endif
+          %}
+          {%
+          if
+          module.controls.play_on_hover
+          %}
+          hover
+          {%
+          endif
+          %}
+          {%
+          if
+          module.controls.autoplay
+          %}
+          autoplay
+          {%
+          endif
+          %}
+        ></lottie-player>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

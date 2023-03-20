@@ -1,0 +1,54 @@
+<div id="NewsLetter" class="IK-NewsLetter {{  module.background_color}}">
+  <div
+    class="page-center py-5 py-xs-3"
+    style="{{ module.style.module_spacing.css }};"
+  >
+    <div class="grid">
+      <div class="one mt-3">
+        <div class="right-content">
+          <h5 class="mt-4">{{ module.section_sub_heading }}</h5>
+          <h2 class="my-2">{{ module.section_heading }}</h2>
+          {% if module.heading_image.src %} {% set sizeAttrs = 'width="{{
+          module.heading_image.width }}" height="{{ module.heading_image.height
+          }}"' %} {% if module.heading_image.size_type == 'auto' %} {% set
+          sizeAttrs = 'style="{{ module.style.section_heading_image_spacing.css
+          }}"' %} {% elif module.heading_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.heading_image.max_width }}"
+          height="{{ module.heading_image.max_height }}"' %} {% endif %} {% set
+          loadingAttr = module.heading_image.loading != 'disabled' ?
+          'loading="{{ module.heading_image.loading }}"' : '' %}
+          <img
+            style="{{ module.style.section_heading_image_spacing.css }}"
+            src="{{ module.heading_image.src }}"
+            alt="{{ module.heading_image.alt }}"
+            {{
+            loadingAttr
+            }}
+            {{
+            sizeAttrs
+            }}
+          />
+          {% endif %}
+
+          <p class="W-80 W-xs-90">
+            <strong> {{ module.section_text }}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="three">
+        <div
+          class="left-image"
+          style="{{ module.style.right_side_spacing.css }}"
+        >
+          {% form form_to_use="{{ module.newsletters_form.form_id }}"
+          response_response_type="{{ module.newsletters_form.response_type }}"
+          response_message="{{ module.newsletters_form.message }}"
+          response_redirect_id="{{ module.newsletters_form.redirect_id }}"
+          response_redirect_url="{{module.newsletters_form.redirect_url}}"
+          gotowebinar_webinar_key="{{
+          module.newsletters_form.gotowebinar_webinar_key }}" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

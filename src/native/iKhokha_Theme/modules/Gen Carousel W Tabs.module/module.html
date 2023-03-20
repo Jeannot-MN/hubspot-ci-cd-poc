@@ -1,0 +1,259 @@
+<link href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css" />
+
+<section class="image-copy-tab-section {{ module.background_color }}">
+  <div class="page-center">
+    <div class="page-center-inner">
+      {% if module.heading.title %}
+        {% if module.heading.title_tag == "h1" %}
+          <h1 class="text-center pb-4">{{ module.heading.title }}</h1> 
+        {% elif module.heading.title_tag == "h2" %}
+          <h2 class="text-center pb-4">{{ module.heading.title }}</h2>
+        {% elif module.heading.title_tag == "h3" %}
+          <h3 class="text-center pb-4">{{ module.heading.title }}</h3>
+        {% elif module.heading.title_tag == "h4" %}
+          <h4 class="text-center pb-4">{{ module.heading.title }}</h4>
+        {% elif %}
+          <h2 class="text-center pb-4">{{ module.heading.title }}</h2>
+        {% endif %}
+      {% endif %}
+         <div class="swiper image-copy-tab-titles-carousel">
+           <div class="swiper-wrapper"> 
+              {% for item in module.tab %}
+               <div class="swiper-slide">
+                  <div class="image-copy-tab-activate-carousel image-copy-tab-titles-title-carousel {{ loop.first ? "active" : "" }}" data-tab-selector="{{ item.tab_name|urlencode }}">
+                    {{ item.tab_name }}
+                    {# <span class="theme-bg-charcoal"></span> #}
+                  </div>
+               </div>
+              {% endfor %}
+            </div>
+         </div>
+      
+      {% for item in module.tab %} 
+	      <div class="image-copy-tab-wrapper-carousel  {{ loop.first ? "active" : "" }}" data-tab-content-carousel="{{ item.tab_name|urlencode }}" {{ loop.first ? "style=display:block;" : "" }}>
+            <div class="image-copy-tab-content-carousel">
+              <div class="hero-image-section">
+                {% if item.hero_image.image.main_image.src %}
+                <div class="hero-image-holder">
+                  <div class="image-container">
+                    {% set sizeAttrs = 'width="{{ item.hero_image.image.main_image.width }}" height="{{ item.hero_image.image.main_image.height }}"' %}
+                    {% if item.hero_image.image.main_image.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.hero_image.image.main_image.width }}" height="{{ item.hero_image.image.main_image.height }}"' %}
+                    {% elif item.hero_image.image.main_image.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.hero_image.image.main_image.max_width }}" height="{{ item.hero_image.image.main_image.max_height }}"' %}
+                    {% endif %}
+                    {% set loadingAttr = item.hero_image.image.main_image.loading != 'disabled' ? 'loading="{{ item.hero_image.image.main_image.loading }}"' : '' %}
+                    <img src="{{ item.hero_image.image.main_image.src }}" alt="{{ item.hero_image.image.main_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+                  </div>
+                </div>
+                {% endif %}
+                <div class="gradient-overlay {{ item.hero_image.overlay_gradient }}"></div>
+                
+                <div class="btn-area">
+                  {% set href = item.hero_image.button.button_link.url.href %}
+                  {% if item.hero_image.button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ href }}"
+                     {% if item.hero_image.button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item.hero_image.button.button_link.rel %}rel="{{ item.hero_image.button.button_link.rel }}"{% endif %}
+                     class="theme-link theme-link-icon-r-arrow {{ item.hero_image.text_color }}"
+                     > 
+                    {{ item.hero_image.button.button_text }}
+                  </a>
+                </div> 
+                
+                {% if item.hero_image.image.image_float_left.src %}
+                  <div class="logo">
+                    {% set sizeAttrs = 'width="{{ item.hero_image.image.image_float_left.width }}" height="{{ item.hero_image.image.image_float_left.height }}"' %}
+                    {% if item.hero_image.image.image_float_left.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.hero_image.image.image_float_left.width }}" height="{{ item.hero_image.image.image_float_left.height }}"' %}
+                    {% elif item.hero_image.image.image_float_left.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.hero_image.image.image_float_left.max_width }}" height="{{ item.hero_image.image.image_float_left.max_height }}"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.hero_image.image.image_float_left.loading != 'disabled' ? 'loading="{{ item.hero_image.image.image_float_left.loading }}"' : '' %}
+                    <img src="{{ item.hero_image.image.image_float_left.src }}" alt="{{ item.hero_image.image.image_float_left.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  </div>
+                {% endif %}
+                
+                {% if item.hero_image.image.image_float_right.src %}
+                  <div class="top-right logo">
+                    {% set sizeAttrs = 'width="{{ item.hero_image.image.image_float_right.width }}" height="{{ item.hero_image.image.image_float_right.height }}"' %}
+                    {% if item.hero_image.image.image_float_right.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.hero_image.image.image_float_right.width }}" height="{{ item.hero_image.image.image_float_right.height }}"' %}
+                    {% elif item.hero_image.image.image_float_right.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.hero_image.image.image_float_right.max_width }}" height="{{ item.hero_image.image.image_float_right.max_height }}"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.hero_image.image.image_float_right.loading != 'disabled' ? 'loading="{{ item.hero_image.image.image_float_right.loading }}"' : '' %}
+                    <img src="{{ item.hero_image.image.image_float_right.src }}" alt="{{ item.hero_image.image.image_float_right.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  </div>
+                {% endif %}
+                
+                <div class="copy">
+                  <h5 class="{{ item.hero_image.text_color }}">{{ item.hero_image.overlay_heading.title }}</h5>
+                </div>
+              </div>
+        
+        <div class="small-cards">
+          <div class="swiper fwcc-cards-tabs {{name}}"
+            data-sw-name="{{name}}"
+            data-sw-autoplay="false"
+            data-sw-delay="1000"
+            data-sw-pause_on_hover="{{ module.settings.auto_settings.pause_on_hover }}"
+            data-sw-arrows="true"
+            data-sw-pagination="true">
+            <span class="swiper-button-prev"></span>
+            <span class="swiper-button-next"></span>
+            <div class="swiper-wrapper">
+            {% for item2 in item.card %}
+                <div class="swiper-slide">
+          <div class="fwcc-slide-content card">
+                  {% if item2.card_image.src %}
+                  <div class="card-image">
+                  {% set sizeAttrs = 'width="{{ item2.card_image.width }}" height="{{ item2.card_image.height }}"' %}
+                  {% if item2.card_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item2.card_image.width }}" height="{{ item2.card_image.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item2.card_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item2.card_image.max_width }}" height="{{ item2.card_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item2.card_image.loading != 'disabled' ? 'loading="{{ item2.card_image.loading }}"' : '' %}
+                  <img src="{{ item2.card_image.src }}" alt="{{ item2.card_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  
+                  </div>
+                  {% endif %}
+                  <div class="description">
+                    {{ item2.copy }}
+                  </div>
+                  </div></div>
+              {% endfor %}
+            </div>
+            <div class="dots-container">
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+              
+              </div>
+              
+              <div class="button-area text-center">
+                {% for item in module.buttons %}
+
+                      {% if item.button_type == "standard" %}
+                        <div class="d-inline-block px-2">
+                          {% set href = item.button_link.url.href %}
+                          {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+                          {% set rel = [] %}
+                          {% if item.button_link.no_follow %}
+                            {% do rel.append("nofollow") %}
+                          {% endif %}
+                          {% if item.button_link.open_in_new_tab %}
+                            {% do rel.append("noopener") %}
+                          {% endif %}
+                          <a href="{{ href }}"
+                           {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                           {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+                             class="theme-btn my-2 {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ item.button_color }}">
+                              {{ item.button_text }}
+                          </a>  
+                        </div>
+                      {% endif %}
+                      {% if item.button_type == "cta" %}
+                        <div class="d-inline-block px-2">
+                          {% cta guid="{{ item.select_cta }}" %}
+                        </div>
+                      {% endif %}              
+                      
+                      {% if item.button_type == "link" %}
+                        <div class="d-inline-block px-2">
+                        {% set href = item.button_link.url.href %}
+                        {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        {% set rel = [] %}
+                        {% if item.button_link.no_follow %}
+                          {% do rel.append("nofollow") %}
+                        {% endif %}
+                        {% if item.button_link.open_in_new_tab %}
+                          {% do rel.append("noopener") %}
+                        {% endif %}
+                        <a href="{{ href }}" class="theme-link my-2 {% if loop.index > 1 %}button-{{ loop.index}}{% endif %}" data-id="custom-{{ loop.index }}"
+                           {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                           {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}>
+                            {{ item.button_text }}
+                        </a>
+                          </div>
+                      {% endif %}
+                {% endfor %}
+                    </div>
+              
+            </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<script src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/aos.js"></script>
+<script type="text/javascript" src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"></script>
+<script type="text/javascript">
+  setTimeout(function(){
+      if($(".fwcc-cards-tabs").length) {
+        $(".fwcc-cards-tabs").each((function() {
+          var carouselName = $(this).data("sw-name")
+            , autoplay = $(this).data("sw-autoplay")
+            , delay = $(this).data("sw-delay")
+            , pauseOnHover = $(this).data("sw-pause_on_hover")
+            , arrows = $(this).data("sw-arrows")
+            , pagination = $(this).data("sw-pagination");
+          
+            new Swiper(".fwcc-cards-tabs." + carouselName,{
+              centerInsufficientSlides: true,
+              navigation: arrows ? ({
+                nextEl: "." + carouselName + " .swiper-button-next",
+                prevEl: "." + carouselName + " .swiper-button-prev"
+              }) : false,
+              autoplay: autoplay ? ({
+                delay: delay,
+                disableOnInteraction: !1,
+                pauseOnMouseEnter: pauseOnHover
+              }) : false,
+              pagination: pagination ? ({
+                el: ".swiper-pagination",
+              }) : false,
+              breakpoints: {
+                0: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 10
+                },
+                640: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 10
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 20
+                },
+                992: {
+                  slidesPerView: 3,
+                  spaceBetween: 20
+                },
+                1281: {
+                  slidesPerView: 3,
+                  spaceBetween: 20
+                },
+                1600: {
+                  slidesPerView: 4,
+                  spaceBetween: 20
+                }
+              },
+              inifinty: true
+            })
+          }
+        ));
+      }
+    }, 1000);
+
+</script>

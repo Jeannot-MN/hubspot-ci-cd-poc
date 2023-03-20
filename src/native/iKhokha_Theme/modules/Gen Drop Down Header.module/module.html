@@ -1,0 +1,43 @@
+
+<div id="#top"  class="primary-navigation {{ module.background_colour }}">
+  {% if module.heading.heading != "" %} 
+        {% if module.heading.tag == "h1" %}
+        <h1>{{ module.heading.heading }}</h1>
+        {% elif module.heading.tag == "h2" %}
+        <h2>{{ module.heading.heading }}</h2>
+        {% elif module.heading.tag == "h3" %}
+        <h3>{{ module.heading.heading }}</h3>
+        {% elif module.heading.tag == "h4" %}
+        <h4>{{ module.heading.heading }}</h4>
+        {% elif module.heading.tag == "h5" %}
+        <h5>{{ module.heading.heading }}</h5>
+        {% elif module.heading.tag == "h6" %}
+        <h6>{{ module.heading.heading }}</h6>
+        {% endif %}
+        {% endif %} 
+       {% if module.sub_heading != "" %}
+        <p class="mt-2">{{ module.sub_heading }}</p>
+        {% endif %}
+  <ul>
+    <li class=""><a class="heading" href="#">{{ module.list_item_heading }} 
+      <span class="arrow"></span></a>
+      <ul class="dropdown {{ module.background_colour }}">
+      {% for item in module.list_item %}
+<li>
+	{% set href = item.link_field.url.href %}
+	{% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+		{% set href = "mailto:" + href %}
+	{% endif %}
+	<a href="{{ href }}"
+		{% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+		{% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+		>
+		{% inline_text field="product_collection" value="{{ item.product_collection }}" %}
+	</a>
+{% endfor %}
+      
+     
+     </ul>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,51 @@
+<div
+  class="theme-bg-iK-Light-Grey p-3 d-flex flex-column text-start W-10 theme-border-iK-Radius top-10 position-fixed mr-4"
+>
+  {% for item in module.links %} {% set href = item.item_link.url.href %} {% if
+  item.item_link.url.type is equalto "EMAIL_ADDRESS" %} {% set href = "mailto:"
+  + href %} {% endif %}
+  <a
+    class="pl-1 py-2 theme-border-B theme-border-Teal"
+    href="{{ href }}"
+    {%
+    if
+    item.item_link.open_in_new_tab
+    %}target="_blank"
+    {%
+    endif
+    %}
+    {%
+    if
+    item.item_link.rel
+    %}rel="{{ item.item_link.rel }}"
+    {%
+    endif
+    %}
+  >
+    {{ item.item_text }}
+  </a>
+  {% for item2 in item.sub_item_group %} {% set href =
+  item2.sub_item_link.url.href %} {% if item2.sub_item_link.url.type is equalto
+  "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+  <a
+    class="py-1 pl-3"
+    href="{{ href }}"
+    {%
+    if
+    item2.sub_item_link.open_in_new_tab
+    %}target="_blank"
+    {%
+    endif
+    %}
+    {%
+    if
+    item2.sub_item_link.rel
+    %}rel="{{ item2.sub_item_link.rel }}"
+    {%
+    endif
+    %}
+  >
+    {{ item2.sub_item_text }}
+  </a>
+  {% endfor %} {% endfor %}
+</div>

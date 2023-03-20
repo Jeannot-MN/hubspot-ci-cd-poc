@@ -1,0 +1,69 @@
+[ {
+  "id" : "2d3b9720-918f-8857-5068-e4a3e9eaeb3c",
+  "name" : "background_colour",
+  "display_width" : null,
+  "label" : "Background Colour",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple white" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark ", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "theme-bg-iK-Yellow"
+}, {
+  "id" : "bdc18aaa-c523-8373-9dd7-95887519fc68",
+  "name" : "form_field",
+  "display_width" : null,
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "form_id" : "c3193099-cfb5-4cd4-b577-ad08736f6b31",
+    "response_type" : "inline",
+    "message" : "<p><img src=\"https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/300x150.png\" alt=\"300x150\" width=\"300\" loading=\"lazy\" style=\"width: 300px; margin-left: auto; margin-right: auto; display: block;\"></p>\n<p style=\"text-align: center;\">Thanks for submitting the form.</p>",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "fdcbb96d-75a7-8233-1777-269a6c3f1a79",
+  "name" : "icon_image",
+  "display_width" : null,
+  "label" : "Icon Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/50.png",
+    "alt" : "50x50",
+    "loading" : "lazy",
+    "width" : 50,
+    "height" : 50,
+    "max_width" : 50,
+    "max_height" : 50
+  }
+}, {
+  "id" : "dac07413-9c77-6461-82a4-f05efe8bb717",
+  "name" : "header",
+  "display_width" : null,
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : ""
+}, {
+  "id" : "6c62ea88-eb03-eae1-519f-57e3cdb603f4",
+  "name" : "copy",
+  "display_width" : null,
+  "label" : "Copy",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : ""
+} ]

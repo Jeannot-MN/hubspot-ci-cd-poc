@@ -1,0 +1,371 @@
+[ {
+  "id" : "a1a4a967-2a9b-d233-1825-de65dc4daf4d",
+  "name" : "settings",
+  "display_width" : null,
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "135c22cf-e6a1-2e97-af79-8d751646d5af",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple White" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme-bg-iK-Off-White"
+  }, {
+    "id" : "settings.border_colour",
+    "name" : "border_colour",
+    "display_width" : null,
+    "label" : "Bottom Border colour",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme-border-iK-Black theme-border", "Black" ], [ "theme-border-iK-White theme-border", "White" ], [ "theme-border-iK-Charcoal theme-border", "Charcoal" ], [ "theme-border-iK-Light-Grey theme-border", "Light Grey" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme-border-iK-Light-Grey theme-border"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background_color" : "theme-bg-iK-Off-White"
+  }
+}, {
+  "id" : "f1f07b2e-cc03-89cb-6943-4e0e09c7aff6",
+  "name" : "menu_blocks",
+  "display_width" : null,
+  "label" : "Menu Blocks",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "baa8bcbc-55f5-e947-484e-adaa6881f66e",
+    "name" : "menu_block_title",
+    "display_width" : null,
+    "label" : "Menu Block Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Title"
+  }, {
+    "id" : "b82cc814-3df3-b52d-b734-c38fe9523c0b",
+    "name" : "menuitem_group",
+    "display_width" : null,
+    "label" : "MenuItem Group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "2260d4e9-e5f3-d03b-774d-fac7eb91ffe4",
+      "name" : "menu_item_label",
+      "display_width" : null,
+      "label" : "Menu Item Label",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "f99237b4-8e2c-e2c4-1f56-2045bdc623ac",
+      "name" : "menu_item_link",
+      "display_width" : null,
+      "label" : "Menu Item Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "menu_item_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "menu_block_title" : "Title",
+    "menuitem_group" : {
+      "menu_item_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+}, {
+  "id" : "2f9029ae-3ead-6c81-e6d8-a779c7f98c54",
+  "name" : "address_block",
+  "display_width" : null,
+  "label" : "iKhokha Address",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "edc58cb5-2afe-8bfd-aa36-6f79494127fa",
+    "name" : "address_block_icon",
+    "display_width" : null,
+    "label" : "Address Block Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/iK_Logo_WY.svg",
+      "alt" : "iKhokha Logo",
+      "loading" : "lazy",
+      "width" : 84,
+      "height" : 23,
+      "max_width" : 84,
+      "max_height" : 23
+    }
+  }, {
+    "id" : "589ff414-eb9e-a19b-c646-b7293c98b8a8",
+    "name" : "address_block_copy",
+    "display_width" : null,
+    "label" : "Address Block Copy",
+    "required" : false,
+    "locked" : true,
+    "type" : "richtext",
+    "default" : "1 Nokwe Avenue, Umhlanga Ridge, 4319"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "address_block_icon" : {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/iK_Logo_WY.svg",
+      "alt" : "iKhokha Logo",
+      "loading" : "lazy",
+      "width" : 84,
+      "height" : 23,
+      "max_width" : 84,
+      "max_height" : 23
+    },
+    "address_block_copy" : "1 Nokwe Avenue, Umhlanga Ridge, 4319"
+  }
+}, {
+  "id" : "518b0962-92bd-0585-1082-db9102f91ada",
+  "name" : "bank_icons",
+  "display_width" : null,
+  "label" : "Bank Icons",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "8c38f064-cd8c-978c-61b4-3790ab26cd38",
+    "name" : "bank_icon",
+    "display_width" : null,
+    "label" : "Bank Icon",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : [ {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60be0cc105e209eb8494b73d_Visa.svg",
+      "alt" : "Visa",
+      "loading" : "lazy",
+      "width" : 27,
+      "height" : 8,
+      "max_width" : 27,
+      "max_height" : 8
+    }, {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60be0cc105e209eb8494b73d_Visa.svg",
+      "alt" : "Visa",
+      "loading" : "lazy",
+      "width" : 27,
+      "height" : 8,
+      "max_width" : 27,
+      "max_height" : 8
+    }, {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60be0cc105e209eb8494b73d_Visa.svg",
+      "alt" : "Visa",
+      "loading" : "lazy",
+      "width" : 27,
+      "height" : 8,
+      "max_width" : 27,
+      "max_height" : 8
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "bank_icon" : [ {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60be0cc105e209eb8494b73d_Visa.svg",
+      "alt" : "Visa",
+      "loading" : "lazy",
+      "width" : 27,
+      "height" : 8,
+      "max_width" : 27,
+      "max_height" : 8
+    }, {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60be0cc105e209eb8494b73d_Visa.svg",
+      "alt" : "Visa",
+      "loading" : "lazy",
+      "width" : 27,
+      "height" : 8,
+      "max_width" : 27,
+      "max_height" : 8
+    }, {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60be0cc105e209eb8494b73d_Visa.svg",
+      "alt" : "Visa",
+      "loading" : "lazy",
+      "width" : 27,
+      "height" : 8,
+      "max_width" : 27,
+      "max_height" : 8
+    } ]
+  }
+}, {
+  "id" : "4cdac1a4-49ae-b9f7-badf-588e50bbf44a",
+  "name" : "social_icons",
+  "display_width" : null,
+  "label" : "Social Icons",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "d497c324-e3f8-bfa5-fbb7-5480ea48e849",
+    "name" : "social_icon_image",
+    "display_width" : null,
+    "label" : "Social Icon Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/twitter.svg",
+      "alt" : "twitter",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 19,
+      "max_width" : 24,
+      "max_height" : 19
+    }
+  }, {
+    "id" : "77e5e618-3b3f-49b8-1ec8-93a76277d096",
+    "name" : "social_icon_link",
+    "display_width" : null,
+    "label" : "Social Icon Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "http://www.facebook.com",
+        "content_id" : null
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "social_icon_image" : {
+      "size_type" : "exact",
+      "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/twitter.svg",
+      "alt" : "twitter",
+      "loading" : "lazy",
+      "width" : 24,
+      "height" : 19,
+      "max_width" : 24,
+      "max_height" : 19
+    },
+    "social_icon_link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "http://www.facebook.com",
+        "content_id" : null
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "272cb5fd-48f5-eed5-df5e-7a12f459c440",
+  "name" : "copyright_info",
+  "display_width" : null,
+  "label" : "Copyright Info",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "default" : "<span>© iKhokha. All Rights Reserved</span>"
+} ]

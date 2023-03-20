@@ -1,0 +1,506 @@
+[ {
+  "id" : "a1a4a967-2a9b-d233-1825-de65dc4daf4d",
+  "name" : "settings",
+  "display_width" : null,
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "135c22cf-e6a1-2e97-af79-8d751646d5af",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple white" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark ", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme-bg-iK-Off-White"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "background_color" : "theme-bg-iK-Off-White"
+  }
+}, {
+  "id" : "90b5b4c8-77f9-f128-ca8d-35c9483bce0d",
+  "name" : "products",
+  "display_width" : null,
+  "label" : "Products",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 12,
+    "sorting_label_field" : "969b6c70-5cca-2bd8-dcc9-4e0febe1ddb8",
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "03ab4cd1-5bd5-a50f-c3ba-b5512eebee70",
+    "name" : "background_color",
+    "display_width" : null,
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple white" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "theme-bg-iK-ec-Primary-Color"
+  }, {
+    "id" : "55b33bdf-e022-3b9a-5edf-de8089215dac",
+    "name" : "call_out_label",
+    "display_width" : null,
+    "label" : "Call out label",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6ca7de2f-5599-29fd-dea3-3966934bc9b0",
+      "name" : "hide",
+      "display_width" : null,
+      "label" : "Hide",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : false
+    }, {
+      "id" : "fb2c3387-7e46-2a52-8fbe-7eaa2cb7b50f",
+      "name" : "position",
+      "display_width" : null,
+      "label" : "Position",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6ca7de2f-5599-29fd-dea3-3966934bc9b0",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "false",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "left"
+    }, {
+      "id" : "c68257df-e32d-242b-2e69-6ac1316dad0d",
+      "name" : "background_color",
+      "display_width" : null,
+      "label" : "Background Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6ca7de2f-5599-29fd-dea3-3966934bc9b0",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "false",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple white" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark ", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "theme-bg-iK-Off-White"
+    }, {
+      "id" : "607dc7ac-4dbe-3c8a-36cf-e7ac9e9108f3",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "visibility" : {
+        "controlling_field" : "6ca7de2f-5599-29fd-dea3-3966934bc9b0",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "false",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "40e3d8db-5ed0-302d-d933-99337a9b1611",
+      "name" : "title_color",
+      "display_width" : null,
+      "label" : "Title Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6ca7de2f-5599-29fd-dea3-3966934bc9b0",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "false",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "theme-text-iK-Black", "Dark" ], [ "theme-text-iK-White", "White" ], [ "theme-text-iK-Yellow", "Yellow" ], [ "theme-text-iK-Pink", "Pink" ], [ "theme-text-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-text-iK-Charcoal", "Charcoal" ], [ "theme-text-iK-OffWhite", "Off White" ], [ "theme-text-iK-Teal", "Dark" ], [ "theme-text-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-text-ik-Light-Grey", "Light Grey" ], [ "theme-text-iK-Success-Light ", "Success" ], [ "theme-text-iK-Success-Dark ", "Success Dark Mode" ], [ "theme-text-iK-Info", "Information" ], [ "theme-text-iK-Error-Dark ", "Error" ], [ "theme-text-UI-iK-Primary", "Primary" ], [ "theme-text-iK-d-Primary-Text-Color ", "Secondary" ], [ "theme-text-UI-iK-Secondary", "Secondary" ], [ "theme-text-iK-d-Primary-Text-Color", "Disabled Primary" ], [ "theme-text-iK-d-Secondary-Text-Color", "Disabled Secondary" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "theme-text-iK-Black"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "hide" : false,
+      "position" : "left",
+      "background_color" : "theme-bg-iK-Off-White",
+      "title_color" : "theme-text-iK-Black"
+    }
+  }, {
+    "id" : "dfafd505-5a71-d417-01ce-8cb527822f1d",
+    "name" : "image",
+    "display_width" : null,
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e0808a71-405d-a9b7-821d-ec916234095e",
+      "name" : "image",
+      "display_width" : null,
+      "label" : "Image",
+      "required" : true,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "id" : "969b6c70-5cca-2bd8-dcc9-4e0febe1ddb8",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c80a3489-51c7-feab-3b2a-8aa9810b57a7",
+      "name" : "title",
+      "display_width" : null,
+      "label" : "Title",
+      "required" : true,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "9f313e95-94bb-c25a-671f-3cf91b4ba640",
+      "name" : "body_text",
+      "display_width" : null,
+      "label" : "Body Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext"
+    }, {
+      "id" : "4645a912-d568-b9df-a37a-4c7d42efaebb",
+      "name" : "price",
+      "display_width" : null,
+      "label" : "Price",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "prefix" : "R",
+      "type" : "number",
+      "default" : 0
+    }, {
+      "id" : "4d29b7aa-1da2-5f4b-8788-ce2fc6a66ac5",
+      "name" : "processes",
+      "display_width" : null,
+      "label" : "Processes",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "22654054-fe16-3986-6742-f5100e264d73",
+        "name" : "stack_processes",
+        "display_width" : null,
+        "label" : "Stack Processes",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "920f2565-e0d7-9395-925a-4644f210b147",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "72129c32-9115-eeb7-87c8-8472454eea56",
+        "name" : "details",
+        "display_width" : null,
+        "label" : "Details",
+        "required" : false,
+        "locked" : false,
+        "occurrence" : {
+          "min" : 0,
+          "max" : 5,
+          "sorting_label_field" : "5cd21f79-1a1d-a43d-eb91-bda4859b73d0",
+          "default" : 0
+        },
+        "children" : [ {
+          "id" : "1e024e77-91d6-f5bb-6289-76f658f5b677",
+          "name" : "background_color",
+          "display_width" : null,
+          "label" : "Background Color",
+          "required" : false,
+          "locked" : false,
+          "display" : "select",
+          "choices" : [ [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple white" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark ", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+          "multiple" : false,
+          "reordering_enabled" : true,
+          "preset" : null,
+          "type" : "choice"
+        }, {
+          "id" : "5cd21f79-1a1d-a43d-eb91-bda4859b73d0",
+          "name" : "detail",
+          "display_width" : null,
+          "label" : "Detail",
+          "required" : false,
+          "locked" : false,
+          "validation_regex" : "",
+          "allow_new_line" : false,
+          "show_emoji_picker" : false,
+          "type" : "text"
+        } ],
+        "tab" : "CONTENT",
+        "expanded" : false,
+        "type" : "group",
+        "default" : { }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "stack_processes" : false,
+        "details" : { }
+      }
+    }, {
+      "id" : "05dbdafd-2d87-ee7c-c315-1cf4b6efeeb0",
+      "name" : "buttons",
+      "display_width" : null,
+      "label" : "Buttons",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : 1,
+        "sorting_label_field" : "06e842ae-1664-2db6-ca1d-bcbaa855aa59",
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "2bf28a14-41d3-6a79-3c6c-424fad724995",
+        "name" : "button_type",
+        "display_width" : null,
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "standard", "Standard" ], [ "cta", "CTA" ], [ "link", "Link" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "standard"
+      }, {
+        "id" : "06e842ae-1664-2db6-ca1d-bcbaa855aa59",
+        "name" : "button_text",
+        "display_width" : null,
+        "label" : "Button text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "visibility" : {
+          "controlling_field" : "2bf28a14-41d3-6a79-3c6c-424fad724995",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "standard|link",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text"
+      }, {
+        "id" : "2b3bc59f-c2f9-573d-a489-14345344cd9b",
+        "name" : "button_link",
+        "display_width" : null,
+        "label" : "Button link",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "2bf28a14-41d3-6a79-3c6c-424fad724995",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "standard|link",
+          "property" : null,
+          "operator" : "MATCHES_REGEX",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "3e3767e8-0c3c-4596-a2db-4d0c8f2ed645",
+        "name" : "button_cta",
+        "display_width" : null,
+        "label" : "Button CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "2bf28a14-41d3-6a79-3c6c-424fad724995",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "type" : "cta"
+      }, {
+        "id" : "032fd456-58de-5b34-bbd9-791978970751",
+        "name" : "button_color",
+        "display_width" : null,
+        "label" : "Button Color",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "theme-btn theme-btn-iK-Yellow", "Primary" ], [ "theme-btn theme-btn-iK-White", "Secondary" ], [ "theme-btn theme-btn-iK-Black", "Dark" ], [ "theme-link theme-link-icon-r-arrow", "Link with Right Arrow" ], [ "theme-link theme-link-icon-l-arrow", "Link with Left Arrow" ], [ "theme-link theme-link-icon-r-circle", "Link with Right Circle" ], [ "theme-link theme-link-icon-l-circle", "Link with Left Circle on Hover" ], [ "theme-link theme-link-icon-r-arrow-i", "Link with Right Arrow on Hover" ], [ "theme-link theme-link-icon-l-arrow-i", "Link with Left Arrow on Hover" ], [ "theme-link theme-link-icon-r-circle-i", "Link with Right Circle on Hover" ], [ "theme-link theme-link-icon-l-circle-i", "Link with Left Circle on Hover" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "button_type" : "standard",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "price" : 0,
+      "processes" : {
+        "stack_processes" : false,
+        "details" : { }
+      },
+      "buttons" : {
+        "button_type" : "standard",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : [ {
+    "call_out_label" : {
+      "hide" : false,
+      "position" : "left",
+      "background_color" : "theme-bg-iK-Off-White",
+      "title_color" : "theme-text-iK-Black"
+    },
+    "image" : {
+      "image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    },
+    "content" : {
+      "price" : 0,
+      "processes" : {
+        "details" : { }
+      },
+      "buttons" : {
+        "button_type" : "standard",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }
+    }
+  } ]
+} ]

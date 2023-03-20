@@ -1,0 +1,147 @@
+<section class="mclr-section {{ module.background_colour }} version1.1">
+  <div class="page-center">
+    <div class="content-wrapper {% if module.content_alignment.desktop_copy_right %} reverse {% endif %} 
+  {% if module.content_alignment.mobile_copy_lead %} mobile-reverse {% endif %}
+ {% if module.images.contained_image %} contained-img-hold {% endif %}">
+      <div class="mclr-image-holder {{ module.images.image_position }}">
+         {% if module.images.content_type == "image" %}
+            {% if module.images.image.src %}
+            {% set sizeAttrs = 'width="{{ module.images.image.width }}" height="{{ module.images.image.height }}"' %}
+            {% if module.images.image.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.images.image.width }}" height="{{ module.images.image.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.images.image.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.images.image.max_width }}" height="{{ module.images.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.images.image.loading != 'disabled' ? 'loading="{{ module.images.image.loading }}"' : '' %}
+            <img class="img-desktop d-xs-none d-block" src="{{ module.images.image.src }}" alt="{{ module.images.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+          {% if module.images.image_mobile.src %}
+            {% set sizeAttrs = 'width="{{ module.images.image_mobile.width }}" height="{{ module.images.image_mobile.height }}"' %}
+            {% if module.images.image_mobile.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.images.image_mobile.width }}" height="{{ module.images.image_mobile.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.images.image_mobile.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.images.image_mobile.max_width }}" height="{{ module.images.image_mobile.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.images.image_mobile.loading != 'disabled' ? 'loading="{{ module.images.image_mobile.loading }}"' : '' %}
+            <img class="img-mobile W-xs-80 m-xs-auto d-none d-xs-block" src="{{ module.images.image_mobile.src }}" alt="{{ module.images.image_mobile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        {% elif module.images.content_type == "video" %}
+                      {% if module.images.video.player_id %}
+                        {% set sizeAttrs = 'style="width: {{ module.images.video.width }}px; height: {{ module.images.video.height }}px;"' %}
+                        {% if module.images.video.size_type == 'auto_full_width' %}
+                          {% set sizeAttrs = 'style="width: {{ module.images.video.width }}px; height: {{ module.images.video.height }}px; max-width: 100%; height: auto;"' %}
+                        {% elif module.images.video.size_type == 'auto_custom_max' %}
+                          {% set sizeAttrs = 'style="width:{{ module.images.video.max_width }}px; height:{{ module.images.video.max_height }}px; max-width: 100%; height: auto;"' %}
+                        {% endif %}
+                        <div {{ sizeAttrs }}>
+                          {% video_player "embed_player"
+                          player_id={{ module.images.video.player_id }}
+                          type={{ module.images.video.player_type || 'scriptV4' }}
+                          full_width={{ module.images.video.size_type == 'auto_full_width' }},
+                          conversion_asset={{ module.images.video.conversion_asset|tojson|safe }}
+                          %}
+                        </div>
+                      {% endif %}
+                  {% elif module.images.content_type == "lottie" %}
+                    {% if module.images.lottie_link != '' %}
+                      <div class="">
+                        {# this should be added to the global footer references  #}
+                        <script type="text/javascript" src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/lottie-player.js"></script>
+                        <lottie-player src="{{ module.images.lottie_link }}"
+                                       {% if module.images.lottie_controls.bounce %} mode="bounce" {% endif %}
+                                       background="transparent"
+                                       speed="{{ module.images.lottie_controls.speed }}" 
+                                       {% if module.images.lottie_controls.loop %} loop {% endif %} 
+                                       {% if module.images.lottie_controls.enable_controls %} controls {% endif %}
+                                       {% if module.images.lottie_controls.play_on_hover %} hover {% endif %}
+                                       {% if module.images.lottie_controls.autoplay %} autoplay {% endif %}
+                                       ></lottie-player>
+                      </div>
+                    {% endif %}
+                  {% endif %}
+      </div>
+      <div class="mclr-content-holder">
+        <div class="mclr-content">
+          {% if module.heading.title != "" %}
+            {% if module.heading.title_tag == "h1" %}
+              <h1 class="heading">
+                {{ module.heading.title }}
+              </h1>
+            {% elif module.heading.title_tag == "h2" %}
+              <h2 class="heading">
+                {{ module.heading.title }}
+              </h2>
+            {% elif module.heading.title_tag == "h3" %}
+              <h3 class="heading">
+                {{ module.heading.title }}
+              </h3>
+            {% elif module.heading.title_tag == "h4" %}
+              <h4 class="heading">
+                {{ module.heading.title }}
+              </h4>
+            {% elif module.heading.title_tag == "h5" %}
+              <h5 class="heading">
+                {{ module.heading.title }}
+              </h5>
+            {% elif module.heading.title_tag == "h6" %}
+              <h6 class="heading">
+                {{ module.heading.title }}
+              </h6>
+            {% endif %}
+          {% endif %}
+          <div class="content mt-3">
+            {% if module.copy != "" %}
+              <p class="sub-lead">
+                {{ module.copy }}
+              </p>
+            {% endif %}
+            {% if module.body_text != "" %}
+              <div>
+                {{ module.body_text }}
+              </div>
+            {% endif %}
+          </div>
+          
+          <div class="button-area">
+            {% for item in module.button_item %}
+              {% if item.button_type == "standard" %}
+                {% set href = item.button_link.url.href %}
+                {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}
+                {% set rel = [] %}
+                {% if item.button_link.no_follow %}
+                  {% do rel.append("nofollow") %}
+                {% endif %}
+                {% if item.button_link.open_in_new_tab %}
+                  {% do rel.append("noopener") %}
+                {% endif %}
+                <a href="{{ href }}"
+                   {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %}
+                   {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+                   class=" {% if loop.index > 1 %} my-xs-2 button-{{ loop.index}} {% endif %} 
+                   {{ item.button_color }}">{{ item.button_text }}</a>
+              {% endif %}
+              {% if item.button_type == "cta" %}
+                {% cta guid="{{ item.select_cta }}" %}
+              {% endif %}        
+              {% if item.button_type == "popup" %}
+                <a class="theme-btn theme-link link-text my-xs-2 {% if loop.index > 1 %} button-{{ loop.index}}{% endif %} popup {{ item.button_color }}" data-id="custom-{{ loop.index }}">{{ item.button_text }}</a>
+              {% endif %}        
+              {% if item.button_type == "link" %}
+                <a href="{{ item.link.url.href }}" class="theme-link my-xs-2 test  {{ item.link_type }} {% if loop.index > 1 %} button-{{ loop.index}}{% endif %} 
+                {{ link_type.href }}" data-id="custom-{{ loop.index }}"
+                   {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}>{{ item.button_text }}</a>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+

@@ -1,0 +1,23 @@
+<!--
+templateType: global_partial
+label: Footer
+-->
+<footer class="footer no-navigation">
+
+
+  <div class="footer__container">
+    <div class="columns-33 footer-row">
+      <div class="footer-column1">
+        {# Copyright information #}
+        <div class="footer__copyright">
+          {% module_block module 'footer_copyright_text' path='@hubspot/text' label='Copyright text' %}
+          {% module_attribute 'value' %}© iKhokha. All Rights Reserved{% end_module_attribute %}
+          {% end_module_block %}
+        </div>
+        {# End copyright information #}
+
+      </div>
+    </div>
+  </div>
+
+</footer>

@@ -1,0 +1,173 @@
+.mbwh-section .page-center, .mbwh-section .content-wrapper {
+  max-width: 1010px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.mbwh-section .img-desktop {
+  display: inline-block;
+  vertical-align: middle;
+} 
+.mbwh-section .img-mobile {
+  vertical-align: middle;
+  display: none;
+  margin: auto;
+}
+.mbwh-section .mbwh-content {
+  margin-bottom: 40px;
+}
+
+.mbwh-section .mbwh-content h1.heading, 
+.mbwh-section .mbwh-content h2.heading, 
+.mbwh-section .mbwh-content h3.heading, 
+.mbwh-section .mbwh-content h4.heading, 
+.mbwh-section .mbwh-content h5.heading, 
+.mbwh-section .mbwh-content h6.heading {
+  font-family: 'Baloo 2', sans-serif !important;
+}
+
+.align-text-left {
+  text-align: left;
+}
+.align-text-right {
+  text-align: right;
+}
+.align-text-center {
+  text-align: center;
+}
+
+.theme-pt-1 {
+  padding-top: 10px;
+}
+
+.theme-py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.theme-py-4 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.theme-py-5 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.theme-py-6 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.theme-py-7 {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.theme-py-8 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.theme-py-9 {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.theme-py-10 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (max-width:991px) {
+  .align-text-left-mobile {
+    text-align: left;
+  }
+  .align-text-right-mobile {
+    text-align: right;
+  }
+  .align-text-center-mobile {
+    text-align: center;
+  }
+  .mbwh-section .img-desktop {
+    display: none;
+  } 
+  .mbwh-section .img-mobile {
+    display: inline-block;
+  }
+  .theme-px-2-mobile {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .theme-px-0-mobile {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .theme-py-0-mobile {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .theme-py-4-mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .theme-py-5-mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .theme-py-6-mobile {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .theme-py-7-mobile {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .theme-py-8-mobile {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .theme-py-9-mobile {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .theme-py-10-mobile {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.lottie-section {
+  position: relative;
+  min-height: 470px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.lottie-section .page-center, .lottie-section .content-wrapper {
+  max-width: 1010px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mbwh-section .content-holder .body-text {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}

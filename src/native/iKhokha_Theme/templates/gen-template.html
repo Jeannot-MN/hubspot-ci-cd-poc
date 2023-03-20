@@ -1,0 +1,19 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: template
+screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base-sticky.html" %} {% block body %}
+<main class="body-container-wrapper home-page">
+  <div class="hs-banner-wrapper">
+    <div class="page-center">
+      <div class="hs-banner-inner">
+        {% dnd_area 'banner_area' class='banner-area', label='Banner area'
+        full_width='true', label='Content', padding={ 'top': '0px', 'bottom':
+        '0px', 'left': '0px', 'right': '0px' } %} {% end_dnd_area %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock body %}

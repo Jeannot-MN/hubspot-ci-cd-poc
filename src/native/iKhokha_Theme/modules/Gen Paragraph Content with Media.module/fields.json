@@ -1,0 +1,622 @@
+[ {
+  "id" : "8aa58524-7761-e1ab-78b0-c21b209bca62",
+  "name" : "background_color",
+  "display_width" : null,
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple White" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "theme-bg-iK-Black"
+}, {
+  "id" : "7fefe46d-96b7-7c2f-9b5d-4c0f2801a1a8",
+  "name" : "column_alignment",
+  "display_width" : null,
+  "label" : "Column Alignment",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d53c608a-b70c-e90d-a1d5-ba3355ee917c",
+    "name" : "desktop_swip_column",
+    "display_width" : null,
+    "label" : "Desktop Swip Column",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "7cb67222-e3e4-572a-17e4-c5b69ef53855",
+    "name" : "mobile_copy_lead",
+    "display_width" : null,
+    "label" : "Mobile Copy Lead",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "desktop_swip_column" : false,
+    "mobile_copy_lead" : false
+  }
+}, {
+  "id" : "adcdf97e-21e2-e8da-7d06-14f04d99ffde",
+  "name" : "column",
+  "display_width" : null,
+  "label" : "Column",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 2,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "2fff1f4c-0301-50d0-5e87-578b2d36133e",
+    "name" : "content_type",
+    "display_width" : null,
+    "label" : "Content Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "content", "Content Module" ], [ "media", "Media (Image)" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice"
+  }, {
+    "id" : "d1450382-520c-7ae0-0a2e-5ac0a7ae4395",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "2fff1f4c-0301-50d0-5e87-578b2d36133e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "content",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "8010dac9-0744-e313-33db-912babcf5739",
+      "name" : "heading",
+      "display_width" : null,
+      "label" : "Heading",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "0c6333a0-c253-906d-8f48-b8c70b01e7a9",
+        "name" : "heading_tag",
+        "display_width" : null,
+        "label" : "Heading Tag",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "h2"
+      }, {
+        "id" : "4a2a4033-5c05-f627-dcf6-50822e9fa0e6",
+        "name" : "title",
+        "display_width" : null,
+        "label" : "Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Gen Paragraph Content With Media"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "heading_tag" : "h2",
+        "title" : "Gen Paragraph Content With Media"
+      }
+    }, {
+      "id" : "41173c82-1c73-c29b-b6e1-7351b688e6e6",
+      "name" : "logo",
+      "display_width" : null,
+      "label" : "Logo",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Logo%20-%20Full%20Logo%2026px.svg",
+        "alt" : "Logo - Full Logo 26px",
+        "loading" : "lazy",
+        "width" : 128,
+        "height" : 26,
+        "max_width" : 128,
+        "max_height" : 26
+      }
+    }, {
+      "id" : "6fa8e376-2161-72b9-78f2-663fbc5c3bae",
+      "name" : "body_text",
+      "display_width" : null,
+      "label" : "Body Text",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "default" : "This is a copy on the paragraph Content with media section. I hope you will have fun editing and working with this module."
+    }, {
+      "id" : "67bccdb9-fa42-7516-1f28-9990ed0e4af3",
+      "name" : "number_of_column_list",
+      "display_width" : null,
+      "label" : "Number of Column List",
+      "required" : false,
+      "locked" : false,
+      "display" : "slider",
+      "max" : 3,
+      "step" : 1,
+      "type" : "number",
+      "default" : 1
+    }, {
+      "id" : "265870ee-de9a-f85d-4370-ff2bde6c1167",
+      "name" : "copy",
+      "display_width" : null,
+      "label" : "List Columns",
+      "help_text" : "The first columns will be on the left",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : 2,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "acebbf42-d6de-78e9-1426-6138cea8ca0b",
+        "name" : "remove_features_spacing_mobile",
+        "display_width" : null,
+        "label" : "Remove Features Spacing Mobile",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "eaa31e08-6943-e50b-ae4c-94422f3a8b5a",
+        "name" : "hide_feature_title_on_mobile",
+        "display_width" : null,
+        "label" : "Hide Feature Title on Mobile",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "15de0b71-a8f8-a57b-7c32-7a241f5fa06c",
+        "name" : "custom_bullets_points",
+        "display_width" : null,
+        "label" : "Custom Bullets Points",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : false
+      }, {
+        "id" : "9f8552ff-9322-6b87-2819-aad558e06a2a",
+        "name" : "list_title",
+        "display_width" : null,
+        "label" : "List Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "List Title"
+      }, {
+        "id" : "01e6db68-dc7b-d1fa-7024-5b4f5fef97b6",
+        "name" : "list_title_tag",
+        "display_width" : null,
+        "label" : "List Title Tag",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ], [ "bold", "Bold" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "h6"
+      }, {
+        "id" : "3fc606f7-c94e-186d-b403-b6665d359928",
+        "name" : "list_bodytext",
+        "display_width" : null,
+        "label" : "List BodyText",
+        "required" : false,
+        "locked" : false,
+        "type" : "richtext",
+        "default" : "<ul>\n<li>First List</li>\n<li>Second List</li>\n<li>Third List</li>\n<li>Fourth List&nbsp;</li>\n<li>And So on</li>\n</ul>"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "remove_features_spacing_mobile" : false,
+        "hide_feature_title_on_mobile" : false,
+        "custom_bullets_points" : false,
+        "list_title" : "List Title",
+        "list_title_tag" : "h6",
+        "list_bodytext" : "<ul>\n<li>First List</li>\n<li>Second List</li>\n<li>Third List</li>\n<li>Fourth List&nbsp;</li>\n<li>And So on</li>\n</ul>"
+      }
+    }, {
+      "id" : "4ff087eb-68a2-4f79-b8ed-5904a1107213",
+      "name" : "button",
+      "display_width" : null,
+      "label" : "Button",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : 2,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "3a94ba07-7c83-6df6-e056-97a3b2316c3f",
+        "name" : "button_type",
+        "display_width" : null,
+        "label" : "Button Type",
+        "required" : false,
+        "locked" : false,
+        "display" : "select",
+        "choices" : [ [ "standard", "Standard" ], [ "cta", "CTA" ], [ "link", "Link" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "standard"
+      }, {
+        "id" : "b8c2e99b-e40c-3e3f-b5a0-35f7094733ee",
+        "name" : "button_color",
+        "display_width" : null,
+        "label" : "Button Color",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "3a94ba07-7c83-6df6-e056-97a3b2316c3f",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "standard",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "theme-btn-iK-Yellow", "Primary" ], [ "theme-btn-iK-White", "Secondary" ], [ "theme-btn-iK-Black", "Dark" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "theme-btn-iK-Yellow"
+      }, {
+        "id" : "c6ebe3ed-a0cd-573e-694d-8aa0f13fafea",
+        "name" : "link_type",
+        "display_width" : null,
+        "label" : "Link Type",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "3a94ba07-7c83-6df6-e056-97a3b2316c3f",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "link",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "link_without_error", "Link Without Error" ], [ "theme-link theme-link-icon-r-arrow", "Link with Right Arrow" ], [ "theme-link theme-link-icon-l-arrow", "Link with Left Arrow" ], [ "theme-link theme-link-icon-r-circle", "Link with Right Circle" ], [ "theme-link theme-link-icon-l-circle", "Link with Left Circle" ], [ "theme-link theme-link-icon-r-arrow-i", "Link with Right Arrow on Hover" ], [ "theme-link theme-link-icon-l-arrow-i", "Link with Left Arrow on Hover" ], [ "theme-link theme-link-icon-r-circle-i", "Link with Right A Circle on Hover" ], [ "theme-link theme-link-icon-l-circle-i", "Link with Left Circle on Hover" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "default" : "link_without_error"
+      }, {
+        "id" : "d7db226f-d6ad-ac08-2f4a-1cdcc967a52e",
+        "name" : "button_cta",
+        "display_width" : null,
+        "label" : "Button CTA",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "3a94ba07-7c83-6df6-e056-97a3b2316c3f",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "cta",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null,
+          "hidden_subfields" : null
+        },
+        "type" : "cta"
+      }, {
+        "id" : "0fae530a-62d6-3d1c-a44e-46c63161b909",
+        "name" : "button_link",
+        "display_width" : null,
+        "label" : "Button Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        }
+      }, {
+        "id" : "002ef8ab-9059-9066-d55f-0ff0616f0b7a",
+        "name" : "button_text",
+        "display_width" : null,
+        "label" : "Button Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Link Text"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "button_type" : "standard",
+        "button_color" : "theme-btn-iK-Yellow",
+        "link_type" : "link_without_error",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_text" : "Link Text"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "heading" : {
+        "heading_tag" : "h2",
+        "title" : "Gen Paragraph Content With Media"
+      },
+      "logo" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Logo%20-%20Full%20Logo%2026px.svg",
+        "alt" : "Logo - Full Logo 26px",
+        "loading" : "lazy",
+        "width" : 128,
+        "height" : 26,
+        "max_width" : 128,
+        "max_height" : 26
+      },
+      "body_text" : "This is a copy on the paragraph Content with media section. I hope you will have fun editing and working with this module.",
+      "number_of_column_list" : 1,
+      "copy" : {
+        "remove_features_spacing_mobile" : false,
+        "hide_feature_title_on_mobile" : false,
+        "custom_bullets_points" : false,
+        "list_title" : "List Title",
+        "list_title_tag" : "h6",
+        "list_bodytext" : "<ul>\n<li>First List</li>\n<li>Second List</li>\n<li>Third List</li>\n<li>Fourth List&nbsp;</li>\n<li>And So on</li>\n</ul>"
+      },
+      "button" : {
+        "button_type" : "standard",
+        "button_color" : "theme-btn-iK-Yellow",
+        "link_type" : "link_without_error",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_text" : "Link Text"
+      }
+    }
+  }, {
+    "id" : "2b1f2bb0-85b5-6cad-185a-790224daddfa",
+    "name" : "media",
+    "display_width" : null,
+    "label" : "Media",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "2fff1f4c-0301-50d0-5e87-578b2d36133e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "media",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "278cb389-9953-bc32-ba01-044343f9e921",
+      "name" : "mobile_image",
+      "display_width" : null,
+      "label" : "Mobile Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "2fff1f4c-0301-50d0-5e87-578b2d36133e",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "media",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Imported_Blog_Media/transaction_history_ios.jpg",
+        "alt" : "transaction_history_ios",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 530,
+        "max_width" : 800,
+        "max_height" : 530
+      }
+    }, {
+      "id" : "ef309b56-b8a9-e842-9f3f-32f74b5d306e",
+      "name" : "image",
+      "display_width" : null,
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "2fff1f4c-0301-50d0-5e87-578b2d36133e",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "media",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Imported_Blog_Media/transaction_history_ios.jpg",
+        "alt" : "transaction_history_ios",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 530,
+        "max_width" : 800,
+        "max_height" : 530
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "mobile_image" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Imported_Blog_Media/transaction_history_ios.jpg",
+        "alt" : "transaction_history_ios",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 530,
+        "max_width" : 800,
+        "max_height" : 530
+      },
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Imported_Blog_Media/transaction_history_ios.jpg",
+        "alt" : "transaction_history_ios",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 530,
+        "max_width" : 800,
+        "max_height" : 530
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "content" : {
+      "heading" : {
+        "heading_tag" : "h2",
+        "title" : "Gen Paragraph Content With Media"
+      },
+      "logo" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Logo%20-%20Full%20Logo%2026px.svg",
+        "alt" : "Logo - Full Logo 26px",
+        "loading" : "lazy",
+        "width" : 128,
+        "height" : 26,
+        "max_width" : 128,
+        "max_height" : 26
+      },
+      "body_text" : "This is a copy on the paragraph Content with media section. I hope you will have fun editing and working with this module.",
+      "number_of_column_list" : 1,
+      "copy" : {
+        "remove_features_spacing_mobile" : false,
+        "hide_feature_title_on_mobile" : false,
+        "custom_bullets_points" : false,
+        "list_title" : "List Title",
+        "list_title_tag" : "h6",
+        "list_bodytext" : "<ul>\n<li>First List</li>\n<li>Second List</li>\n<li>Third List</li>\n<li>Fourth List&nbsp;</li>\n<li>And So on</li>\n</ul>"
+      },
+      "button" : {
+        "button_type" : "standard",
+        "button_color" : "theme-btn-iK-Yellow",
+        "link_type" : "link_without_error",
+        "button_link" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false
+        },
+        "button_text" : "Link Text"
+      }
+    },
+    "media" : {
+      "mobile_image" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Imported_Blog_Media/transaction_history_ios.jpg",
+        "alt" : "transaction_history_ios",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 530,
+        "max_width" : 800,
+        "max_height" : 530
+      },
+      "image" : {
+        "size_type" : "auto",
+        "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/Imported_Blog_Media/transaction_history_ios.jpg",
+        "alt" : "transaction_history_ios",
+        "loading" : "lazy",
+        "width" : 800,
+        "height" : 530,
+        "max_width" : 800,
+        "max_height" : 530
+      }
+    }
+  }
+} ]

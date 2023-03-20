@@ -1,0 +1,18 @@
+[ {
+  "id" : "4900800a-3b85-f9cc-850f-00d6c27f9d8a",
+  "name" : "form_field",
+  "display_width" : null,
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "form_id" : "96b04406-aa6c-4af4-bb94-a8c340198cc7",
+    "response_type" : "inline",
+    "message" : "Thank you.",
+    "redirect_id" : null,
+    "redirect_url" : "https://www.ikhokha.com",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

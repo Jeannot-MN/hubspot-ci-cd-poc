@@ -1,0 +1,142 @@
+{% if module.first_card_form_popup.form.form_id %}
+<div class="genblock-popup-wrapper version1.0">
+  <div class="genblock-popup-modal theme-bg-iK-Off-White">
+    <div class="close-modal-button">
+      <img
+        src="https://www.ikhokha.com/hubfs/raw_assets/public/iKhokha_July2021/images/Cancel.png"
+        alt="Close Icon"
+      />
+    </div>
+    <div class="modal-content">
+      <div>
+        {% if module.first_card_form_popup.heading.title != "" %} {% if
+        module.first_card_form_popup.heading.title_tag == "h2" %}
+        <h2 class="heading">
+          {{ module.first_card_form_popup.heading.title }}
+        </h2>
+        {% elif module.first_card_form_popup.heading.title_tag == "h3" %}
+        <h3 class="heading">
+          {{ module.first_card_form_popup.heading.title }}
+        </h3>
+        {% elif module.first_card_form_popup.heading.title_tag == "h4" %}
+        <h4 class="heading">
+          {{ module.first_card_form_popup.heading.title }}
+        </h4>
+        {% elif module.first_card_form_popup.heading.title_tag == "h5" %}
+        <h5 class="heading">
+          {{ module.first_card_form_popup.heading.title }}
+        </h5>
+        {% elif module.first_card_form_popup.heading.title_tag == "h6" %}
+        <h6 class="heading">
+          {{ module.first_card_form_popup.heading.title }}
+        </h6>
+        {% endif %} {% endif %}
+      </div>
+      {% form form_to_use="{{ module.first_card_form_popup.form.form_id }}"
+      response_response_type="{{ module.first_card_form_popup.form.response_type
+      }}" response_message="{{ module.first_card_form_popup.form.message }}"
+      response_redirect_id="{{ module.first_card_form_popup.form.redirect_id }}"
+      response_redirect_url="{{module.first_card_form_popup.form.redirect_url}}"
+      gotowebinar_webinar_key="{{
+      module.first_card_form_popup.form.gotowebinar_webinar_key }}" %}
+    </div>
+  </div>
+</div>
+{% endif %} {% set cards_per_row = 'grid-template-columns: repeat({{
+module.number_of_cards_per_row_desktop }}, 1fr)' %} {% set card_wrapper_style =
+'style="{{ cards_per_row }}"' %}
+<section
+  class="cardblock-main-section px-3 version1.0 {{ module.background_colour }}"
+>
+  <div class="cardblock-main-section__cardswrapper" {{card_wrapper_style}}>
+    {% for item in module.card_group %} {% if item.content_type == "image" %} {%
+    if item.card_image.src %} {% set sizeAttrs = 'width="{{
+    item.card_image.width }}" height="{{ item.card_image.height }}"' %} {% if
+    item.card_image.size_type == 'auto' %} {% set sizeAttrs = 'width="{{
+    item.card_image.width }}" height="{{ item.card_image.height }}"
+    style="max-width: 100%; height: auto;"' %} {% elif item.card_image.size_type
+    == 'auto_custom_max' %} {% set sizeAttrs = 'width="{{
+    item.card_image.max_width }}" height="{{ item.card_image.max_height }}"
+    style="max-width: 100%; height: auto;"' %} {% endif %} {% set loadingAttr =
+    item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading
+    }}"' : '' %} {% endif %} {% endif %}
+
+    <div class="cardblock-main-section__cardswrapper--card">
+      {% if item.content_type == "image" %} {% if item.card_image.src %}
+      <img
+        src="{{ item.card_image.src }}"
+        alt="{{ item.card_image.alt }}"
+        {{
+        loadingAttr
+        }}
+        {{
+        sizeAttrs
+        }}
+      />
+      {% endif %} {% elif item.content_type == "lottie" %} {% if
+      item.lottie_link != '' %}
+      <div class="cardblock-lottie">
+        {# this should be added to the global footer references #}
+        <script
+          type="text/javascript"
+          src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"
+        ></script>
+        <lottie-player
+          src="{{ item.lottie_link }}"
+          {%
+          if
+          item.lottie_controls.bounce
+          %}
+          mode="bounce"
+          {%
+          endif
+          %}
+          background="transparent"
+          speed="{{ item.lottie_controls.speed }}"
+          {%
+          if
+          item.lottie_controls.loop
+          %}
+          loop
+          {%
+          endif
+          %}
+          {%
+          if
+          item.lottie_controls.enable_controls
+          %}
+          controls
+          {%
+          endif
+          %}
+          {%
+          if
+          item.lottie_controls.play_on_hover
+          %}
+          hover
+          {%
+          endif
+          %}
+          {%
+          if
+          item.lottie_controls.autoplay
+          %}
+          autoplay
+          {%
+          endif
+          %}
+        ></lottie-player>
+      </div>
+      {% endif %} {% endif %}
+      <h4>{{ item.card_subtitle }}</h4>
+      <p>{{ item.card_copy_rich_text }}</p>
+      <a
+        class="theme-link-xs-L theme-link {% if item.link_show_tick %} theme-link theme-link-icon-r-arrow {% endif %}"
+        href="{{ item.link.href }}"
+        target="_blank"
+        >{{ item.link_text }}
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+</section>

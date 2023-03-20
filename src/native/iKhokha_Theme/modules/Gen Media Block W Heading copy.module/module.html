@@ -1,0 +1,134 @@
+<section class="mbwh-section {{ module.background_colour }} ">
+  <div class="page-center">
+    <div class="content-wrapper theme-py-{{ module.y_axis_spacing }} theme-py-{{ module.mobile_y_axis_spacing }}-mobile {% if module.images.mobile_no_space_left_right %} theme-px-0-mobile {% endif %}">
+      {% if module.heading.title != '' %}
+        <div class="mbwh-content {{ module.heading.text_align_ipad }} {{ module.heading.text_align_desktop }} {{ module.heading.text_align_mobile }}-mobile {% if module.images.mobile_no_space_left_right %} theme-px-2-mobile {% endif %}">
+          {% if module.heading.title != "" %}
+            {% if module.heading.title_tag == "h2" %}
+              <h2 class="heading">
+                {{ module.heading.title }}
+              </h2>
+            {% elif module.heading.title_tag == "h3" %}
+              <h3 class="heading">
+                {{ module.heading.title }}
+              </h3>
+            {% elif module.heading.title_tag == "h4" %}
+              <h4 class="heading">
+                {{ module.heading.title }}
+              </h4>
+            {% elif module.heading.title_tag == "h5" %}
+              <h5 class="heading">
+                {{ module.heading.title }}
+              </h5>
+            {% elif module.heading.title_tag == "h6" %}
+              <h6 class="heading">
+                {{ module.heading.title }} 
+              </h6>
+            {% endif %}
+          {% endif %}
+          {% if module.heading.sub_title != "" %}
+            <p class="sub-title">
+              {{ module.heading.sub_title }}
+            </p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="mbwh-image-holder {{ module.images.image_alignment }} {{ module.images.image_alignment_mobile }}">
+        {% if module.media_section.media_type == "image" %}
+          
+        {% if module.media_section.images.image.src %}
+          {% set sizeAttrs = 'width="{{ module.media_section.images.image.width }}" height="{{ module.media_section.images.image.height }}"' %}
+          {% if module.media_section.images.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.media_section.images.image.width }}" height="{{ module.media_section.images.image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.media_section.images.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.media_section.images.image.max_width }}" height="{{ module.media_section.images.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.media_section.images.image.loading != 'disabled' ? 'loading="{{ module.media_section.images.image.loading }}"' : '' %} 
+          <img class="img-desktop" src="{{ module.media_section.images.image.src }}" alt="{{ module.media_section.images.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        {% if module.media_section.images.mobile_image.src %}
+          {% set sizeAttrs = 'width="{{ module.media_section.images.mobile_image.width }}" height="{{ module.media_section.images.mobile_image.height }}"' %}
+          {% if module.media_section.images.mobile_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.media_section.images.mobile_image.width }}" height="{{ module.media_section.images.mobile_image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.media_section.images.mobile_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.media_section.images.mobile_image.max_width }}" height="{{ module.media_section.images.mobile_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.media_section.images.mobile_image.loading != 'disabled' ? 'loading="{{ module.media_section.images.mobile_image.loading }}"' : '' %}
+          <img class="img-mobile" src="{{ module.media_section.images.mobile_image.src }}" alt="{{ module.media_section.images.mobile_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        {% elif module.media_section.media_type == "video" %}
+          {% if module.media_section.video.hubspot_video.player_id %}
+            {% set max_width = module.media_section.video.hubspot_video.size_type == 'auto_custom_max' ? module.media_section.video.hubspot_video.max_width : module.media_section.video.hubspot_video.width %}
+            {% set max_height = module.media_section.video.hubspot_video.size_type == 'auto_custom_max' ? module.media_section.video.hubspot_video.max_height : module.media_section.video.hubspot_video.height %}
+            {% video_player "embed_player"
+              player_id={{ module.media_section.video.hubspot_video.player_id }}
+              type={{ module.media_section.video.hubspot_video.player_type || 'scriptV4' }}
+              full_width={{ module.media_section.video.hubspot_video.size_type == 'auto_full_width' }},
+              conversion_asset={{ module.media_section.video.hubspot_video.conversion_asset|tojson|safe }}
+            %}
+          {% endif %}
+        {% elif module.media_section.media_type == "youtube_embeded" %}
+        <div class="video-container">
+          <iframe
+            src="https://www.youtube.com/embed/{{ module.media_section.youtube_video.video_id }}"
+            frameborder="0"
+            allow="accelerometer; {{ module.media_section.youtube_video.autoplay == true ? "autoplay" }}; encrypted-media; gyroscope;"
+            allowfullscreen></iframe>
+        </div>
+        {% elif module.media_section.media_type == "lottie" %}
+           {% if module.media_section.lottie.lottie_link != '' %}
+            <div class="">
+              {# this should be added to the global footer references  #}
+              <script type="text/javascript" src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/lottie-player.js"></script>
+              <lottie-player src="{{ module.media_section.lottie.lottie_link }}"
+                             {% if module.media_section.lottie.bounce %} mode="bounce" {% endif %}
+                             background="transparent"
+                             speed="{{ module.media_section.lottie.speed }}" 
+                             {% if module.media_section.lottie.loop %} loop {% endif %} 
+                             {% if module.media_section.lottie.enable_controls %} controls {% endif %}
+                             {% if module.media_section.lottie.play_on_hover %} hover {% endif %}
+                             {% if module.media_section.lottie.autoplay %} autoplay {% endif %}
+                             ></lottie-player>
+            </div>
+          {% endif %}
+        {% endif %}
+        
+      </div>
+      <div class="content-holder align-text-{{ module.content.align_content }}  align-text-{{ module.content.mobile_align_mobile }}-mobile">
+        <div class="body-text">{{ module.content.copy }}</div>
+        <div class="btn-area">
+          {% for item in module.content.button %}
+            {% if item.button_type == "standard" %}
+              {% set href = item.button_link.url.href %}
+                {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}
+                
+                {% set rel = [] %}
+                {% if item.button_link.no_follow %}
+                  {% do rel.append("nofollow") %}
+                {% endif %}
+            
+                {% if item.button_link.open_in_new_tab %}
+                  {% do rel.append("noopener") %}
+                {% endif %}
+                <div class="theme-pt-1">
+                  <a href="{{ href }}" {% if item.button_link.open_in_new_tab %} target="_blank" {% endif %} {% if rel %} rel="{{ rel|join(" ") }}" {% endif %} class="theme-btn {{ item.button_color }}">{{ item.button_text }}</a>
+                </div>
+            {% endif %}
+            {% if item.button_type == "cta" %}
+            <div class="theme-pt-1">
+              {% cta guid="{{ item.button_cta }}" %}
+            </div>
+            {% endif %}        
+            {% if item.button_type == "link" %}
+              <div class="theme-pt-1">
+                <a href="{{ href }}" class="theme-link {{ item.link_type }}" {% if item.button_link.open_in_new_tab %} target="_blank"{% endif %}>{{ item.button_text }}</a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

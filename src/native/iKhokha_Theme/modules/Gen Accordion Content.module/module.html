@@ -1,0 +1,71 @@
+{# version 1.1 #}
+<link
+  rel="stylesheet"
+  href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css"
+/>
+<section class="accordion-content-section version.1.1">
+  <div class="page-center">
+    <div class="accordion-content-wrapper">
+      {% set loopCounter = {val : 0} %} {% for accordion in module.accordion %}
+      {% if accordion.title != "" %}
+      <div
+        class="accordion-content-item"
+        data-aos="fade-right"
+        data-aos-delay="{{ loopCounter.val }}"
+      >
+        <div class="accordion-content-item-inner">
+          <div
+            class="accordion-content-item-title {{ accordion.background_color }}"
+          >
+            {{ accordion.title }}
+          </div>
+          <div class="accordion-content-item-content">
+            <div
+              class="accordion-content-item-content-inner theme-bg-iK-Off-White"
+            >
+              {% if accordion.content_type == "link" %} {% for link in
+              accordion.links %}
+              <div class="accordion-content-item-content-link">
+                {% set href = link.link.url.href %} {% if link.link.url.type is
+                equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {%
+                endif %}
+                <a
+                  href="{{ href }}"
+                  {%
+                  if
+                  link.link.open_in_new_tab
+                  %}target="_blank"
+                  {%
+                  endif
+                  %}
+                  {%
+                  if
+                  link.link.rel
+                  %}rel="{{ link.link.rel }}"
+                  {%
+                  endif
+                  %}
+                >
+                  {{ link.link_text }}
+                </a>
+              </div>
+              {% endfor %} {% elif accordion.content_type == "text" %} {% if
+              accordion.body_text != "" %}
+              <div class="accordion-content-item-content-copy">
+                {{ accordion.body_text }}
+              </div>
+              {% endif %} {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %} {% do loopCounter.update({val: loopCounter.val + 50 }) %} {%
+      endfor %}
+    </div>
+  </div>
+</section>
+<script
+  type="text/javascript"
+  src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"
+></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

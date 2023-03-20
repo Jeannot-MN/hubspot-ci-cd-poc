@@ -1,0 +1,190 @@
+{% if module.is_carousel %} 
+<link
+  rel="stylesheet"
+  href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css"
+/>
+
+<script src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"></script>
+<script>
+  window.addEventListener("load", (event) => {
+    if (window.innerWidth <= 992) {
+      //let swiperEl = document.querySelector(".{{name}}.mediablock-main-section-swiper");
+      let boxesEl = document.querySelector(".{{name}}.mediablock-main-section");
+
+      //swiperEl.classList.remove("hideEl")
+      boxesEl.classList.add("hideEl");
+    } else {
+      let swiperEl = document.querySelector(
+        ".{{name}}.mediablock-main-section-swiper"
+      );
+      let boxesEl = document.querySelector(".{{name}}.mediablock-main-section");
+
+      swiperEl.classList.add("hideEl");
+      boxesEl.classList.remove("hideEl");
+    }
+  });
+
+  window.addEventListener("resize", (event) => {
+    //console.log(window.innerWidth);
+    if (window.innerWidth <= 992) {
+      let swiperEl = document.querySelector(
+        ".{{name}}.mediablock-main-section-swiper"
+      );
+      let boxesEl = document.querySelector(".{{name}}.mediablock-main-section");
+
+      swiperEl.classList.remove("hideEl");
+      boxesEl.classList.add("hideEl");
+    } else {
+      let swiperEl = document.querySelector(
+        ".{{name}}.mediablock-main-section-swiper"
+      );
+      let boxesEl = document.querySelector(".{{name}}.mediablock-main-section");
+
+      swiperEl.classList.add("hideEl");
+      boxesEl.classList.remove("hideEl");
+    }
+  });
+</script>
+
+
+{% endif %} {% if module.is_carousel %}
+
+<section
+  class="{{ name }} mediablock-main-section-swiper {{ module.background_colour }} hideEl"
+>
+  <div class="mediablock-main-section-swiper__content">
+    <div class="swiper {{ name }} boxSwiper ">
+      <div class="swiper-wrapper">
+        {% for item in module.block_item %}
+        <div class="swiper-slide">
+          <div class="swiper-slide__block">
+            {% if item.image_field.src %} {% set sizeAttrs = 'width="{{
+            item.image_field.width }}" height="{{ item.image_field.height }}"'
+            %} {% if item.image_field.size_type == 'auto' %} {% set sizeAttrs =
+            'width="{{ item.image_field.width }}" height="{{
+            item.image_field.height }}" style="max-width: 100%; height: auto;"'
+            %} {% elif item.image_field.size_type == 'auto_custom_max' %} {% set
+            sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{
+            item.image_field.max_height }}" style="max-width: 100%; height:
+            auto;"' %} {% endif %} {% set loadingAttr = item.image_field.loading
+            != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+            <img
+              src="{{ item.image_field.src }}"
+              alt="{{ item.image_field.alt }}"
+              class="swiper-lazy"
+              {{
+              loadingAttr
+              }}
+              {{
+              sizeAttrs
+              }}
+            />
+            <div class="swiper-lazy-preloader"></div>
+            {% endif %}
+            <h4 class="{{ item.subtitle_color }} slide-title">
+              {{ item.subtitle }}
+            </h4>
+            <div class="{{ item.subtitle_color }} slide-copy">
+              {{ item.block_copy }}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if module.navigation_arrows %}
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      {% endif %} {% if module.navigation_thumbs %}
+      <div class="swiper-pagination"></div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<script>
+  /* Init Swiper */
+  var swiper = new Swiper(".swiper.{{ name }}", {
+    // Disable preloading of all images
+    preloadImages: false,
+    // Enable lazy loading
+    lazy: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    on: {
+      afterInit: function () {
+        if (window.innerWidth <= 992) {
+          document
+            .querySelector(".{{name}}.mediablock-main-section-swiper")
+            .classList.remove("hideEl");
+        }
+      },
+    },
+  });
+</script>
+{% endif %}
+
+<section
+  class="{{ name }} mediablock-main-section {{ module.background_colour }} "
+>
+  <div class="mediablock-main-section__content">
+    <div class="mediablock-main-section__content__blocks-container">
+      {% for item in module.block_item %} {% set href = item.item_link.url.href
+      %} {% if item.item_link.url.type is equalto "EMAIL_ADDRESS" %} {% set href
+      = "mailto:" + href %} {% endif %}
+      <a
+        class="{{ item.add_link_on_item }}"
+        href="{{ href }}"
+        {%
+        if
+        item.item_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item.item_link.rel
+        %}rel="{{ item.item_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        <div class="mediablock-main-section__content__blocks-container--block pb-4">
+          {% if item.image_field.src %} {% set sizeAttrs = 'width="{{
+          item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+          {% if item.image_field.size_type == 'auto' %} {% set sizeAttrs =
+          'width="{{ item.image_field.width }}" height="{{
+          item.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.image_field.size_type == 'auto_custom_max' %} {% set
+          sizeAttrs = 'width="{{ item.image_field.max_width }}" height="{{
+          item.image_field.max_height }}" style="max-width: 100%; height:
+          auto;"' %} {% endif %} {% set loadingAttr = item.image_field.loading
+          != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+          <img
+            src="{{ item.image_field.src }}"
+            alt="{{ item.image_field.alt }}"
+            {{
+            loadingAttr
+            }}
+            {{
+            sizeAttrs
+            }}
+          />
+          {% endif %}
+          <h4 class="{{ item.subtitle_color }} slide-title">
+            {{ item.subtitle }}
+          </h4>
+          <div class="{{ item.subtitle_color }} slide-copy">
+            {{ item.block_copy }}
+          </div>
+        </div>
+      </a>
+
+      {% endfor %}
+    </div>
+  </div>
+</section>

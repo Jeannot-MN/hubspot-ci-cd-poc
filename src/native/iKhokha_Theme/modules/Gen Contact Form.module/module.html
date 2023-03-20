@@ -1,0 +1,132 @@
+<div
+  id="genContactForm"
+  class="py-5 mb-5 {{ module.module_setting.background_colour }} version1.1"
+>
+  <div
+    class="W-70 W-md-75 W-xs-100 m-auto mt-5 mt-xs-2 d-flex flex-xs-column con"
+  >
+    <div class="W-50 W-xs-90 m-xs-auto mt-5 position-relative">
+      <div class="position-absolute position-xs-relative content">
+        <div
+          class="heading mb-4 {{ text_align_ipad }} {{ module.text_align_desktop }} {{ module.text_align_mobile }}"
+        >
+          {% if module.heading.title != "" %} {% if module.heading.title_tag ==
+          "h1" %}
+          <h1 class="heading">{{ module.heading.title }}</h1>
+          {% elif module.heading.title_tag == "h2" %}
+          <h2 class="heading">{{ module.heading.title }}</h2>
+          {% elif module.heading.title_tag == "h3" %}
+          <h3 class="heading">{{ module.heading.title }}</h3>
+          {% elif module.heading.title_tag == "h4" %}
+          <h4 class="heading">{{ module.heading.title }}</h4>
+          {% elif module.heading.title_tag == "h5" %}
+          <h5 class="heading">{{ module.heading.title }}</h5>
+          {% elif module.heading.title_tag == "h6" %}
+          <h6 class="heading">{{ module.heading.title }}</h6>
+          {% endif %} {% endif %} {% if module.sub_title != "" %}
+          <p class="sub-title">{{ module.sub_title }}</p>
+          {% endif %}
+        </div>
+        <div class="text-content">
+          {% inline_rich_text field="content" value="{{ module.heading.content
+          }}" %}
+
+          <div class="d-grid list">
+            {% for item in module.heading.list_with_image %}
+            <div>
+              {% if item.icon_image.src %} {% set sizeAttrs = 'width="{{
+              item.icon_image.width }}" height="{{ item.icon_image.height }}"'
+              %} {% if item.icon_image.size_type == 'auto' %} {% set sizeAttrs =
+              'width="{{ item.icon_image.width }}" height="{{
+              item.icon_image.height }}" style="max-width: 100%; height: auto;"'
+              %} {% elif item.icon_image.size_type == 'auto_custom_max' %} {%
+              set sizeAttrs = 'width="{{ item.icon_image.max_width }}"
+              height="{{ item.icon_image.max_height }}" style="max-width: 100%;
+              height: auto;"' %} {% endif %} {% set loadingAttr =
+              item.icon_image.loading != 'disabled' ? 'loading="{{
+              item.icon_image.loading }}"' : '' %}
+              <img
+                src="{{ item.icon_image.src }}"
+                alt="{{ item.icon_image.alt }}"
+                {{
+                loadingAttr
+                }}
+                {{
+                sizeAttrs
+                }}
+              />
+              {% endif %}
+            </div>
+            <div>{% inline_text field="text" value="{{ item.text }}" %}</div>
+
+            {% endfor %}
+          </div>
+
+          <div class="icons d-flex mt-3 mt-xs-4 mb-xs-3">
+            {% for item in module.heading.additional_icons.additional_icons %}
+            {% if item.src %} {% set sizeAttrs = 'width="{{ item.width }}"
+            height="{{ item.height }}"' %} {% if item.size_type == 'auto' %} {%
+            set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"
+            style="max-width: 100%; height: auto;"' %} {% elif item.size_type ==
+            'auto_custom_max' %} {% set sizeAttrs = 'width="{{ item.max_width
+            }}" height="{{ item.max_height }}" style="max-width: 100%; height:
+            auto;"' %} {% endif %} {% set loadingAttr = item.loading !=
+            'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+
+            <div class="m-2">
+              <img
+                src="{{ item.src }}"
+                alt="{{ item.alt }}"
+                {{
+                loadingAttr
+                }}
+                {{
+                sizeAttrs
+                }}
+              />
+            </div>
+            {% endif %} {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="backgroundImage d-xs-none d-flex justify-content-end">
+        {% if module.module_setting.background_image.src %} {% set sizeAttrs =
+        'width="{{ module.module_setting.background_image.width }}" height="{{
+        module.module_setting.background_image.height }}"' %} {% if
+        module.module_setting.background_image.size_type == 'auto' %} {% set
+        sizeAttrs = 'width="{{ module.module_setting.background_image.width }}"
+        height="{{ module.module_setting.background_image.height }}"
+        style="max-width: 100%; height: auto;"' %} {% elif
+        module.module_setting.background_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{
+        module.module_setting.background_image.max_width }}" height="{{
+        module.module_setting.background_image.max_height }}" style="max-width:
+        100%; height: auto;"' %} {% endif %} {% set loadingAttr =
+        module.module_setting.background_image.loading != 'disabled' ?
+        'loading="{{ module.module_setting.background_image.loading }}"' : '' %}
+        <img
+          src="{{ module.module_setting.background_image.src }}"
+          alt="{{ module.module_setting.background_image.alt }}"
+          {{
+          loadingAttr
+          }}
+          {{
+          sizeAttrs
+          }}
+        />
+        {% endif %}
+      </div>
+    </div>
+    <div
+      class="W-50 W-xs-90 m-xs-auto mt-xs-4 px-2 px-xs-4 py-4 theme-border-iK-Radius iK-shadow position-relative form {{ module.form_setting.Form_background_colour }}"
+    >
+      {% form form_to_use="{{ module.form_setting.contact_form.form_id }}"
+      response_response_type="{{ module.form_setting.contact_form.response_type
+      }}" response_message="{{ module.form_setting.contact_form.message }}"
+      response_redirect_id="{{ module.form_setting.contact_form.redirect_id }}"
+      response_redirect_url="{{module.form_setting.contact_form.redirect_url}}"
+      gotowebinar_webinar_key="{{
+      module.form_setting.contact_form.gotowebinar_webinar_key }}" %}
+    </div>
+  </div>
+</div>

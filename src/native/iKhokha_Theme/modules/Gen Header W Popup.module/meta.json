@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "https://f.hubspotusercontent40.net/hubfs/6412394/ik%20logo.svg",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 80524817545,
+  "label" : "Gen Header W Popup",
+  "is_available_for_new_content" : true
+}

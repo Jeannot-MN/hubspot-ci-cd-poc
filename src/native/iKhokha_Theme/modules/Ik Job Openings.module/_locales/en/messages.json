@@ -1,0 +1,1097 @@
+{
+  "choice_field.choices.value 1" : {
+    "message" : "Label 1",
+    "description" : "",
+    "placeholders" : null
+  },
+  "choice_field.choices.value 2" : {
+    "message" : "Label 2",
+    "description" : "",
+    "placeholders" : null
+  },
+  "choice_field.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "choice_field.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "choice_field.label" : {
+    "message" : "Choice",
+    "description" : "",
+    "placeholders" : null
+  },
+  "choice_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "creative_brand_image.default.alt" : {
+    "message" : "601b7e5fde5c8d63f3bc2d3d_Creative&Brand_3_ab82761b-324d-4a17-bd9b-284df7d1b833",
+    "description" : "",
+    "placeholders" : null
+  },
+  "creative_brand_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "creative_brand_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "creative_brand_image.label" : {
+    "message" : "Creative & Brand Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "creative_brand_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_success_image.default.alt" : {
+    "message" : "6013b28a371afa4c9df60e54_CustomerSuccess_2_a06c347a-74f7-44e7-a1df-e09c5a4d31af-p-800",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_success_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_success_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_success_image.label" : {
+    "message" : "Customer Success Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "customer_success_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "data_image.default.alt" : {
+    "message" : "601b80a9adea934dd0fddbfd_GrowthMarketing_3_3b10ebda-d428-4489-8e32-3cb6012c3ac7-p-500",
+    "description" : "",
+    "placeholders" : null
+  },
+  "data_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "data_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "data_image.label" : {
+    "message" : "Data Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "data_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_eight.default" : {
+    "message" : "Creative & Brand",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_eight.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_eight.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_eight.label" : {
+    "message" : "Department Eight",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_eight.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_eight.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_five.default" : {
+    "message" : "Finance",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_five.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_five.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_five.label" : {
+    "message" : "Department five",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_five.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_five.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_four.default" : {
+    "message" : "Data",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_four.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_four.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_four.label" : {
+    "message" : "Department four",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_four.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_four.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_one.default" : {
+    "message" : "Customer Success",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_one.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_one.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_one.label" : {
+    "message" : "Department One",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_one.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_one.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_seven.default" : {
+    "message" : "People",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_seven.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_seven.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_seven.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_seven.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_seven.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_six.default" : {
+    "message" : "Product & Dev",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_six.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_six.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_six.label" : {
+    "message" : "Department Six",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_six.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_six.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_three.default" : {
+    "message" : "Growth Marketing",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_three.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_three.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_three.label" : {
+    "message" : "Department Three",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_three.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_three.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_two.default" : {
+    "message" : "Sales",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_two.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_two.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_two.label" : {
+    "message" : "Department Two",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_two.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "department_two.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "finance_image.default.alt" : {
+    "message" : "60c737a1cfb800ba404f22a5_Finance_1b-p-500",
+    "description" : "",
+    "placeholders" : null
+  },
+  "finance_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "finance_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "finance_image.label" : {
+    "message" : "Finance Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "finance_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "growth_marketing_image.default.alt" : {
+    "message" : "601b7f649d294d9d1760b1b3_GrowthMarketing_1_155ad573-c744-4165-bf02-9c2576dc1d85-p-500",
+    "description" : "",
+    "placeholders" : null
+  },
+  "growth_marketing_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "growth_marketing_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "growth_marketing_image.label" : {
+    "message" : "Growth Marketing Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "growth_marketing_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "Ik Job Openings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "people_image.default.alt" : {
+    "message" : "601b8198440868ecb69002ea_People_1_6043c4d3-cfcf-41ba-94df-b0e1446a6b28-p-500",
+    "description" : "",
+    "placeholders" : null
+  },
+  "people_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "people_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "people_image.label" : {
+    "message" : "People Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "people_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "product_dev_image.default.alt" : {
+    "message" : "601b81be00f2a655b14de2cc_Engineering&Product_1_cf9d77c1-053c-4c61-8100-46d3f627bcb2-p-500",
+    "description" : "",
+    "placeholders" : null
+  },
+  "product_dev_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "product_dev_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "product_dev_image.label" : {
+    "message" : "Product & Dev Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "product_dev_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "sales_image.default.alt" : {
+    "message" : "601b7f2b4e13cbcb843df896_iKSales_2_39f65fb3-2c88-4792-a6ee-1488210de48d-p-500",
+    "description" : "",
+    "placeholders" : null
+  },
+  "sales_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "sales_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "sales_image.label" : {
+    "message" : "Sales Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "sales_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "section_text.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "section_text.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "section_text.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "section_text.label" : {
+    "message" : "Section text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "section_text.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "section_text.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "section_title.default" : {
+    "message" : "Our job openings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "section_title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "section_title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "section_title.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "section_title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "section_title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default.color" : {
+    "message" : "#000000",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default.fallback" : {
+    "message" : "sans-serif",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default.font" : {
+    "message" : "Roboto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default.font_set" : {
+    "message" : "GOOGLE",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default.size.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.default.variant" : {
+    "message" : "700",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.department_heading_font_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles.default.text_align" : {
+    "message" : "LEFT",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles_copy.default.text_align" : {
+    "message" : "LEFT",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles_copy.label" : {
+    "message" : "Heading Alignment Styles copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_alignment_styles_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_font_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.default.color" : {
+    "message" : "#000000",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.default.fallback" : {
+    "message" : "cursive",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.default.font" : {
+    "message" : "Baloo 2",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.default.font_set" : {
+    "message" : "GOOGLE",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.default.variant" : {
+    "message" : "800",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_font_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.margin.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.bottom.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.left.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.right.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.right.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.top.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.default.padding.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.margin.top.units" : {
+    "message" : "px",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.bottom.units" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.left.units" : {
+    "message" : "px",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.right.units" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.right.value" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.top.units" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.default.padding.top.value" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.label" : {
+    "message" : "Heading Spacing Styles copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.heading_spacing_styles_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.label" : {
+    "message" : "Style",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.margin.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.margin.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.bottom.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.right.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.right.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.top.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.default.padding.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.module_spacing_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.name" : {
+    "message" : "Ik Job Openings",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_font_styles.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_font_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_font_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_font_styles.label" : {
+    "message" : "Text Font Styles",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_font_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.margin.top.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.bottom.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.left.units" : {
+    "message" : "px",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.right.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.right.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.top.units" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.default.padding.top.value" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.margin.bottom.units" : {
+    "message" : "px",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.margin.top.units" : {
+    "message" : "px",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.bottom.units" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.bottom.value" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.left.units" : {
+    "message" : "px",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.right.units" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.right.value" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.top.units" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.default.padding.top.value" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.label" : {
+    "message" : "Text Spacing Styles copy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "style.text_spacing_styles_copy.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  }
+}

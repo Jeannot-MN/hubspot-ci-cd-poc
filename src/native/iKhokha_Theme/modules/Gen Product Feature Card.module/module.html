@@ -1,0 +1,211 @@
+ {# Can we move this into the header section #}
+{# <link rel="stylesheet" href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css" /> #}
+
+<section class="product-feature-card-carousel-section W-100 pt-4 position-relative {{ module.settings.background_color }} version1.1">
+  {% if module.settings.slider_settings.arrows %}
+    <span class="swiper-button-prev {{name}}-button"></span>
+    <span class="swiper-button-next {{name}}-button"></span>
+  {% endif %}
+  
+  <div class="page-center">
+      <div class="swiper product-feature-card-carousel-swiper" data-slider-name="{{ name }}" data-slider-active="{{ module.settings.slider_settings.mobile_slide_only }}" data-slider-arrows="{{ module.settings.slider_settings.arrows }}" data-slider-autoplay="{{module.settings.slider_settings.autoplay}}" data-slider-cycle-delay="{{ module.settings.slider_settings.cycle_delay }}" data-slider-pause-hover="{{ module.settings.slider_settings.pause_on_hover }}" data-slider-pagination = "{{ module.settings.slider_settings.pagination }}">
+        <div class="product-feature-card-carousel-swiper-wrapper swiper-wrapper">
+          {% for item in module.slides %}
+            <div class="swiper-slide product-feature-card-carousel-swiper-item {{ item.container_background_color }}">
+              {% if !item.call_out_label.hide && item.call_out_label.title != "" && item.call_out_label.title %}
+                <div class="product-feature-card-carousel-swiper-item-label-wrapper {{ item.call_out_label.position == "right" ? "product-feature-card-right" : "" }}">
+                  <div class="product-feature-card-carousel-swiper-item-label {{ item.call_out_label.background_color }} {{ item.call_out_label.title_color }}">
+                    {{ item.call_out_label.title }}
+                  </div>
+                </div>
+              {% endif %}
+              
+              <div class="product-feature-card-carousel-swiper-item-image">
+                {% if item.image.image.src %}
+                  {% set sizeAttrs = 'width="{{ item.image.image.width }}" height="{{ item.image.image.height }}"' %}
+
+                  {% if item.image.image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.image.image.width }}" height="{{ item.image.image.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.image.image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.image.image.max_width }}" height="{{ item.image.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+
+                  {% set loadingAttr = item.image.image.loading != 'disabled' ? 'loading="{{ item.image.image.loading }}"' : '' %}
+                  <img src="{{ item.image.image.src }}" alt="{{ item.image.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+              </div>
+              <div class="product-feature-card-carousel-swiper-item-content theme-bg-iK-White">
+                {% if item.content.title != "" %}
+                  <h3 class="product-feature-card-carousel-swiper-item-content-title">
+                    {{ item.content.title }}
+                  </h3>
+                {% endif %}
+                
+                {% if item.content.price > 0 %}
+                  <h4 class="product-feature-card-carousel-swiper-item-content-price mt-2">
+                     {{ item.content.price|format_currency("en-ZA", "ZAR", true) }}
+
+                    {% if item.content.discount_price > 0 %}
+                      <span>{{ item.content.discount_price|format_currency("en-ZA", "ZAR", true) }}</span>
+                    {% endif %}
+                  </h4>
+                {% endif %}
+
+                {% if item.content.body_text != "" %}
+                  <div class="product-feature-card-carousel-swiper-item-content-copy">
+                     {{item.content.body_text}}
+                  </div>
+                {% endif %}
+
+                {% if item.content.features.features|length > 0 %}
+                  <div class="product-feature-card-carousel-swiper-item-content-features {{ item.content.features.stack_features ? "product-feature-card-stack" : ""}}">
+                    {% for feature in item.content.features.features %}
+                      <div class="product-feature-card-carousel-swiper-item-content-features-feature {{ feature.hide_container ? "product-feature-card-hide" : "theme-bg-iK-White" }}  {{ item.content.features.stack_features ? "product-feature-card-stack" : ""}}">
+                          {% if feature.image.src %}
+                            {% set sizeAttrs = 'width="{{ feature.image.width }}" height="{{ feature.image.height }}"' %}
+
+                            {% if feature.image.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ feature.image.width }}" height="{{ feature.image.height }}" style="max-width: 100%; height: auto;"' %}
+                            {% elif feature.image.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ feature.image.max_width }}" height="{{ feature.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                            {% endif %}
+
+                            {% set loadingAttr = feature.image.loading != 'disabled' ? 'loading="{{ feature.image.loading }}"' : '' %}
+                            <img src="{{ feature.image.src }}" alt="{{ feature.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                          {% endif %}
+                        
+                          {% if feature.detail %}
+                            <span class="{% if feature.image.src != ''%} no-margin {% endif %}">
+                              {{ feature.detail }}
+                            </span>
+                          {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+
+                {% if item.content.processes.processes|length > 0 %}
+                  <div class="product-feature-card-carousel-swiper-item-content-processes">
+                    <div class="product-feature-card-carousel-swiper-item-content-processes-title">
+                      <p>
+                        {{ item.content.processes.title }}
+                      </p>
+                    </div>
+                    <div class="product-feature-card-carousel-swiper-item-content-processes-process-wrapper">
+                      {% for item in item.content.processes.processes %}
+                        <div class="product-feature-card-carousel-swiper-item-content-processes-process-wrapper-process theme-bg-iK-White">
+                            {% if item.image.src %}
+                              {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+
+                              {% if item.image.size_type == 'auto' %}
+                                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                              {% elif item.image.size_type == 'auto_custom_max' %}
+                                {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                              {% endif %}
+
+                              {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                              <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                            {% endif %}
+                        </div>
+                      {% endfor %}
+                    </div>    
+                  </div>
+                {% endif %}
+                
+                {% if !item.content.services.hide %}
+                  <div class="product-feature-card-carousel-swiper-item-content-services">
+                    <p>{{ item.content.services.title }}</p>
+                    <span class="product-feature-card-carousel-swiper-item-content-services-tooltips">
+                      {% if item.content.services.tooltip_icon.src %}
+                        <div class="product-feature-card-carousel-swiper-item-content-services-tooltips-icon">
+                            {% set sizeAttrs = 'width="{{ item.content.services.tooltip_icon.width }}" height="{{ item.content.services.tooltip_icon.height }}"' %}
+                            {% if item.content.services.tooltip_icon.size_type == 'auto' %}
+                                {% set sizeAttrs = 'width="{{ item.content.services.tooltip_icon.width }}" height="{{ item.content.services.tooltip_icon.height }}" style="max-width: 100%; height: auto;"' %}
+                            {% elif item.content.services.tooltip_icon.size_type == 'auto_custom_max' %}
+                                {% set sizeAttrs = 'width="{{ item.content.services.tooltip_icon.max_width }}" height="{{ item.content.services.tooltip_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+                            {% endif %}
+                             {% set loadingAttr = item.content.services.tooltip_icon.loading != 'disabled' ? 'loading="{{ item.content.services.tooltip_icon.loading }}"' : '' %}
+                            <img src="{{ item.content.services.tooltip_icon.src }}" alt="{{ item.content.services.tooltip_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                          </div>
+                        {% endif %}
+
+                      {% if item.content.services.tooltip_body_text != "" %}
+                        <span class="product-feature-card-carousel-swiper-item-content-services-tooltips-text">
+                          {{ item.content.services.tooltip_body_text }}
+                        </span>
+                      {% endif %}
+                    </span>
+                  </div>
+                {% endif %}
+                
+                {% if item.content.buttons|length > 0 %}
+                  <div class="product-feature-card-carousel-swiper-item-content-buttons">
+                    {% for button in item.content.buttons %}
+                      <div class="product-feature-card-carousel-swiper-item-content-buttons-button">
+                        {% if button.button_type == "standard" %}
+                          {% set href = button.button_link.url.href %}
+                          {% if button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+
+                          {% set rel = [] %}
+                          {% if button.button_link.no_follow %}
+                            {% do rel.append("nofollow") %}
+                          {% endif %}
+
+                          {% if button.button_link.open_in_new_tab %}
+                            {% do rel.append("noopener") %}
+                          {% endif %}
+
+                          <a href="{{ href }}"
+                            {% if button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if button.button_link.rel %}rel="{{ button.button_link.rel }}"{% endif %}
+                            class=" {{ button.button_color }}">
+                              {{ button.button_text }}
+                          </a>
+                        {% endif %}
+
+                        {% if button.button_type == "cta" %}
+                          {% cta guid="{{ button.button_cta }}" %}
+                        {% endif %}        
+
+                        {% if button.button_type == "link" %}
+                          {% set href = button.button_link.url.href %}
+                          {% if button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+
+                          {% set rel = [] %}
+                          {% if button.button_link.no_follow %}
+                            {% do rel.append("nofollow") %}
+                          {% endif %}
+
+                          {% if button.button_link.open_in_new_tab %}
+                            {% do rel.append("noopener") %}
+                          {% endif %}
+
+                          <a href="{{ button.button_link.url.href }}" class="theme-link {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ button.link_type }}" data-id="custom-{{ loop.index }}"
+                            {% if button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if button.button_link.rel %}rel="{{ button.button_link.rel }}"{% endif %}>
+                            {{ button.button_text }}
+                          </a>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div> 
+  </div>    
+  {% if module.settings.slider_settings.pagination %}
+        <div class="swiper-pagination {{name}}-pagination"></div>
+  {% endif %}
+</section>
+
+{# We need to move this into the bottom of the page #}
+<script type="text/javascript" src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"></script>

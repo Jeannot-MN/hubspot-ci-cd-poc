@@ -1,0 +1,60 @@
+<section class="mbwh-section theme-bg-{{ module.background_colour }} ">
+  <div class="page-center">
+    <div class="content-wrapper theme-py-{{ module.y_axis_spacing }} theme-py-{{ module.mobile_y_axis_spacing }}-mobile {% if module.images.mobile_no_space_left_right %} theme-px-0-mobile {% endif %}">
+      {% if module.heading.title != '' %}
+        <div class="mbwh-content align-text-{{ module.heading.text_align_desktop }} align-text-{{ module.heading.text_align_mobile }}-mobile {% if module.images.mobile_no_space_left_right %} theme-px-2-mobile {% endif %}">
+          {% if module.heading.title != "" %}
+            {% if module.heading.title_tag == "h2" %}
+              <h2 class="heading">
+                {{ module.heading.title }}
+              </h2>
+            {% elif module.heading.title_tag == "h3" %}
+              <h3 class="heading">
+                {{ module.heading.title }}
+              </h3>
+            {% elif module.heading.title_tag == "h4" %}
+              <h4 class="heading">
+                {{ module.heading.title }}
+              </h4>
+            {% elif module.heading.title_tag == "h5" %}
+              <h5 class="heading">
+                {{ module.heading.title }}
+              </h5>
+            {% elif module.heading.title_tag == "h6" %}
+              <h6 class="heading">
+                {{ module.heading.title }}
+              </h6>
+            {% endif %}
+          {% endif %}
+          {% if module.heading.sub_title != "" %}
+            <p class="sub-title">
+              {{ module.heading.sub_title }}
+            </p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="mbwh-image-holder align-text-{{ module.images.image_alignment }} align-text-{{ module.images.image_alignment_mobile }}-mobile">
+        {% if module.images.image.src %}
+          {% set sizeAttrs = 'width="{{ module.images.image.width }}" height="{{ module.images.image.height }}"' %}
+          {% if module.images.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.images.image.width }}" height="{{ module.images.image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.images.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.images.image.max_width }}" height="{{ module.images.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.images.image.loading != 'disabled' ? 'loading="{{ module.images.image.loading }}"' : '' %}
+          <img class="img-desktop" src="{{ module.images.image.src }}" alt="{{ module.images.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        {% if module.images.mobile_image.src %}
+          {% set sizeAttrs = 'width="{{ module.images.mobile_image.width }}" height="{{ module.images.mobile_image.height }}"' %}
+          {% if module.images.mobile_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.images.mobile_image.width }}" height="{{ module.images.mobile_image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.images.mobile_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.images.mobile_image.max_width }}" height="{{ module.images.mobile_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.images.mobile_image.loading != 'disabled' ? 'loading="{{ module.images.mobile_image.loading }}"' : '' %}
+          <img class="img-mobile" src="{{ module.images.mobile_image.src }}" alt="{{ module.images.mobile_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

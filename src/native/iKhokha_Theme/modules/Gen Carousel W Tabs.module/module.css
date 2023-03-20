@@ -1,0 +1,367 @@
+.image-copy-tab-section{
+  position: relative;
+  width: 100%;
+  padding-top: 40px;
+}
+
+.image-copy-tab-section p{
+  margin-bottom: 0;
+}
+
+.image-copy-tab-section .page-center {
+  max-width: 1060px;
+  margin: 0 auto 0 auto;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 0 40px 0;
+}
+
+.image-copy-tab-section .page-center-inner {
+  width: 100%;
+  padding: 40px 32px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.image-copy-tab-section .logo img, .image-copy-tab-section img {
+  max-width: 100%; height: auto;
+}
+
+.image-copy-tab-section .hero-image-section {
+  position: relative;
+  overflow: hidden;
+  min-width: 100%;
+  color: #fff;
+  min-height: 400px;
+}
+
+.image-copy-tab-section .hero-image-section .hero-image-holder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.image-copy-tab-section .hero-image-section .hero-image-holder .image-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+
+.image-copy-tab-section .hero-image-section .hero-image-holder .image-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width:991px) {
+  .image-copy-tab-section .page-center, .image-copy-tab-section .page-center-inner  {
+    padding: 40px 20px;
+  }
+}
+
+.image-copy-tab-wrapper-test .top-right.logo {
+    right: 0;
+}
+
+.dots-container {
+  position: relative;
+}
+
+.image-copy-tab-section .image-copy-tab-activate-carousel.active {
+  background-color: #FFCD00;
+  border-radius: 15px;
+} 
+
+@media (max-width:991px) {
+  .image-copy-tab-content-carousel {
+    display: block;
+    grid-auto-flow: unset;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+  }
+  .dots-container {
+    padding-top: 0;
+    padding-bottom: 15px;
+  }
+}
+
+@media (max-width:767px) {
+  .image-copy-tab-content-carousel {
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+  }
+}
+
+.image-copy-tab-content-carousel .image-copy-tab-content-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.image-copy-tab-section .small-cards {
+  position: relative;
+  margin-top: 30px;
+}
+
+.image-copy-tab-titles-carousel {
+  padding: 0 15px;
+}
+
+.image-copy-tab-titles-title-carousel {
+  padding: 13px 5px 14px 5px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  position: relative;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.image-copy-tab-titles-title-carousel span{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  -webkit-transition: height 100ms ease-in-out, border-color 100ms ease-in-out, background 100ms ease-in-out;
+  -o-transition: height 100ms ease-in-out, border-color 100ms ease-in-out, background 100ms ease-in-out;
+  transition: height 100ms ease-in-out, border-color 100ms ease-in-out, background 100ms ease-in-out;
+}
+
+.image-copy-tab-titles-title-carousel:hover span{
+  height: 4px;
+}
+
+.image-copy-tab-titles-title-carousel:not(.active):hover{
+  background-color: #FFF5CC;
+  border-radius: 10px;
+}
+
+.image-copy-tab-titles-title-carousel.active span{
+  height: 8px;
+}
+
+.image-copy-tab-wrapper-carousel {
+  display: none; 
+}
+
+@media screen and (min-width: 991px) {
+  .image-copy-tab-content-carousel {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  
+  .image-copy-tab-content-carousel > div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+.image-copy-tab-wrapper-carousel .logo {
+  z-index: 2;
+  position: absolute;
+  padding: 15px;
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+}
+
+.image-copy-tab-wrapper-carousel .btn-area {
+  position: absolute;
+  padding: 0 15px;
+  bottom: -50px;
+  -webkit-transition: -webkit-transform .6s cubic-bezier(.7,0,0,1);
+  transition: -webkit-transform .6s cubic-bezier(.7,0,0,1);
+  -o-transition: transform .6s cubic-bezier(.7,0,0,1);
+  transition: transform .6s cubic-bezier(.7,0,0,1);
+  transition: transform .6s cubic-bezier(.7,0,0,1), -webkit-transform .6s cubic-bezier(.7,0,0,1);
+}
+
+.image-copy-tab-wrapper-carousel .image-copy-tab-wrapper-carousel {
+  position: relative;
+  overflow: hidden;
+  min-width: 100%;
+  color: #fff;
+  min-height: 400px;
+  border-radius: 10px;
+}
+
+.image-copy-tab-wrapper-carousel .hero-image-section:hover .copy {
+  -webkit-transform: translateY(-32px);
+      -ms-transform: translateY(-32px);
+          transform: translateY(-32px)
+}
+
+.image-copy-tab-wrapper-carousel .hero-image-section:hover .btn-area {
+  -webkit-transform: translateY(-65px);
+      -ms-transform: translateY(-65px);
+          transform: translateY(-65px)
+}
+
+.image-copy-tab-content-carousel .hero-image-section .btn-area .theme-link {
+  padding-left: 0;
+}
+
+.image-copy-tab-wrapper-carousel .copy {
+  position: absolute;
+  bottom: 30px;
+  padding: 15px;
+  -webkit-transition: -webkit-transform .6s cubic-bezier(.7,0,0,1);
+  transition: -webkit-transform .6s cubic-bezier(.7,0,0,1);
+  -o-transition: transform .6s cubic-bezier(.7,0,0,1);
+  transition: transform .6s cubic-bezier(.7,0,0,1);
+  transition: transform .6s cubic-bezier(.7,0,0,1), -webkit-transform .6s cubic-bezier(.7,0,0,1);
+}
+
+.image-copy-tab-section .hero-image-section {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  min-width: 100%;
+  color: #fff;
+  min-height: 400px;
+  margin-top: 15px;
+}
+
+.image-copy-tab-wrapper-test .hero-image-section:hover .copy {
+    -webkit-transform: translateY(-50px);
+        -ms-transform: translateY(-50px);
+            transform: translateY(-50px);
+}
+.image-copy-tab-section .top-right.logo {
+    right: 0;
+} 
+
+.image-copy-tab-wrapper-test .logo {
+    z-index: 2;
+    position: absolute;
+    padding: 15px;
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+}
+
+.small-cards .fwcc-slide-content.card {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    padding: 25px;
+    z-index: 499;
+    z-index: calc(500 - 1);
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+    box-shadow: 0 13px 27px -5px rgb(50 50 93 / 25%), 0 8px 16px -8px rgb(0 0 0 / 30%), 0 -6px 16px -6px rgb(0 0 0 / 3%);
+    -webkit-transition-property: color,background-color,-webkit-box-shadow,-webkit-transform;
+    transition-property: color,background-color,-webkit-box-shadow,-webkit-transform;
+    -o-transition-property: color,background-color,box-shadow,transform;
+    transition-property: color,background-color,box-shadow,transform;
+    transition-property: color,background-color,box-shadow,transform,-webkit-box-shadow,-webkit-transform;
+    -webkit-transition-duration: .15s;
+    -o-transition-duration: .15s;
+       transition-duration: .15s;
+}
+
+.small-cards .fwcc-slide-content.card:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #aab7c4;
+  pointer-events: none;
+  opacity: 0;
+  -webkit-transition: opacity .15s;
+  -o-transition: opacity .15s;
+  transition: opacity .15s;
+}
+
+.small-cards .card-image {
+    margin-bottom: 5px;
+}
+
+.small-cards .fwcc-slide-content.card {
+
+}
+
+.small-cards .swiper-pagination .swiper-pagination-bullet {
+  background-color: #3d3d3d;
+  border-radius: 7px;
+  height: 10px;
+  width: 40px;
+}
+
+.small-cards .swiper-wrapper {
+    margin-bottom: 45px;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.small-cards .swiper-button-prev, .small-cards .swiper-button-next { 
+    display: none;
+}
+
+.image-copy-tab-wrapper-carousel .gradient-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-mask-image: -webkit-gradient(linear,left bottom, left top,color-stop(15%, #000),color-stop(54.75%, rgba(0,0,0,.5)));
+    -webkit-mask-image: linear-gradient(0deg,#000 15%,rgba(0,0,0,.5) 54.75%);
+    mask-image: -webkit-gradient(linear,left bottom, left top,color-stop(15%, #000),color-stop(54.75%, rgba(0,0,0,.5)));
+    mask-image: linear-gradient(0deg,#000 15%,rgba(0,0,0,.5) 54.75%);
+    -webkit-transition: -webkit-transform .6s cubic-bezier(.7,0,0,1);
+    transition: -webkit-transform .6s cubic-bezier(.7,0,0,1);
+    -o-transition: transform .6s cubic-bezier(.7,0,0,1);
+    transition: transform .6s cubic-bezier(.7,0,0,1);
+    transition: transform .6s cubic-bezier(.7,0,0,1), -webkit-transform .6s cubic-bezier(.7,0,0,1);
+    pointer-events: none;
+    display: block;
+    -webkit-transform: scaleY(1.2);
+        -ms-transform: scaleY(1.2);
+            transform: scaleY(1.2);
+    -webkit-transform-origin: 50% 0;
+        -ms-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+}
+
+
+

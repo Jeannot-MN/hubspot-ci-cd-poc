@@ -1,0 +1,46 @@
+<section
+  class="iK-Gen-Subscribe theme-border-iK-Radius  mx-xs-2 version1.1  {{ module.background_colour }} "
+>
+  <div class="content-container">
+    <div class="content-container__copy-block ml-4 ml-xs-auto text-md-center">
+      <div class="content-container__copy-block--image">
+        {% if module.image.src %} {% set sizeAttrs = 'width="{{
+        module.image.width }}" height="{{ module.image.height }}"' %} {% if
+        module.image.size_type == 'auto' %} {% set sizeAttrs = 'width="{{
+        module.image.width }}" height="{{ module.image.height }}"
+        style="max-width: 100%; height: auto;"' %} {% elif
+        module.image.size_type == 'auto_custom_max' %} {% set sizeAttrs =
+        'width="{{ module.image.max_width }}" height="{{ module.image.max_height
+        }}" style="max-width: 100%; height: auto;"' %} {% endif %} {% set
+        loadingAttr = module.image.loading != 'disabled' ? 'loading="{{
+        module.image.loading }}"' : '' %}
+        <img
+          src="{{ module.image.src }}"
+          alt="{{ module.image.alt }}"
+          {{
+          loadingAttr
+          }}
+          {{
+          sizeAttrs
+          }}
+        />
+        {% endif %}
+      </div>
+      <div class="content-container__copy-block--header heading">
+        {{ module.header }}
+      </div>
+      <div class="content-container__copy-block--copy content">
+        {{ module.copy }}
+      </div>
+    </div>
+    <div class="content-container__form-block W-xs-100 W-md-100">
+      {% form form_to_use="{{ module.form_field.form_id }}"
+      response_response_type="{{ module.form_field.response_type }}"
+      response_message="{{ module.form_field.message }}"
+      response_redirect_id="{{ module.form_field.redirect_id }}"
+      response_redirect_url="{{module.form_field.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+      %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,521 @@
+
+<div id="Openings" class="Openings">
+  
+<div class="JobsOpenings" style="{{ module.style.module_spacing_styles.css }};">
+    <div class="header-section">
+        <h2 id="Openings" class="h2-test"
+            style="{{ module.style.heading_font_styles.css }};
+            {{ module.style.heading_alignment_styles.css }};
+            {{ module.style.heading_spacing_styles.css }};"
+            >{{ module.section_title }}</h2>
+      
+      
+        <p class="vacancy-copy" 
+            style="{{ module.style.text_font_styles.style }}; 
+            {{ module.style.text_alignment_styles.css }};
+            {{ module.style.text_spacing_styles.css}};
+            ">{{ module.section_text }}</p>
+    </div>
+    <div class="columns-16 w-row">
+        <div class="column-141 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.customer_success_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.customer_success_image.width }}" height="{{ module.customer_success_image.height }}"' %}
+                    {% if module.customer_success_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.customer_success_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.customer_success_image.max_width }}" height="{{ module.customer_success_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.customer_success_image.loading != 'disabled' ? 'loading="{{ module.customer_success_image.loading }}"' : '' %}
+                    <img src="{{ module.customer_success_image.src }}" alt="{{ module.customer_success_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_one }}</a>
+                    <a onclick='showJobs(event, "success")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+<div class="column-176 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.sales_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.sales_image.width }}" height="{{ module.sales_image.height }}"' %}
+                    {% if module.sales_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.sales_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.sales_image.max_width }}" height="{{ module.sales_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.sales_image.loading != 'disabled' ? 'loading="{{ module.sales_image.loading }}"' : '' %}
+                    <img src="{{ module.sales_image.src }}" alt="{{ module.sales_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_two }}</a>
+                    <a onclick='showJobs(event, "sales")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+        <div class="column-171 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.growth_marketing_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.growth_marketing_image.width }}" height="{{ module.growth_marketing_image.height }}"' %}
+                    {% if module.growth_marketing_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.growth_marketing_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.growth_marketing_image.max_width }}" height="{{ module.growth_marketing_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.growth_marketing_image.loading != 'disabled' ? 'loading="{{ module.growth_marketing_image.loading }}"' : '' %}
+                    <img src="{{ module.growth_marketing_image.src }}" alt="{{ module.growth_marketing_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_three }}</a>
+                    <a onclick='showJobs(event, "growth")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+        <div class="column-173 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.data_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.data_image.width }}" height="{{ module.data_image.height }}"' %}
+                    {% if module.data_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.data_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.data_image.max_width }}" height="{{ module.data_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.data_image.loading != 'disabled' ? 'loading="{{ module.data_image.loading }}"' : '' %}
+                    <img src="{{ module.data_image.src }}" alt="{{ module.data_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_four }}</a>
+                    <a onclick='showJobs(event, "data")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="columns-16 w-row">
+        <div class="column-141 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.finance_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.finance_image.width }}" height="{{ module.finance_image.height }}"' %}
+                    {% if module.finance_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.finance_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.finance_image.max_width }}" height="{{ module.finance_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.finance_image.loading != 'disabled' ? 'loading="{{ module.finance_image.loading }}"' : '' %}
+                    <img src="{{ module.finance_image.src }}" alt="{{ module.finance_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_five }}</a>
+                    <a onclick='showJobs(event, "finance")' href="#" class="a">View positions</a>
+                  
+                </div>
+            </div>
+        </div>
+        <div class="column-175 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.people_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.people_image.width }}" height="{{ module.people_image.height }}"' %}
+                    {% if module.people_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.people_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.people_image.max_width }}" height="{{ module.people_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.people_image.loading != 'disabled' ? 'loading="{{ module.people_image.loading }}"' : '' %}
+                    <img src="{{ module.people_image.src }}" alt="{{ module.people_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_seven }}</a>
+                    <a onclick='showJobs(event, "people")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+     <div class="column-172 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.product_dev_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.product_dev_image.width }}" height="{{ module.product_dev_image.height }}"' %}
+                    {% if module.product_dev_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.product_dev_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.product_dev_image.max_width }}" height="{{ module.product_dev_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.product_dev_image.loading != 'disabled' ? 'loading="{{ module.product_dev_image.loading }}"' : '' %}
+                    <img src="{{ module.product_dev_image.src }}" alt="{{ module.product_dev_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_six }}</a>
+                    <a onclick='showJobs(event, "product")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+        <div class="column-174 w-col w-col-3 w-col-small-6 w-col-tiny-6">
+            <div class="item">
+                <div class="item-innner">
+                    {% if module.creative_brand_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.creative_brand_image.width }}" height="{{ module.creative_brand_image.height }}"' %}
+                    {% if module.creative_brand_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+                    {% elif module.creative_brand_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.creative_brand_image.max_width }}" height="{{ module.creative_brand_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                    {% set loadingAttr = module.creative_brand_image.loading != 'disabled' ? 'loading="{{ module.creative_brand_image.loading }}"' : '' %}
+                    <img src="{{ module.creative_brand_image.src }}" alt="{{ module.creative_brand_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    {% endif %}
+                    <a href="#" class="a career" style=" {{ module.style.department_heading_font_styles.css}}">{{ module.department_eight }}</a>
+                    <a onclick='showJobs(event, "creative")' href="#" class="a">View positions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container people-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+  <script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300795",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+  </script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container sales-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300829",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container creative-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300710",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container success-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300727",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container data-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300744",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container finance-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300761",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container product-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300812",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>
+
+<script type='text/javascript' 
+src='https://static.smartrecruiters.com/job-widget/1.6.1/script/smart_widget.js'></script>
+<div class="ik-job-widget-container growth-widget">
+  <button class="cls-btn" onclick="closeJob(event)">    X
+  </button>
+<script type='text/javascript' class='job_widget'>
+widget({
+    "company_code": "IKhokha",
+    "bg_color_widget": "#ffffff",
+    "bg_color_headers": "#000000",
+    "bg_color_links": "#e54361",
+    "txt_color_headers": "#ffffff",
+    "txt_color_job": "#000",
+    "bg_color_even_row": "#e0e0e0",
+    "bg_color_odd_row": "#f7f7f7",
+    "auto_width": "auto",
+    "auto_height": "auto",
+    "number": "on",
+    "job_title": "true",
+    "location": "true",
+    "type_of_employment": "true",
+    "dateFormat": "us",
+    "filter_locations": "",
+    "filter_departments": "3300778",
+    "departments_field_id": "62628cdcdf35942488dedee3",
+    "filter_languages": "",
+    "jobAdType": "PUBLIC",
+    "trid": "998bc6c9-cfbe-4db9-af4b-d7bb8407f264",
+    "api_url": "https://www.smartrecruiters.com",
+    "custom_css_url": "https://static.smartrecruiters.com/job-widget/1.6.1/css/smart_widget.css"
+});
+</script>
+  <script>
+   function showJobs(e, type){ 
+      e.preventDefault()
+      document.querySelector(`.ik-job-widget-container.${type}-widget`).classList.add('show');
+    }
+    
+    function closeJob(e){
+      e.target.parentNode.classList.remove("show")
+    }
+  </script>
+</div>

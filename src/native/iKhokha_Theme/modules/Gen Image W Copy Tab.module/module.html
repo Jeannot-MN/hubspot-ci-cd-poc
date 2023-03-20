@@ -1,0 +1,59 @@
+{# Can we move these stylesheet reference to the head section with the styles #}
+{# <link href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css" /> #}
+
+<section class="image-copy-tab-section {{ module.background_color }} version1.1">
+  <div class="page-center">
+    <div class="page-center-inner">
+      {% if module.tabs|length > 0 %}
+         <div class="swiper image-copy-tab-titles">
+           <div class="swiper-wrapper">
+              {% for tab in module.tabs %}
+               <div class="swiper-slide">
+                  <div class="image-copy-tab-activate image-copy-tab-titles-title {{ loop.first ? "active" : "" }}" data-tab-selector="{{ tab.title|urlencode }}">
+                    {{ tab.title }}
+                    <span class="theme-bg-iK-Charcoal"></span>
+                  </div>
+               </div>
+              {% endfor %}
+            </div>
+         </div>
+
+
+        {% for tab in module.tabs %}
+          <div class="image-copy-tab-wrapper" data-tab-content="{{ tab.title|urlencode }}" {{ loop.first ? "style=display:block;" : "" }}>
+            <div class="image-copy-tab-content">
+              {% for content in tab.content %}
+                <div>
+                {% if content.content_type == "image" %}
+                  {% if content.image.src %}
+                    <div class="image-copy-tab-content-image">
+                      {% set sizeAttrs = 'width="{{ content.image.width }}" height="{{ content.image.height }}"' %}
+                      {% if content.image.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ content.image.width }}" height="{{ content.image.height }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif content.image.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ content.image.max_width }}" height="{{ content.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+
+                      {% set loadingAttr = content.image.loading != 'disabled' ? 'loading="{{ content.image.loading }}"' : '' %}
+                      <img src="{{ content.image.src }}" alt="{{ content.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    </div>
+                  {% endif %}
+                {% elif content.content_type == "text" %}
+                  {% if content.body_text != "" %}
+                    {{ content.body_text }}
+                  {% endif %}
+                {% endif %}
+              </div>    
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{# Can we move these script into the bottom page with the script #}
+{# <script src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/aos.js"></script> #}
+<script type="text/javascript" src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"></script>

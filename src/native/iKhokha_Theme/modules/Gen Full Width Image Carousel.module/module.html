@@ -1,0 +1,302 @@
+{# Can we move this into the header section containing styles in the template #}
+{#
+<link
+  rel="stylesheet"
+  href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css"
+/>
+#}
+
+<section
+  class="fwic-section {{ module.settings.background_colour }} version1.1"
+>
+  <div
+    class="swiper fwic-swiper {{name}}"
+    data-sw-name="{{name}}"
+    data-sw-autoplay="{{ module.settings.auto_settings.autoplay }}"
+    data-sw-delay="{{ module.settings.auto_settings.cycle_delay }}"
+    data-sw-pause_on_hover="{{ module.settings.auto_settings.pause_on_hover }}"
+    data-sw-arrows="{{ module.settings.arrows }}"
+    data-sw-pagination="{{ module.settings.pagination }}"
+  >
+    {% if module.settings.arrows %}
+    <span class="swiper-button-prev"></span>
+    <span class="swiper-button-next"></span>
+    {% endif %}
+    <div class="swiper-wrapper">
+      {% for item in module.slide %}
+      <div class="swiper-slide {{ item.background.background_colour }} ">
+        <div class="fwic-slide-content">
+          {% if item.background.image.src %}
+          <div
+            class="bg-pos-hold hide-mobile bg-pos-{{ item.background.bg_focus }}"
+            style="background-image: url('{{ item.background.image.src }}');"
+          ></div>
+          {% endif %}
+
+          <div class="page-center">
+            <div
+              class="content-wrapper {% if item.content_alignment.desktop_copy_right %} reverse {% endif %}"
+            >
+              <div class="fwic-image-holder {{ item.images.image_position }}">
+                {% if item.images.content_type == "image" %} {% if
+                item.images.image.src %} {% set sizeAttrs = 'width="{{
+                item.images.image.width }}" height="{{ item.images.image.height
+                }}"' %} {% if item.images.image.size_type == 'auto' %} {% set
+                sizeAttrs = 'width="{{ item.images.image.width }}" height="{{
+                item.images.image.height }}" style="max-width: 100%; height:
+                auto;"' %} {% elif item.images.image.size_type ==
+                'auto_custom_max' %} {% set sizeAttrs = 'width="{{
+                item.images.image.max_width }}" height="{{
+                item.images.image.max_height }}" style="max-width: 100%; height:
+                auto;"' %} {% endif %} {% set loadingAttr =
+                item.images.image.loading != 'disabled' ? 'loading="{{
+                item.images.image.loading }}"' : '' %}
+                <img
+                  class="img-desktop"
+                  src="{{ item.images.image.src }}"
+                  alt="{{ item.images.image.alt }}"
+                  {{
+                  loadingAttr
+                  }}
+                  {{
+                  sizeAttrs
+                  }}
+                />
+                {% endif %} {% if item.images.image_mobile.src %}
+                <div class="hide-desktop" style="padding: 0 0 100% 0"></div>
+                <div
+                  class="hide-desktop bg-pos-hold"
+                  style="background-image: url('{{ item.images.image_mobile.src }}');"
+                ></div>
+                {% endif %} {% elif item.images.content_type == "video" %} {% if
+                item.images.video.player_id %} {% set sizeAttrs = 'style="width:
+                {{ item.images.video.width }}px; height: {{
+                item.images.video.height }}px;"' %} {% if
+                item.images.video.size_type == 'auto_full_width' %} {% set
+                sizeAttrs = 'style="width: {{ item.images.video.width }}px;
+                height: {{ item.images.video.height }}px; max-width: 100%;
+                height: auto;"' %} {% elif item.images.video.size_type ==
+                'auto_custom_max' %} {% set sizeAttrs = 'style="width:{{
+                item.images.video.max_width }}px; height:{{
+                item.images.video.max_height }}px; max-width: 100%; height:
+                auto;"' %} {% endif %}
+                <div {{ sizeAttrs }}>
+                  {% video_player "embed_player" player_id={{
+                  item.images.video.player_id }} type={{
+                  item.images.video.player_type || 'scriptV4' }}
+                  conversion_asset={{
+                  item.images.video.conversion_asset|tojson|safe }} %}
+                </div>
+                {% endif %} {% elif item.images.content_type == "lottie" %} {%
+                if item.images.lottie_link != '' %}
+                <div class="fwic-section-lottie">
+                  {# this should be added to the global footer references #}
+                  <script
+                    type="text/javascript"
+                    src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/lottie-player.js"
+                  ></script>
+                  <lottie-player
+                    src="{{ item.images.lottie_link }}"
+                    {%
+                    if
+                    item.images.lottie_controls.bounce
+                    %}
+                    mode="bounce"
+                    {%
+                    endif
+                    %}
+                    background="transparent"
+                    speed="{{ item.images.lottie_controls.speed }}"
+                    {%
+                    if
+                    item.images.lottie_controls.loop
+                    %}
+                    loop
+                    {%
+                    endif
+                    %}
+                    {%
+                    if
+                    item.images.lottie_controls.enable_controls
+                    %}
+                    controls
+                    {%
+                    endif
+                    %}
+                    {%
+                    if
+                    item.images.lottie_controls.play_on_hover
+                    %}
+                    hover
+                    {%
+                    endif
+                    %}
+                    {%
+                    if
+                    item.images.lottie_controls.autoplay
+                    %}
+                    autoplay
+                    {%
+                    endif
+                    %}
+                  ></lottie-player>
+                </div>
+                {% endif %} {% endif %}
+              </div>
+              <div class="fwic-content-holder justify-content-center">
+                <div class="fwic-content">
+                  {% if item.heading.title != "" %} {% if item.heading.title_tag
+                  == "h2" %}
+                  <h2 class="heading">{{ item.heading.title }}</h2>
+                  {% elif item.heading.title_tag == "h3" %}
+                  <h3 class="heading">{{ item.heading.title }}</h3>
+                  {% elif item.heading.title_tag == "h4" %}
+                  <h4 class="heading">{{ item.heading.title }}</h4>
+                  {% elif item.heading.title_tag == "h5" %}
+                  <h5 class="heading">{{ item.heading.title }}</h5>
+                  {% elif item.heading.title_tag == "h6" %}
+                  <h6 class="heading">{{ item.heading.title }}</h6>
+                  {% endif %} {% endif %}
+                  <div class="content">
+                    {% if item.copy != "" %}
+                    <p class="sub-lead">{{ item.copy }}</p>
+                    {% endif %} {% if item.body_text != "" %}
+                    <div class="sub-copy">{{ item.body_text }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div>
+                  <div class="button-area">
+                    {% if item.button.button_type == "standard" %} {% set href =
+                    item.button.button_link.url.href %} {% if
+                    item.button.button_link.url.type is equalto "EMAIL_ADDRESS"
+                    %} {% set href = "mailto:" + href %} {% endif %} {% set rel
+                    = [] %} {% if item.button.button_link.no_follow %} {% do
+                    rel.append("nofollow") %} {% endif %} {% if
+                    item.button.button_link.open_in_new_tab %} {% do
+                    rel.append("noopener") %} {% endif %}
+                    <a
+                      href="{{ href }}"
+                      {%
+                      if
+                      item.button.button_link.open_in_new_tab
+                      %}target="_blank"
+                      {%
+                      endif
+                      %}
+                      {%
+                      if
+                      item.button.button_link.rel
+                      %}rel="{{ item.button.button_link.rel }}"
+                      {%
+                      endif
+                      %}
+                      class="theme-btn {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ item.button.button_color }}"
+                    >
+                      {{ item.button.button_text }}
+                    </a>
+                    {% endif %} {% if item.button.button_type == "cta" %} {% cta
+                    guid="{{ item.button.select_cta }}" %} {% endif %} {% if
+                    item.button.button_type == "link" %} {% set href =
+                    item.button.link.url.href %} {% if item.button.link.url.type
+                    is equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href
+                    %} {% endif %} {% set rel = [] %} {% if
+                    item.button.link.no_follow %} {% do rel.append("nofollow")
+                    %} {% endif %} {% if item.button.link.open_in_new_tab %} {%
+                    do rel.append("noopener") %} {% endif %}
+                    <a
+                      href="{{ item.button.Link.url.href }}"
+                      class="theme-link {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ item.button.link_type }}"
+                      data-id="custom-{{ loop.index }}"
+                      {%
+                      if
+                      item.button.link.open_in_new_tab
+                      %}target="_blank"
+                      {%
+                      endif
+                      %}
+                      {%
+                      if
+                      item.button.link.rel
+                      %}rel="{{ item.button.link.rel }}"
+                      {%
+                      endif
+                      %}
+                    >
+                      {{ item.button.button_text }}
+                    </a>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% if module.settings.pagination %}
+    <div class="swiper-pagination"></div>
+    {% endif %}
+  </div>
+</section>
+
+{# Can we move this into the script template, at the very bottom of the page #}
+<script
+  type="text/javascript"
+  src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"
+></script>
+<script type="text/javascript">
+  setTimeout(function () {
+    if ($(".fwic-swiper").length) {
+      $(".fwic-swiper").each(function () {
+        var carouselName = $(this).data("sw-name"),
+          autoplay = $(this).data("sw-autoplay"),
+          delay = $(this).data("sw-delay"),
+          pauseOnHover = $(this).data("sw-pause_on_hover"),
+          arrows = $(this).data("sw-arrows"),
+          pagination = $(this).data("sw-pagination");
+
+        new Swiper(".fwic-swiper." + carouselName, {
+          navigation: arrows
+            ? {
+                nextEl: "." + carouselName + " .swiper-button-next",
+                prevEl: "." + carouselName + " .swiper-button-prev",
+              }
+            : false,
+          autoplay: autoplay
+            ? {
+                delay: delay,
+                disableOnInteraction: !1,
+                pauseOnMouseEnter: pauseOnHover,
+              }
+            : false,
+          pagination: pagination
+            ? {
+                el: ".swiper-pagination",
+              }
+            : false,
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            640: {
+              slidesPerView: 1.7,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            992: {
+              slidesPerView: 1,
+              spaceBetween: 0,
+            },
+          },
+          loop: true,
+        });
+      });
+    }
+  }, 1000);
+</script>

@@ -1,0 +1,159 @@
+<section class="milr-section {{ module.background_colour }} version1.1">
+  <div class="page-center">
+    <div class="content-wrapper {% if module.content_alignment.desktop_copy_right %} reverse {% endif %} {% if module.content_alignment.mobile_copy_lead %} mobile-reverse {% endif %}  {% if module.images.contained_image %} contained-img-hold {% endif %} ">
+      <div class="milr-image-holder {{ module.images.image_position }}">
+        {% if module.images.image.src %}
+          {% set sizeAttrs = 'width="{{ module.images.image.width }}" height="{{ module.images.image.height }}"' %}
+          {% if module.images.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.images.image.width }}" height="{{ module.images.image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.images.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.images.image.max_width }}" height="{{ module.images.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.images.image.loading != 'disabled' ? 'loading="{{ module.images.image.loading }}"' : '' %}
+          <img class="img-desktop" src="{{ module.images.image.src }}" alt="{{ module.images.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+        {% if module.images.image_mobile.src %}
+          {% set sizeAttrs = 'width="{{ module.images.image_mobile.width }}" height="{{ module.images.image_mobile.height }}"' %}
+          {% if module.images.image_mobile.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.images.image_mobile.width }}" height="{{ module.images.image_mobile.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.images.image_mobile.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.images.image_mobile.max_width }}" height="{{ module.images.image_mobile.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.images.image_mobile.loading != 'disabled' ? 'loading="{{ module.images.image_mobile.loading }}"' : '' %}
+          <img class="img-mobile W-80 m-auto" src="{{ module.images.image_mobile.src }}" alt="{{ module.images.image_mobile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+      <div class="milr-content-holder">
+        <div class="milr-content">
+           {% if module.content.copy != "" %}
+              <p class="sub-lead">
+                {{ module.content.copy }}
+              </p>
+            {% endif %}
+          {% if module.heading.title != "" %}
+            {% if module.heading.title_tag == "h1" %}
+              <h1 class="heading">
+                {{ module.heading.title }}
+              </h1>
+            {% elif module.heading.title_tag == "h2" %}
+              <h2 class="heading">
+                {{ module.heading.title }}
+              </h2>
+            {% elif module.heading.title_tag == "h3" %}
+              <h3 class="heading">
+                {{ module.heading.title }}
+              </h3>
+            {% elif module.heading.title_tag == "h4" %}
+              <h4 class="heading">
+                {{ module.heading.title }}
+              </h4>
+            {% elif module.heading.title_tag == "h5" %}
+              <h5 class="heading">
+                {{ module.heading.title }}
+              </h5>
+            {% elif module.heading.title_tag == "h6" %}
+              <h6 class="heading">
+                {{ module.heading.title }}
+              </h6>
+            {% endif %}
+          {% endif %}
+          <div class="content my-4">
+            {% if module.content.body_text != "" %}
+              <div>
+                {{ module.content.body_text }}
+              </div>
+            {% endif %}
+          </div>
+          
+          <div class="content-cards">
+            {% for item in module.icons %}
+            <div class="content-card {{ module.feature_settings.align_icons == "above" ? "above" : "next" }} desktop-row-{{ module.feature_settings.feature_per_row_desktop }} mobile-row-{{ module.feature_settings.features_per_row_mobile }}">
+              {% if item.icon_image.src %}
+                {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}"' %}
+                {% if item.icon_image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.icon_image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.icon_image.max_width }}" height="{{ item.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.icon_image.loading != 'disabled' ? 'loading="{{ item.icon_image.loading }}"' : '' %}
+                <img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+              {% if item.icon_title != "" %}
+                <p>
+                  {{ item.icon_title }}
+                </p>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          
+          <div class="additional-icons">
+            {% if module.additional_icons.additional_label != "" %}
+              <p>
+                {{ module.additional_icons.additional_label }}
+              </p>
+            {% endif %}
+            <div class="additional-icons-holder">
+              {% for item in module.additional_icons.additional_icons %}
+                {% if item.src %}
+                  {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+                  {% if item.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+                  <img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          
+          <div class="btn-holder d-flex mt-4 flex-xs-column">
+             {% for item in module.buttons %}
+             {% if item.button_type == "standard" %}
+              <div class="d-inline-block W-50 W-xs-100 my-1 d-xs-block ">
+                {% set href = item.button_link.url.href %}
+                  {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ href }}"
+                    {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                    {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+                    class="theme-btn {{ item.button_color }}"
+                    >
+                    {{ item.button_text }}
+                  </a>
+              </div>
+             {% endif %}
+             
+             {% if item.button_type == "cta" %}
+              <div class="d-inline-block W-50 W-xs-100 my-1 d-xs-block ">
+                {% cta guid="{{ item.button_cta }}" %}
+              </div>
+             {% endif %}
+             
+             {% if item.button_type == "link" %}
+               <div class="d-inline-block W-50 W-xs-100 my-1 d-xs-block ">  
+                {% set href = item.button_link.url.href %}
+                  {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ item.button_link.url.href }}"
+                    {% if item.button_link.open_in_new_tab %} target="_blank"{% endif %}
+                    {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+                    class="{{ item.link_type }} W-xs-100"
+                    >
+                    {{ item.button_text }}
+                  </a>
+
+                </div>
+              {% endif %}
+            {% endfor %}
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

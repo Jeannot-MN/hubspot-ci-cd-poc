@@ -1,0 +1,247 @@
+<link rel="stylesheet" href="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.css" />
+<section class="complex-slider {{ module.background_colour }}">
+  <div class="page-center">
+    <div class="tech-col w-row {{ module.alignment_settings.desktop_copy_right == true ? "reverse" : "" }}">
+      <div class="w-col w-col-4">
+        <div class="milr-content">
+          {% if module.heading.title_tag != null %}
+            {% if module.heading.title_tag == "h1" %}
+              <h1> {{ module.heading.title }} </h1>
+            {% elif module.heading.title_tag == "h2" %}
+              <h2> {{ module.heading.title }} </h2>
+            {% elif module.heading.title_tag == "h3" %}
+              <h3> {{ module.heading.title }} </h3>
+            {% elif module.heading.title_tag == "h4" %}
+              <h4> {{ module.heading.title }} </h4>
+            {% elif module.heading.title_tag == "h5" %}
+              <h5> {{ module.heading.title }} </h5>
+            {% else %}
+              <h6> {{ module.heading.title }} </h6>
+            {% endif %}
+          {% endif %}
+          <div>
+            <p class="sub-lead">
+              {{ module.content.content.copy }}
+            </p>
+           <p>
+             {{ module.content.body_text }}
+            </p> 
+            
+            {% if module.content.icons != null %}
+              <div class="icon-section">
+                {% for item in module.content.icons %}
+                <div class="icons {{ module.alignment_settings.align_icons == "next"  ? "next" : "" }}  icon-{{ module.alignment_settings.icons_per_row_desktop }}">
+                	{% set href = item.link.url.href %}
+                    {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                    {% endif %}
+                	<a href="{{ href }}" class="{% if item.disabled_link %}disabled-link{% endif %}"
+                    {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                    {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}>
+                  {% if item.icon_image.src %}
+                    {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}"' %}
+                    {% if item.icon_image.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.icon_image.width }}" height="{{ item.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.icon_image.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.icon_image.max_width }}" height="{{ item.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+                     {% set loadingAttr = item.icon_image.loading != 'disabled' ? 'loading="{{ item.icon_image.loading }}"' : '' %}
+                    <img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        </a>
+                  {% endif %}
+            
+                  {% if module.alignment_settings.hide_icon_decription  == false && item.icon_title != null %}
+                    <p>{{ item.icon_title }}</p>
+                  {% endif %}
+                     
+                </div>
+           
+                {% endfor %}
+              </div>
+            {% endif %}
+            {% if module.content.buttons != null %}
+            <div class="btn-holder">
+            {% for item in module.content.buttons %}
+             {% if item.button_type == "standard" %}
+              {% set href = item.button_link.url.href %}
+                {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}
+                <a href="{{ href }}"
+                  {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                  {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+                  class="theme-btn {{ item.button_color }}">
+                    {% icon
+                      name="{{ item.button_icon.name }}"
+                      style="{{ item.button_icon.type }}"
+                      unicode="{{ item.button_icon.unicode }}"
+                      icon_set="{{ item.button_icon.icon_set }}"
+                    %}
+                  {{ item.button_text }}
+                </a>
+             {% endif %}
+             
+             {% if item.button_type == "cta" %}
+              {% cta guid="{{ item.button_cta }}" %}
+             {% endif %}
+             
+             {% if item.button_type == "link" %}
+                {% set href = item.button_link.url.href %}
+                {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                {% endif %}
+                <a href="{{ item.button_link.url }}"
+                  {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                  {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+                  class="theme-link {{ item.link_type }}"
+                  >
+                  {{ item.button_text }}
+                </a>
+                
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+
+      <div class="w-col w-col-8 {{ module.alignment_settings.desktop_copy_right == true ? "reverse" : "" }}">
+        <div class="swiper fwcc-complex-swiper {{name}}"
+         data-sw-name="{{name}}"
+         data-sw-autoplay="{{ module.settings.auto_settings.autoplay }}"
+         data-sw-delay="{{ module.settings.auto_settings.cycle_delay }}"
+         data-sw-pause_on_hover="{{ module.settings.auto_settings.pause_on_hover }}"
+         data-sw-arrows="true"
+         data-sw-pagination="true">
+         <span class="swiper-button-prev"></span>
+        <span class="swiper-button-next"></span>
+      
+          <div class="swiper-wrapper">
+            {% for item in module.slider_container %}
+              <div class="swiper-slide">
+                {% for item2 in item.slider %}
+                <div class="card-slider">
+                  {% if item2.section_title %}
+                    <div class="stack-title">{{ item2.section_title }} 
+                      {% if item2.intro_copy %}
+                        <p>{{ item2.intro_copy }}</p>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+                  
+                  {% if item2.icons %}
+                    {% for item3 in item2.icons %}
+                      <div class="icon-holder  icon-{{ module.alignment_settings.icons_per_row_in_slider }}">
+                        <div class="icon">
+
+
+                        {% set href = item3.link.url.href %}
+                        {% if item3.link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a href="{{ href }}" class="{% if item3.disabled_link %}disabled-link{% endif %}"
+                          {% if item3.link.open_in_new_tab %}target="_blank"{% endif %}
+                          {% if item3.link.rel %}rel="{{ item3.link.rel }}"{% endif %}>
+
+                          {% if item3.icon_image.src %}
+                            {% set sizeAttrs = 'width="{{ item3.icon_image.width }}" height="{{ item3.icon_image.height }}"' %}
+                            {% if item3.icon_image.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ item3.icon_image.width }}" height="{{ item3.icon_image.height }}" style="max-width: 100%; height: auto;"' %}
+                            {% elif item3.icon_image.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ item3.icon_image.max_width }}" height="{{ item3.icon_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                            {% endif %}
+                            {% set loadingAttr = item3.icon_image.loading != 'disabled' ? 'loading="{{ item3.icon_image.loading }}"' : '' %}
+                              <img src="{{ item3.icon_image.src }}" alt="{{ item3.icon_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                           {% endif %}
+                           </a>
+                        </div>
+                        {% set href = item3.link.url.href %}
+                        {% if item3.link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+
+                        <a href="{{ href }}" class="{% if item3.disabled_link %} disabled-link {% endif %}"
+                          {% if item3.link.open_in_new_tab %}target="_blank"{% endif %}
+                          {% if item3.link.rel %}rel="{{ item3.link.rel }}"{% endif %}>
+                         {% if module.alignment_settings.hide_icon_decription == false && item3.icon_title != null %}
+                          <p class="icon-text">{{ item3.icon_title }} </p>
+                        {% endif %}
+                        </a>
+                      </div>
+                    {% endfor %}
+                  {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+           {% endfor %}
+          </div>
+          
+          {% if module.alignment_settings.show_pagination %}
+            <div class="swiper-pagination"></div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <script type="text/javascript" src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/swiper-bundle.min.js"></script>
+  <script type="text/javascript">
+    setTimeout(function(){
+      if($(".fwcc-complex-swiper").length) {
+        $(".fwcc-complex-swiper").each((function() {
+          var carouselName = $(this).data("sw-name")
+            , autoplay = $(this).data("sw-autoplay")
+            , delay = $(this).data("sw-delay")
+            , pauseOnHover = $(this).data("sw-pause_on_hover")
+            , arrows = $(this).data("sw-arrows")
+            , pagination = $(this).data("sw-pagination");
+          
+            new Swiper(".fwcc-complex-swiper." + carouselName,{
+              centerInsufficientSlides: true,
+              navigation: arrows ? ({
+                nextEl: "." + carouselName + " .swiper-button-next",
+                prevEl: "." + carouselName + " .swiper-button-prev"
+              }) : false,
+              autoplay: autoplay ? ({
+                delay: delay,
+                disableOnInteraction: !1,
+                pauseOnMouseEnter: pauseOnHover
+              }) : false,
+              pagination: pagination ? ({
+                el: ".swiper-pagination",
+              }) : false,
+              breakpoints: {
+                0: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 10
+                },
+                640: {
+                  slidesPerView: 1.2, 
+                  spaceBetween: 10
+                },
+                768: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 20
+                },
+                992: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 20
+                },
+                1281: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 20
+                },
+                1600: {
+                  slidesPerView: 1.2,
+                  spaceBetween: 20
+                }
+              },
+              inifinty: true
+            })
+          }
+        ));
+      }
+    }, 1000);
+  </script>

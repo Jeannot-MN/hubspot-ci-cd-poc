@@ -1,0 +1,42 @@
+<div
+  class="gen-List {{ module.section_settings.background_colour }} p-4 {% if module.border_radius %}theme-border-iK-Radius{% endif %}"
+>
+  <div class="gen-List-container content-wrapper">
+    <div class="gen-List-header">
+      <div
+        class="gen-List-header-content {{module.heading_alignment}}  {{module.heading_alignment_mobile}}"
+      >
+        <div>
+          {% if module.content.title.banner_heading != "" %}{% if
+          module.content.title.title_tag == "h1" %}
+          <h1 class="heading heading-title mb-4">
+            {{ module.content.title.banner_heading }}
+          </h1>
+          {% elif module.content.title.title_tag == "h2" %}
+          <h2 class="heading heading-title mb-4">
+            {{ module.content.title.banner_heading }}
+          </h2>
+          {% elif module.content.title.title_tag == "h3" %}
+          <h3 class="heading heading-title mb-4">
+            {{ module.content.title.banner_heading }}
+          </h3>
+          {% elif module.content.title.title_tag == "h4" %}
+          <h4 class="heading heading-title mb-4">
+            {{ module.content.title.banner_heading }}
+          </h4>
+          {% elif module.content.title.title_tag == "h5" %}
+          <h5 class="heading heading-title mb-4">
+            {{ module.content.title.banner_heading }}
+          </h5>
+          {% elif module.content.title.title_tag == "h6" %}
+          <h6 class="heading heading-title mb-4">
+            {{ module.content.title.banner_heading }}
+          </h6>
+          {% endif %}{% endif %}{% if module.content.banner_sub_heading != "" %}
+          <div class="content">{{ module.content.banner_sub_heading }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,143 @@
+<section class="lcwi-section {{ module.background_colour }} version1.1">
+  <div class="page-center">
+    <div
+      class="content-wrapper {% if module.content_alignment.desktop_copy_right %} {% else %} reverse {% endif %} {% if module.content_alignment.mobile_copy_lead %} mobile-reverse {% endif %}"
+    >
+      <div class="lcwi-content-holder">
+        <div class="lcwi-image-holder">
+          {% if module.image.src %} {% set sizeAttrs = 'width="{{
+          module.image.width }}" height="{{ module.image.height }}"' %} {% if
+          module.image.size_type == 'auto' %} {% set sizeAttrs = 'width="{{
+          module.image.width }}" height="{{ module.image.height }}"
+          style="max-width: 100%; height: auto;"' %} {% elif
+          module.image.size_type == 'auto_custom_max' %} {% set sizeAttrs =
+          'width="{{ module.image.max_width }}" height="{{
+          module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %} {% set loadingAttr = module.image.loading != 'disabled' ?
+          'loading="{{ module.image.loading }}"' : '' %}
+          <img
+            src="{{ module.image.src }}"
+            alt="{{ module.image.alt }}"
+            {{
+            loadingAttr
+            }}
+            {{
+            sizeAttrs
+            }}
+          />
+          {% endif %}
+        </div>
+      </div>
+      <div class="lcwi-content-holder">
+        <div
+          class="lcwi-content lcwi-card {{ module.card_content.card_bg_colour }} {% if module.card_content.shadow %} lcwi-shadow {% endif %}"
+        >
+          <div class="content">
+            {% if module.card_content.heading.title != "" %} {% if
+            module.card_content.heading.title_tag == "h1" %}
+            <h1 class="heading pb-4">
+              {{ module.card_content.heading.title }}
+            </h1>
+            {% elif module.card_content.heading.title_tag == "h2" %}
+            <h2 class="heading pb-4">
+              {{ module.card_content.heading.title }}
+            </h2>
+            {% elif module.card_content.heading.title_tag == "h3" %}
+            <h3 class="heading pb-4">
+              {{ module.card_content.heading.title }}
+            </h3>
+            {% elif module.card_content.heading.title_tag == "h4" %}
+            <h4 class="heading pb-4">
+              {{ module.card_content.heading.title }}
+            </h4>
+            {% elif module.card_content.heading.title_tag == "h5" %}
+            <h5 class="heading pb-4">
+              {{ module.card_content.heading.title }}
+            </h5>
+            {% elif module.card_content.heading.title_tag == "h6" %}
+            <h6 class="heading pb-4">
+              {{ module.card_content.heading.title }}
+            </h6>
+            {% endif %} {% endif %} {% for item in
+            module.card_content.card_list.card_value %}
+            <div class="lcwi-list-item">
+              {% if item.card_content_label != "" %}
+              <p
+                class="lcwi-label {{ module.card_content.card_list.label_colour }}"
+              >
+                {{ item.card_content_label }}
+              </p>
+              {% endif %} {% if item.card_content != "" %}
+              <p class="lcwi-value">{{ item.card_content }}</p>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+          <div class="button-area text-center">
+            {% if module.card_content.button.button_type == "standard" %} {% set
+            href = module.card_content.button.button_link.url.href %} {% if
+            module.card_content.button.button_link.url.type is equalto
+            "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %} {%
+            set rel = [] %} {% if
+            module.card_content.button.button_link.no_follow %} {% do
+            rel.append("nofollow") %} {% endif %} {% if
+            module.card_content.button.button_link.open_in_new_tab %} {% do
+            rel.append("noopener") %} {% endif %}
+            <a
+              href="{{ href }}"
+              {%
+              if
+              module.card_content.button.button_link.open_in_new_tab
+              %}target="_blank"
+              {%
+              endif
+              %}
+              {%
+              if
+              module.card_content.button.button_link.rel
+              %}rel="{{ module.card_content.button.button_link.rel }}"
+              {%
+              endif
+              %}
+              class=" {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ module.card_content.button.button_color }}"
+            >
+              {{ module.card_content.button.button_text }}
+            </a>
+            {% endif %} {% if module.card_content.button.button_type == "cta" %}
+            {% cta guid="{{ module.card_content.button.select_cta }}" %} {%
+            endif %} {% if module.card_content.button.button_type == "link" %}
+            {% set href = module.card_content.button.link.url.href %} {% if
+            module.card_content.button.link.url.type is equalto "EMAIL_ADDRESS"
+            %} {% set href = "mailto:" + href %} {% endif %} {% set rel = [] %}
+            {% if module.card_content.button.link.no_follow %} {% do
+            rel.append("nofollow") %} {% endif %} {% if
+            module.card_content.button.link.open_in_new_tab %} {% do
+            rel.append("noopener") %} {% endif %}
+            <a
+              href="{{ module.card_content.button.link.url }}"
+              class="theme-link {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ module.card_content.button.link_type }}"
+              data-id="custom-{{ loop.index }}"
+              {%
+              if
+              module.card_content.button.link.open_in_new_tab
+              %}target="_blank"
+              {%
+              endif
+              %}
+              {%
+              if
+              module.card_content.button.link.rel
+              %}rel="{{ module.card_content.button.link.rel }}"
+              {%
+              endif
+              %}
+            >
+              {{ module.card_content.button.button_text }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,215 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+.paragraph-section {
+  min-height: 100px; /*This is for the section to be able to be edited even it might be empty*/
+  padding: 0px 0 !important;
+}
+
+.paragraph-section .page-center {
+  margin: 0 auto;
+  max-width: 1060px;
+  overflow: hidden;
+  padding: 0 22px;
+}
+
+.paragraph-section .content-holder {
+  margin-bottom: 10px;
+}
+
+.paragraph-section .content-holder p {
+  margin-bottom: 0;
+}
+
+.paragraph-section .content .heading {
+  margin: 15px 0;
+}
+
+.paragraph-section .content-holder.split-list {
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+.paragraph-section .button-area a {
+  margin-right: 10px;
+}
+
+.paragraph-section .theme-btn.theme-link.theme-arrow-right {
+  padding-right: 30px;
+}
+
+.paragraph-section .theme-btn.theme-link.theme-arrow-right:after {
+  bottom: 0;
+  top: 4px;
+}
+
+.paragraph-section .content-holder ul,
+.paragraph-section .content-holder ol {
+  margin-left: 0;
+  -webkit-padding-start: 17px;
+  padding-inline-start: 17px;
+  margin-bottom: 10px;
+}
+
+.paragraph-section .row {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.paragraph-section .row.mobile-swap {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.paragraph-section .row.mobile-swap .w-col-6:last-child .img-holder {
+  padding-top: 0;
+  padding-bottom: 40px;
+}
+
+.paragraph-section .w-col-6,
+.paragraph-section .w-col-lg-6 {
+  width: 100%;
+  max-width: 100%;
+  float: left;
+}
+
+.paragraph-section .content .content-holder .features {
+  padding-top: 10px;
+}
+
+.paragraph-section .content .content-holder .w-col-6 h5,
+.paragraph-section .content .content-holder .w-col-6 h6,
+.paragraph-section .content .content-holder .w-col-6 .strong {
+  margin-bottom: 3px;
+}
+
+.paragraph-section .content .content-holder .custom-list ul,
+.paragraph-section .content .content-holder .custom-list ol {
+  list-style: none;
+  -webkit-padding-start: 0;
+  padding-inline-start: 0;
+}
+
+.paragraph-section .content .content-holder .custom-list ul li img,
+.paragraph-section .content .content-holder .custom-list ol li img {
+  max-width: 22px !important;
+  margin-right: 10px;
+}
+
+.paragraph-section .custom-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.paragraph-section .w-col-6:last-child .img-holder,
+.paragraph-section .w-col-6:last-child .content {
+  padding-top: 30px;
+}
+
+.paragraph-section .content .logo-holder {
+  max-width: 100px;
+}
+
+.paragraph-section .content .logo-holder img {
+  height: auto;
+}
+
+.paragraph-section .content-holder .features .remove-title h4,
+.paragraph-section .content-holder .features .remove-title h5,
+.paragraph-section .content-holder .features .remove-title h6 {
+  display: none;
+}
+
+.paragraph-section .content-holder .features .remove-spacing ol,
+.paragraph-section .content-holder .features .remove-spacing ul {
+  margin-bottom: 0;
+}
+
+.paragraph-section .content {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.paragraph-section .mobile-img {
+  display: block;
+  max-width: 350px !important;
+  margin: 0 auto;
+}
+.paragraph-section .desktop-img {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .paragraph-section .w-col-6 {
+    max-width: 50%;
+  }
+  .paragraph-section {
+    min-height: 100px; /*This is for the section to be able to be edited even it might be empty*/
+    padding: 60px 0 !important;
+  }
+  .paragraph-section .row {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+  .paragraph-section .w-col-6:last-child .img-holder,
+  .paragraph-section .w-col-6:last-child .content {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  .paragraph-section .w-col-6:first-child .content {
+    margin-right: 30px;
+  }
+  .paragraph-section .row.desktop-swap {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: reverse !important;
+    -ms-flex-direction: row-reverse !important;
+    flex-direction: row-reverse !important;
+  }
+  .paragraph-section .row.desktop-swap .w-col-6:first-child .content {
+    margin-left: 30px !important;
+    margin-right: 0 !important;
+  }
+  .paragraph-section
+    .row.desktop-swap
+    .w-col-6:first-child
+    .content
+    .content-holder {
+    margin-right: 0;
+  }
+  .paragraph-section .mobile-img {
+    display: none !important;
+  }
+  .paragraph-section .desktop-img {
+    display: block !important;
+  }
+}

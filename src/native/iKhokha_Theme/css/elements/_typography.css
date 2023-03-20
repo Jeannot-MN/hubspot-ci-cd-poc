@@ -1,0 +1,63 @@
+body {
+  line-height: 1.5;
+  word-break: break-word;
+}
+html[lang^="ja"] body,
+html[lang^="zh"] body,
+html[lang^="ko"] body {
+  line-break: strict;
+  word-break: break-all;
+}
+p {
+  font-size: 1rem;
+  margin: 0 0 1.4rem;
+}
+a {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1.4rem;
+}
+ul,
+ol {
+  margin: 0 0 1.4rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 0;
+}
+ul.no-list {
+  list-style: none;
+}
+code {
+  vertical-align: bottom;
+}
+blockquote {
+  border-left: 2px solid;
+  margin: 0 0 1.4rem;
+  padding-left: 15px;
+}
+hr {
+  background-color: #ccc;
+  border: none;
+  color: #ccc;
+  height: 1px;
+}
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}

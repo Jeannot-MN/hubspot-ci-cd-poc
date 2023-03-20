@@ -1,0 +1,144 @@
+<section class="paragraph-section fwcc-section {{ module.background_color }}">
+  <div class="container">
+    <div class="page-center">
+      <div class="row {{ module.column_alignment.mobile_copy_lead == true ? "mobile-swap" : "" }} {{ module.column_alignment.desktop_swip_column == true ? "desktop-swap" : ""  }}">
+        {% for item in module.column %}
+          {% if item.content_type == "content" %}
+            <div class="w-col-6">
+              <div class="content">
+
+                {% if item.content.logo.src %}
+                  <div class="logo-holder">
+                      {% set sizeAttrs = 'width="{{ item.content.logo.width }}" height="{{ item.content.logo.height }}"' %}
+                      {% if item.content.logo.size_type == 'auto' %}
+                        {% set sizeAttrs = 'width="{{ item.content.logo.width }}" height="{{ item.content.logo.height }}" style="max-width: 100%; height: auto;"' %}
+                      {% elif item.content.logo.size_type == 'auto_custom_max' %}
+                        {% set sizeAttrs = 'width="{{ item.content.logo.max_width }}" height="{{ item.content.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+                      {% endif %}
+                       {% set loadingAttr = item.content.logo.loading != 'disabled' ? 'loading="{{ item.content.logo.loading }}"' : '' %}
+                      <img src="{{ item.content.logo.src }}" alt="{{ item.content.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                    </div>
+                  {% endif %}
+                
+                {% if item.content.heading.heading_tag != null %}
+                  {% if item.content.heading.heading_tag == "h1" %}
+                    <h1 class="heading">{{ item.content.heading.title }}</h1>
+                  {% elif item.content.heading.heading_tag == "h2" %}
+                    <h2 class="heading">{{ item.content.heading.title }}</h2>
+                  {% elif item.content.heading.heading_tag == "h3" %}
+                    <h3 class="heading">{{ item.content.heading.title }}</h3>
+                  {% elif item.content.heading.heading_tag == "h4" %}
+                    <h4 class="heading">{{ item.content.heading.title }}</h4>
+                  {% elif item.content.heading.heading_tag == "h5" %}
+                    <h5 class="heading">{{ item.content.heading.title }}</h5>
+                  {% elif item.content.heading.heading_tag == "h6" %}
+                    <h6 class="heading">{{ item.content.heading.title }}</h6>
+                  {% endif %}
+                {% endif %}
+                
+                
+                <div class="content-holder">
+                  {% if item.content.body_text != null %}  
+                    {{ item.content.body_text }}
+                  {% endif %}  
+
+                  {% if item.content.copy %}
+                    <div class="w-row features">
+                      {% for item2 in item.content.copy %}
+                        <div class="w-col-6"> 
+                          <div class="{{ item2.custom_bullets_points == true ? "custom-list" : "" }} {{ item2.hide_feature_title_on_mobile == true ? "remove-title" : "" }} {{ item2.remove_features_spacing_mobile == true ? "remove-spacing" : "" }}">
+                            {% if item2.list_title != null %}
+                              {% if item2.list_title_tag == "h3" %}
+                                <h3>{{ item2.list_title }}</h3>
+                              {% elif item2.list_title_tag == "h4" %}
+                                <h4>{{ item2.list_title }}</h4>
+                              {% elif item2.list_title_tag == "h5" %}
+                                <h5>{{ item2.list_title }}</h5>  
+                              {% elif item2.list_title_tag == "h6" %}
+                                <h6>{{ item2.list_title }}</h6>
+                              {% endif %}
+                            {% endif %}
+                            
+                            {% if item2.list_bodytext != null %}
+                              {{ item2.list_bodytext }}
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+
+                {% if module.column != null %}
+                  <div class="button-area">
+                    {% for item2 in item.content.button %}
+                      {% if item2.button_type == "standard" %}
+                        {% set href = item2.button_link.url.href %}
+                        {% if item2.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                          {% set href = "mailto:" + href %}
+                        {% endif %}
+                        {% set rel = [] %}
+                        {% if item2.button_link.no_follow %}
+                          {% do rel.append("nofollow") %}
+                        {% endif %}
+                        {% if item2.button_link.open_in_new_tab %}
+                          {% do rel.append("noopener") %}
+                        {% endif %}
+                        <a href="{{ href }}"
+                           {% if item2.button_link.open_in_new_tab %}
+                             target="_blank"
+                           {% endif %}
+                           {% if rel %}
+                            rel="{{ rel|join(" ") }}"
+                           {% endif %}
+                           class="theme-btn {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ item2.button_color }}">{{ item2.button_text }}</a>
+                      {% endif %}
+                      {% if item2.button_type == "cta" %}
+                        {% cta guid="{{ item2.button_cta }}" %}
+                      {% endif %}        
+                      {% if item2.button_type == "link" %}
+                        <a href="{{ href }}" class="theme-link {{ item2.link_type }}"
+                           {% if item2.button_link.open_in_new_tab %}target="_blank"{% endif %}>{{ item2.button_text }}</a>
+                      {% endif %}
+                    {% endfor %}
+                </div>
+              {% endif %}
+              </div>
+            </div>
+
+          {% elif item.content_type == "media" %}
+
+            <div class="w-col-6">
+              <div class="img-holder">
+                {% if item.media.image.src %}
+                {% set sizeAttrs = 'width="{{ item.media.image.width }}" height="{{ item.media.image.height }}"' %}
+                {% if item.media.image.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.media.image.width }}" height="{{ item.media.image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.media.image.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.media.image.max_width }}" height="{{ item.media.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                 {% set loadingAttr = item.media.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                <img src="{{ item.media.image.src }}" alt="{{ item.media.image.alt }}" class="desktop-img"  {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}  
+                
+              {# Mobile Image #}
+                {% if item.media.mobile_image.src %}
+                  {% set sizeAttrs = 'width="{{ item.media.mobile_image.width }}" height="{{ item.media.mobile_image.height }}"' %}
+                  {% if item.media.mobile_image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ item.media.mobile_image.width }}" height="{{ item.media.mobile_image.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.media.mobile_image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ item.media.mobile_image.max_width }}" height="{{ item.media.mobile_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                   {% set loadingAttr = item.media.mobile_image.loading != 'disabled' ? 'loading="{{ item.media.mobile_image.loading }}"' : '' %}
+                  <img src="{{ item.media.mobile_image.src }}" alt="{{ item.media.mobile_image.alt }}" class="mobile-img" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+              </div> 
+            </div>
+
+          {% endif %}
+
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

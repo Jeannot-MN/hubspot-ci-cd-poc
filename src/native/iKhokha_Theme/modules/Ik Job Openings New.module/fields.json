@@ -1,0 +1,640 @@
+[ {
+  "id" : "6fb2adc2-7791-30ba-8079-62fd44d11028",
+  "name" : "section_title",
+  "display_width" : null,
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Our job openings"
+}, {
+  "id" : "303badea-d82e-416f-f299-cd63f07d03bb",
+  "name" : "section_text",
+  "display_width" : null,
+  "label" : "Section text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "We’re on a mission to fill our team with talented people who want to make a difference. If you’re ready to bring your skills to our growing tribe, then it’s time to #JoinTheHustle!"
+}, {
+  "id" : "f34e5912-c110-dc1c-b706-77d85d90f8b0",
+  "name" : "department_one",
+  "display_width" : null,
+  "label" : "Department One",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Customer Success"
+}, {
+  "id" : "c1a5c65d-f93f-1b0f-cb81-8f4b62276085",
+  "name" : "customer_success_image",
+  "display_width" : null,
+  "label" : "Customer Success Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/6013b28a371afa4c9df60e54_CustomerSuccess_2_a06c347a-74f7-44e7-a1df-e09c5a4d31af-p-800.png",
+    "alt" : "6013b28a371afa4c9df60e54_CustomerSuccess_2_a06c347a-74f7-44e7-a1df-e09c5a4d31af-p-800",
+    "loading" : "lazy",
+    "width" : 800,
+    "height" : 619,
+    "max_width" : 800,
+    "max_height" : 619
+  }
+}, {
+  "id" : "d08d741f-3932-aa6b-f6fb-23f73047ee06",
+  "name" : "department_two",
+  "display_width" : null,
+  "label" : "Department Two",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Sales"
+}, {
+  "id" : "27365339-a971-8a5f-dd92-d6a10ac8c93d",
+  "name" : "sales_image",
+  "display_width" : null,
+  "label" : "Sales Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/601b7f2b4e13cbcb843df896_iKSales_2_39f65fb3-2c88-4792-a6ee-1488210de48d-p-500.png",
+    "alt" : "601b7f2b4e13cbcb843df896_iKSales_2_39f65fb3-2c88-4792-a6ee-1488210de48d-p-500",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 475,
+    "max_width" : 500,
+    "max_height" : 475
+  }
+}, {
+  "id" : "96f030d0-8c3a-1780-2cda-2433ef1f820d",
+  "name" : "department_three",
+  "display_width" : null,
+  "label" : "Department Three",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Growth Marketing"
+}, {
+  "id" : "1947eab7-cdae-ea32-6e93-021fa73ceba4",
+  "name" : "growth_marketing_image",
+  "display_width" : null,
+  "label" : "Growth Marketing Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/601b7f649d294d9d1760b1b3_GrowthMarketing_1_155ad573-c744-4165-bf02-9c2576dc1d85-p-500.png",
+    "alt" : "601b7f649d294d9d1760b1b3_GrowthMarketing_1_155ad573-c744-4165-bf02-9c2576dc1d85-p-500",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 401,
+    "max_width" : 500,
+    "max_height" : 401
+  }
+}, {
+  "id" : "4786d2d4-27d9-4646-087f-01b57e2174ef",
+  "name" : "department_four",
+  "display_width" : null,
+  "label" : "Department four",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Data"
+}, {
+  "id" : "9f8bfc92-f73f-b4a3-ce73-f87e7fe131c2",
+  "name" : "data_image",
+  "display_width" : null,
+  "label" : "Data Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/601b80a9adea934dd0fddbfd_GrowthMarketing_3_3b10ebda-d428-4489-8e32-3cb6012c3ac7-p-500.png",
+    "alt" : "601b80a9adea934dd0fddbfd_GrowthMarketing_3_3b10ebda-d428-4489-8e32-3cb6012c3ac7-p-500",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 500,
+    "max_width" : 500,
+    "max_height" : 500
+  }
+}, {
+  "id" : "9fa070ba-dae5-0a96-57c9-2005e52df958",
+  "name" : "department_five",
+  "display_width" : null,
+  "label" : "Department five",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Finance"
+}, {
+  "id" : "7bdcc063-435d-2992-1854-6616673660ca",
+  "name" : "department_six",
+  "display_width" : null,
+  "label" : "Department Six",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Product & Dev"
+}, {
+  "id" : "b873806d-8004-0d7f-75e1-4f89e2ab23fc",
+  "name" : "finance_image",
+  "display_width" : null,
+  "label" : "Finance Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/60c737a1cfb800ba404f22a5_Finance_1b-p-500.png",
+    "alt" : "60c737a1cfb800ba404f22a5_Finance_1b-p-500",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 455,
+    "max_width" : 500,
+    "max_height" : 455
+  }
+}, {
+  "id" : "6fd0b596-d40f-570b-57fe-9978d411360e",
+  "name" : "department_seven",
+  "display_width" : null,
+  "label" : "Department Seven",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "People"
+}, {
+  "id" : "ba8cf742-3021-2ef9-5395-419b202ea30d",
+  "name" : "people_image",
+  "display_width" : null,
+  "label" : "People Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/601b8198440868ecb69002ea_People_1_6043c4d3-cfcf-41ba-94df-b0e1446a6b28-p-500.png",
+    "alt" : "601b8198440868ecb69002ea_People_1_6043c4d3-cfcf-41ba-94df-b0e1446a6b28-p-500",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 429,
+    "max_width" : 500,
+    "max_height" : 429
+  }
+}, {
+  "id" : "c4638ae7-28b1-64f5-ec68-29880aa89e07",
+  "name" : "department_eight",
+  "display_width" : null,
+  "label" : "Department Eight",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Creative & Brand"
+}, {
+  "id" : "1a98f10c-e504-1353-5c16-7025597d14eb",
+  "name" : "product_dev_image",
+  "display_width" : null,
+  "label" : "Product & Dev Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/iKhokha_July2021/Image/601b81be00f2a655b14de2cc_Engineering&Product_1_cf9d77c1-053c-4c61-8100-46d3f627bcb2-p-500.png",
+    "alt" : "601b81be00f2a655b14de2cc_Engineering&Product_1_cf9d77c1-053c-4c61-8100-46d3f627bcb2-p-500",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 459,
+    "max_width" : 500,
+    "max_height" : 459
+  }
+}, {
+  "id" : "51c8a807-cc2a-fa29-c4e6-ee369277b7e7",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36e2f812-12d3-3e93-e2fb-4e1544e1a66a",
+    "name" : "heading_font_styles",
+    "display_width" : null,
+    "label" : "Heading Font Styles",
+    "required" : false,
+    "locked" : false,
+    "load_external_fonts" : true,
+    "type" : "font",
+    "default" : {
+      "styles" : { },
+      "variant" : "800",
+      "font" : "Baloo 2",
+      "fallback" : "cursive",
+      "font_set" : "GOOGLE",
+      "size" : 50,
+      "color" : "#000000"
+    }
+  }, {
+    "id" : "585cdeb8-922d-7450-4e9c-e1c3e22f3856",
+    "name" : "department_heading_font_styles",
+    "display_width" : null,
+    "label" : "Department Heading Font Styles",
+    "required" : false,
+    "locked" : false,
+    "load_external_fonts" : true,
+    "type" : "font",
+    "default" : {
+      "styles" : { },
+      "variant" : "700",
+      "font" : "Roboto",
+      "fallback" : "sans-serif",
+      "font_set" : "GOOGLE",
+      "size" : {
+        "value" : 18,
+        "units" : "px"
+      },
+      "color" : "#000000"
+    }
+  }, {
+    "id" : "e49b063e-425c-bd91-6733-240dfc2bda35",
+    "name" : "text_font_styles",
+    "display_width" : null,
+    "label" : "Text Font Styles",
+    "required" : false,
+    "locked" : false,
+    "load_external_fonts" : true,
+    "type" : "font",
+    "default" : {
+      "styles" : { },
+      "variant" : "regular",
+      "font" : "Roboto",
+      "fallback" : "sans-serif",
+      "font_set" : "GOOGLE",
+      "size" : {
+        "value" : 16,
+        "units" : "px"
+      },
+      "color" : "#425466"
+    }
+  }, {
+    "id" : "53889bdb-b677-574d-1a0f-d73a264c8151",
+    "name" : "module_spacing_styles",
+    "display_width" : null,
+    "label" : "Module Spacing Styles",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "margin" : {
+        "top" : {
+          "value" : 0,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 0,
+          "units" : "px"
+        }
+      },
+      "padding" : {
+        "top" : {
+          "value" : null,
+          "units" : null
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : 20,
+          "units" : "px"
+        }
+      }
+    }
+  }, {
+    "id" : "db7ec286-8087-d950-79f9-7cbd3d6c506c",
+    "name" : "heading_spacing_styles",
+    "display_width" : null,
+    "label" : "Heading Spacing Styles",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "margin" : {
+        "top" : {
+          "value" : 1,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 1,
+          "units" : "px"
+        }
+      },
+      "padding" : {
+        "top" : {
+          "value" : null,
+          "units" : null
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }, {
+    "id" : "2c337fe7-240f-8aec-d3ac-be0f2b5ecae5",
+    "name" : "heading_alignment_styles",
+    "display_width" : null,
+    "label" : "Heading Alignment Styles",
+    "required" : false,
+    "locked" : false,
+    "type" : "textalignment",
+    "default" : {
+      "text_align" : "LEFT"
+    }
+  }, {
+    "id" : "f16aea2b-7c15-87a5-cc87-85f42548f0f3",
+    "name" : "text_alignment_styles",
+    "display_width" : null,
+    "label" : "Text Alignment Styles",
+    "required" : false,
+    "locked" : false,
+    "type" : "textalignment",
+    "default" : {
+      "text_align" : "LEFT"
+    }
+  }, {
+    "id" : "8e3fa370-500f-3f35-2e90-4db29eed84bd",
+    "name" : "text_spacing_styles",
+    "display_width" : null,
+    "label" : "Text Spacing Styles",
+    "required" : false,
+    "locked" : false,
+    "type" : "spacing",
+    "default" : {
+      "margin" : {
+        "top" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        }
+      },
+      "padding" : {
+        "top" : {
+          "value" : null,
+          "units" : null
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "heading_font_styles" : {
+      "styles" : { },
+      "variant" : "800",
+      "font" : "Baloo 2",
+      "fallback" : "cursive",
+      "font_set" : "GOOGLE",
+      "size" : 50,
+      "color" : "#000000"
+    },
+    "department_heading_font_styles" : {
+      "styles" : { },
+      "variant" : "700",
+      "font" : "Roboto",
+      "fallback" : "sans-serif",
+      "font_set" : "GOOGLE",
+      "size" : {
+        "value" : 18,
+        "units" : "px"
+      },
+      "color" : "#000000"
+    },
+    "text_font_styles" : {
+      "styles" : { },
+      "variant" : "regular",
+      "font" : "Roboto",
+      "fallback" : "sans-serif",
+      "font_set" : "GOOGLE",
+      "size" : {
+        "value" : 16,
+        "units" : "px"
+      },
+      "color" : "#425466"
+    },
+    "module_spacing_styles" : {
+      "margin" : {
+        "top" : {
+          "value" : 0,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 0,
+          "units" : "px"
+        }
+      },
+      "padding" : {
+        "top" : {
+          "value" : null,
+          "units" : null
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : 20,
+          "units" : "px"
+        }
+      }
+    },
+    "heading_spacing_styles" : {
+      "margin" : {
+        "top" : {
+          "value" : 1,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 1,
+          "units" : "px"
+        }
+      },
+      "padding" : {
+        "top" : {
+          "value" : null,
+          "units" : null
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    },
+    "heading_alignment_styles" : {
+      "text_align" : "LEFT"
+    },
+    "text_alignment_styles" : {
+      "text_align" : "LEFT"
+    },
+    "text_spacing_styles" : {
+      "margin" : {
+        "top" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "bottom" : {
+          "value" : 50,
+          "units" : "px"
+        }
+      },
+      "padding" : {
+        "top" : {
+          "value" : null,
+          "units" : null
+        },
+        "bottom" : {
+          "value" : null,
+          "units" : null
+        },
+        "left" : {
+          "value" : 20,
+          "units" : "px"
+        },
+        "right" : {
+          "value" : null,
+          "units" : null
+        }
+      }
+    }
+  }
+}, {
+  "id" : "77767e71-1c02-9663-66e1-f2a2247f138b",
+  "name" : "creative_brand_image",
+  "display_width" : null,
+  "label" : "Creative & Brand Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/6412394/601b7e5fde5c8d63f3bc2d3d_Creative&Brand_3_ab82761b-324d-4a17-bd9b-284df7d1b833.png",
+    "alt" : "601b7e5fde5c8d63f3bc2d3d_Creative&Brand_3_ab82761b-324d-4a17-bd9b-284df7d1b833",
+    "loading" : "lazy",
+    "width" : 1141,
+    "height" : 1042,
+    "max_width" : 1141,
+    "max_height" : 1042
+  }
+}, {
+  "id" : "ec261b5d-6b46-1520-6d75-343db0852b22",
+  "name" : "choice_field",
+  "display_width" : null,
+  "label" : "Choice",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "value 1", "Label 1" ], [ "value 2", "Label 2" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice"
+} ]

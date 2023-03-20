@@ -1,0 +1,17 @@
+[ {
+  "id" : "af553c94-0742-ec78-326d-42fb2b9e4c8c",
+  "name" : "richtext_field",
+  "display_width" : null,
+  "label" : "Main text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "a57dc7af-a741-2d22-b8d1-eefdf0b58f8b",
+  "name" : "footer_text",
+  "display_width" : null,
+  "label" : "Footer text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

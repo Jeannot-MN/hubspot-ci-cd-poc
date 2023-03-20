@@ -1,0 +1,480 @@
+<div
+  class="footer-container desktop  {{ module.settings.background_color }} version1.1"
+>
+  <div class="footer-container__inner">
+    <div class="footer-container__inner__address">
+      {% if module.address_block.address_block_icon.src %} {% set sizeAttrs =
+      'width="{{ module.address_block.address_block_icon.width }}" height="{{
+      module.address_block.address_block_icon.height }}"' %} {% if
+      module.address_block.address_block_icon.size_type == 'auto' %} {% set
+      sizeAttrs = 'width="{{ module.address_block.address_block_icon.width }}"
+      height="{{ module.address_block.address_block_icon.height }}"
+      style="max-width: 100%; height: auto;"' %} {% elif
+      module.address_block.address_block_icon.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{
+      module.address_block.address_block_icon.max_width }}" height="{{
+      module.address_block.address_block_icon.max_height }}" style="max-width:
+      100%; height: auto;"' %} {% endif %} {% set loadingAttr =
+      module.address_block.address_block_icon.loading != 'disabled' ?
+      'loading="{{ module.address_block.address_block_icon.loading }}"' : '' %}
+      <img
+        src="{{ module.address_block.address_block_icon.src }}"
+        alt="{{ module.address_block.address_block_icon.alt }}"
+        {{
+        loadingAttr
+        }}
+        {{
+        sizeAttrs
+        }}
+      />
+      {% endif %} {% inline_rich_text field="address_block.address_block_copy"
+      value="{{ module.address_block.address_block_copy }}" %}
+    </div>
+    <div class="footer-container__inner__firstcol">
+      {% for item in module.menu_blocks %} {% if loop.index == 1 %}
+      <label class="footer-col-title"
+        >{% inline_text field="menu_block_title" value="{{ item.menu_block_title
+        }}" %}</label
+      >
+      {% for item2 in item.menuitem_group %} {% set href =
+      item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+      equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+      <a
+        class="footer-col-link"
+        href="{{ href }}"
+        {%
+        if
+        item2.menu_item_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item2.menu_item_link.rel
+        %}rel="{{ item2.menu_item_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        {{ item2.menu_item_label }}
+      </a>
+      {% endfor %} {% endif %} {% endfor %}
+    </div>
+    <div class="footer-container__inner__secondcol">
+      {% for item in module.menu_blocks %} {% if loop.index == 2 %}
+      <label class="footer-col-title"
+        >{% inline_text field="menu_block_title" value="{{ item.menu_block_title
+        }}" %}</label
+      >
+      {% for item2 in item.menuitem_group %} {% set href =
+      item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+      equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+      <a
+        class="footer-col-link"
+        href="{{ href }}"
+        {%
+        if
+        item2.menu_item_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item2.menu_item_link.rel
+        %}rel="{{ item2.menu_item_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+        }}" %}
+      </a>
+      {% endfor %} {% endif %} {% endfor %}
+    </div>
+    <div class="footer-container__inner__thirdcol">
+      {% for item in module.menu_blocks %} {% if loop.index == 3 %}
+      <label class="footer-col-title"
+        >{% inline_text field="menu_block_title" value="{{ item.menu_block_title
+        }}" %}</label
+      >
+      {% for item2 in item.menuitem_group %} {% set href =
+      item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+      equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+      <a
+        class="footer-col-link"
+        href="{{ href }}"
+        {%
+        if
+        item2.menu_item_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item2.menu_item_link.rel
+        %}rel="{{ item2.menu_item_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+        }}" %}
+      </a>
+      {% endfor %} {% endif %} {% endfor %}
+    </div>
+    <div class="footer-container__inner__fourthcol">
+      {% for item in module.menu_blocks %} {% if loop.index == 4 %}
+      <label class="footer-col-title"
+        >{% inline_text field="menu_block_title" value="{{ item.menu_block_title
+        }}" %}</label
+      >
+      {% for item2 in item.menuitem_group %} {% set href =
+      item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+      equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+      <a
+        class="footer-col-link"
+        href="{{ href }}"
+        {%
+        if
+        item2.menu_item_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item2.menu_item_link.rel
+        %}rel="{{ item2.menu_item_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+        }}" %}
+      </a>
+      {% endfor %} {% endif %} {% endfor %}
+    </div>
+    <div class="footer-container__paylogos">
+      {% for item in module.bank_icons.bank_icon %} {% if item.src %} {% set
+      sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %} {% if
+      item.size_type == 'auto' %} {% set sizeAttrs = 'width="{{ item.width }}"
+      height="{{ item.height }}" style="max-width: 100%; height: auto;"' %} {%
+      elif item.size_type == 'auto_custom_max' %} {% set sizeAttrs = 'width="{{
+      item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%;
+      height: auto;"' %} {% endif %} {% set loadingAttr = item.loading !=
+      'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+      <img
+        src="{{ item.src }}"
+        alt="{{ item.alt }}"
+        {{
+        loadingAttr
+        }}
+        {{
+        sizeAttrs
+        }}
+      />
+      {% endif %} {% endfor %}
+    </div>
+    <div
+      class="footer-container__linerule {{ module.settings.border_colour }}"
+    ></div>
+    <div class="footer-container__copyright">
+      {% inline_rich_text field="copyright_info" value="{{ module.copyright_info
+      }}" %}
+    </div>
+    <div class="footer-container__social">
+      {% for item in module.social_icons %} {% if item.social_icon_image.src %}
+      {% set sizeAttrs = 'width="{{ item.social_icon_image.width }}" height="{{
+      item.social_icon_image.height }}"' %} {% if
+      item.social_icon_image.size_type == 'auto' %} {% set sizeAttrs =
+      'width="{{ item.social_icon_image.width }}" height="{{
+      item.social_icon_image.height }}" style="max-width: 100%; height: auto;"'
+      %} {% elif item.social_icon_image.size_type == 'auto_custom_max' %} {% set
+      sizeAttrs = 'width="{{ item.social_icon_image.max_width }}" height="{{
+      item.social_icon_image.max_height }}" style="max-width: 100%; height:
+      auto;"' %} {% endif %} {% set loadingAttr = item.social_icon_image.loading
+      != 'disabled' ? 'loading="{{ item.social_icon_image.loading }}"' : '' %}
+      {% set href = item.social_icon_link.url.href %} {% if
+      item.social_icon_link.url.type is equalto "EMAIL_ADDRESS" %} {% set href =
+      "mailto:" + href %} {% endif %}
+      <a
+        href="{{ href }}"
+        {%
+        if
+        item.social_icon_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item.social_icon_link.rel
+        %}rel="{{ item.social_icon_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        <img
+          src="{{ item.social_icon_image.src }}"
+          alt="{{ item.social_icon_image.alt }}"
+          {{
+          loadingAttr
+          }}
+          {{
+          sizeAttrs
+          }}
+        />
+      </a>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>
+
+<div
+  id="mobile-footer"
+  class="footer-container mobile   {{ module.settings.background_color }} "
+>
+  <div class="footer-container__address">
+    {% if module.address_block.address_block_icon.src %} {% set sizeAttrs =
+    'width="{{ module.address_block.address_block_icon.width }}" height="{{
+    module.address_block.address_block_icon.height }}"' %} {% if
+    module.address_block.address_block_icon.size_type == 'auto' %} {% set
+    sizeAttrs = 'width="{{ module.address_block.address_block_icon.width }}"
+    height="{{ module.address_block.address_block_icon.height }}"
+    style="max-width: 100%; height: auto;"' %} {% elif
+    module.address_block.address_block_icon.size_type == 'auto_custom_max' %} {%
+    set sizeAttrs = 'width="{{ module.address_block.address_block_icon.max_width
+    }}" height="{{ module.address_block.address_block_icon.max_height }}"
+    style="max-width: 100%; height: auto;"' %} {% endif %} {% set loadingAttr =
+    module.address_block.address_block_icon.loading != 'disabled' ? 'loading="{{
+    module.address_block.address_block_icon.loading }}"' : '' %}
+    <img
+      src="{{ module.address_block.address_block_icon.src }}"
+      alt="{{ module.address_block.address_block_icon.alt }}"
+      {{
+      loadingAttr
+      }}
+      {{
+      sizeAttrs
+      }}
+    />
+    {% endif %} {% inline_rich_text field="address_block.address_block_copy"
+    value="{{ module.address_block.address_block_copy }}" %}
+  </div>
+  <div class="footer-container__inner">
+    <div class="footer-container__inner__leftcol">
+      <div class="footer-container__inner__leftcol__products">
+        {% for item in module.menu_blocks %} {% if loop.index == 1 %}
+        <label class="footer-col-title"
+          >{% inline_text field="menu_block_title" value="{{
+          item.menu_block_title }}" %}</label
+        >
+        {% for item2 in item.menuitem_group %} {% set href =
+        item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+        equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+        <a
+          class="footer-col-link"
+          href="{{ href }}"
+          {%
+          if
+          item2.menu_item_link.open_in_new_tab
+          %}target="_blank"
+          {%
+          endif
+          %}
+          {%
+          if
+          item2.menu_item_link.rel
+          %}rel="{{ item2.menu_item_link.rel }}"
+          {%
+          endif
+          %}
+        >
+          {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+          }}" %}
+        </a>
+        {% endfor %} {% endif %} {% endfor %}
+      </div>
+      <div class="footer-container__inner__leftcol__company">
+        {% for item in module.menu_blocks %} {% if loop.index == 2 %}
+        <label class="footer-col-title"
+          >{% inline_text field="menu_block_title" value="{{
+          item.menu_block_title }}" %}</label
+        >
+        {% for item2 in item.menuitem_group %} {% set href =
+        item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+        equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+        <a
+          class="footer-col-link"
+          href="{{ href }}"
+          {%
+          if
+          item2.menu_item_link.open_in_new_tab
+          %}target="_blank"
+          {%
+          endif
+          %}
+          {%
+          if
+          item2.menu_item_link.rel
+          %}rel="{{ item2.menu_item_link.rel }}"
+          {%
+          endif
+          %}
+        >
+          {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+          }}" %}
+        </a>
+        {% endfor %} {% endif %} {% endfor %}
+      </div>
+    </div>
+    <div class="footer-container__inner__rightcol">
+      <div class="footer-container__inner__leftcol__needhelp">
+        {% for item in module.menu_blocks %} {% if loop.index == 3 %}
+        <label class="footer-col-title"
+          >{% inline_text field="menu_block_title" value="{{
+          item.menu_block_title }}" %}</label
+        >
+        {% for item2 in item.menuitem_group %} {% set href =
+        item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+        equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+        <a
+          class="footer-col-link"
+          href="{{ href }}"
+          {%
+          if
+          item2.menu_item_link.open_in_new_tab
+          %}target="_blank"
+          {%
+          endif
+          %}
+          {%
+          if
+          item2.menu_item_link.rel
+          %}rel="{{ item2.menu_item_link.rel }}"
+          {%
+          endif
+          %}
+        >
+          {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+          }}" %}
+        </a>
+        {% endfor %} {% endif %} {% endfor %}
+      </div>
+      <div class="footer-container__inner__leftcol__legal">
+        {% for item in module.menu_blocks %} {% if loop.index == 4 %}
+        <label class="footer-col-title"
+          >{% inline_text field="menu_block_title" value="{{
+          item.menu_block_title }}" %}</label
+        >
+        {% for item2 in item.menuitem_group %} {% set href =
+        item2.menu_item_link.url.href %} {% if item2.menu_item_link.url.type is
+        equalto "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %}
+        <a
+          class="footer-col-link"
+          href="{{ href }}"
+          {%
+          if
+          item2.menu_item_link.open_in_new_tab
+          %}target="_blank"
+          {%
+          endif
+          %}
+          {%
+          if
+          item2.menu_item_link.rel
+          %}rel="{{ item2.menu_item_link.rel }}"
+          {%
+          endif
+          %}
+        >
+          {% inline_text field="menu_item_label" value="{{ item2.menu_item_label
+          }}" %}
+        </a>
+        {% endfor %} {% endif %} {% endfor %}
+      </div>
+    </div>
+    <div class="footer-container__inner__btmcol">
+      <div class="footer-container__paylogos">
+        {% for item in module.bank_icons.bank_icon %} {% if item.src %} {% set
+        sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %} {%
+        if item.size_type == 'auto' %} {% set sizeAttrs = 'width="{{ item.width
+        }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"'
+        %} {% elif item.size_type == 'auto_custom_max' %} {% set sizeAttrs =
+        'width="{{ item.max_width }}" height="{{ item.max_height }}"
+        style="max-width: 100%; height: auto;"' %} {% endif %} {% set
+        loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading
+        }}"' : '' %}
+        <img
+          src="{{ item.src }}"
+          alt="{{ item.alt }}"
+          {{
+          loadingAttr
+          }}
+          {{
+          sizeAttrs
+          }}
+        />
+        {% endif %} {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-container__btm {{ module.style.background_color }} ">
+    <div
+      class="footer-container__linerule {{ module.settings.border_colour }} "
+    ></div>
+    <div class="footer-container__copyright">
+      {% inline_rich_text field="copyright_info" value="{{ module.copyright_info
+      }}" %}
+    </div>
+    <div class="footer-container__social">
+      {% for item in module.social_icons %} {% if item.social_icon_image.src %}
+      {% set sizeAttrs = 'width="{{ item.social_icon_image.width }}" height="{{
+      item.social_icon_image.height }}"' %} {% if
+      item.social_icon_image.size_type == 'auto' %} {% set sizeAttrs =
+      'width="{{ item.social_icon_image.width }}" height="{{
+      item.social_icon_image.height }}" style="max-width: 100%; height: auto;"'
+      %} {% elif item.social_icon_image.size_type == 'auto_custom_max' %} {% set
+      sizeAttrs = 'width="{{ item.social_icon_image.max_width }}" height="{{
+      item.social_icon_image.max_height }}" style="max-width: 100%; height:
+      auto;"' %} {% endif %} {% set loadingAttr = item.social_icon_image.loading
+      != 'disabled' ? 'loading="{{ item.social_icon_image.loading }}"' : '' %}
+      {% set href = item.social_icon_link.url.href %} {% if
+      item.social_icon_link.url.type is equalto "EMAIL_ADDRESS" %} {% set href =
+      "mailto:" + href %} {% endif %}
+      <a
+        href="{{ href }}"
+        {%
+        if
+        item.social_icon_link.open_in_new_tab
+        %}target="_blank"
+        {%
+        endif
+        %}
+        {%
+        if
+        item.social_icon_link.rel
+        %}rel="{{ item.social_icon_link.rel }}"
+        {%
+        endif
+        %}
+      >
+        <img
+          src="{{ item.social_icon_image.src }}"
+          alt="{{ item.social_icon_image.alt }}"
+          {{
+          loadingAttr
+          }}
+          {{
+          sizeAttrs
+          }}
+        />
+      </a>
+      {% endif %} {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,617 @@
+[ {
+  "id" : "8b857b6d-ac30-7320-318e-c0f0c465be2e",
+  "name" : "background_colour",
+  "display_width" : null,
+  "label" : "Background Colour",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "theme-bg-iK-ec-Primary-Color", "Primary UI" ], [ "theme-bg-iK-ec-Secondary-Color", "Secondary UI" ], [ "theme-bg-iK-Yellow", "Yellow" ], [ "theme-bg-iK-Black", "Black" ], [ "theme-bg-iK-White", "White" ], [ "theme-bg-iK-Pink", "Pink" ], [ "theme-bg-iK-Pink-Dark", "Pink Dark Mode" ], [ "theme-bg-iK-Charcoal", "Charcoal" ], [ "theme-bg-iK-Off-White", "Apple White" ], [ "theme-bg-iK-Teal", "Teal" ], [ "theme-bg-iK-Teal-Dark", "Teal Dark Mode" ], [ "theme-bg-iK-Light-Grey", "Light Grey" ], [ "theme-bg-iK-sc-Pink-Light", "Error" ], [ "theme-bg-iK-sc-Pink-Dark", "Error Dark" ], [ "theme-bg-iK-sc-Success-Light", "Success" ], [ "theme-bg-iK-sc-Success-Dark", "Success Dark" ], [ "theme-bg-iK-sc-Warning-Light", "Warning" ], [ "theme-bg-iK-sc-Warning-Dark", "Warning Dark" ], [ "theme-bg-iK-sc-Info-Light", "Information" ], [ "theme-bg-iK-sc-Info-Dark", "Information Dark" ], [ "theme-bg-iK-ec-Clickable-Color", "Clickable UI" ], [ "theme-bg-iK-ec-Blue-Color", "Blue" ], [ "theme-bg-iK-ec-Orange-Color", "Orange" ], [ "theme-Gradient-iK-Primary", "Primary Gradient" ], [ "theme-Gradient-iK-Secondary", "Dark Gradient" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "default" : "theme-bg-iK-ec-Primary-Color"
+}, {
+  "id" : "fa742b5f-3774-173d-7c54-724265fee890",
+  "name" : "alignment_settings",
+  "display_width" : null,
+  "label" : "Alignment Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c51020b4-f7e7-7278-5690-2b4d5325e045",
+    "name" : "desktop_copy_right",
+    "display_width" : null,
+    "label" : "Desktop Copy Right",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "99a0d30d-07fb-5ce0-71bd-21c159ce2878",
+    "name" : "hide_icon_decription",
+    "display_width" : null,
+    "label" : "Hide Icon Decription",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : false
+  }, {
+    "id" : "ea1e3ac9-f76e-f453-270c-49357017193e",
+    "name" : "align_icons",
+    "display_width" : null,
+    "label" : "Align Icons",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "next", "Next To Copy" ], [ "above", "Above Copy" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "above"
+  }, {
+    "id" : "5c61221d-47a0-234b-dcbd-5e08e4bfa17f",
+    "name" : "icons_per_row_desktop",
+    "display_width" : null,
+    "label" : "Icons Per Row Desktop",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 1,
+    "max" : 3,
+    "step" : 1,
+    "type" : "number",
+    "default" : 3
+  }, {
+    "id" : "6b334fa8-1c51-e607-ad4c-94fb000625ad",
+    "name" : "icons_per_row_in_slider",
+    "display_width" : null,
+    "label" : "Icons Per Row in Slider",
+    "required" : false,
+    "locked" : false,
+    "display" : "slider",
+    "min" : 1,
+    "max" : 4,
+    "step" : 1,
+    "type" : "number",
+    "default" : 4
+  }, {
+    "id" : "a58adbbc-1f60-c0b9-2b6c-948aa48ce370",
+    "name" : "show_pagination",
+    "display_width" : null,
+    "label" : "Show Pagination",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "desktop_copy_right" : false,
+    "hide_icon_decription" : false,
+    "align_icons" : "above",
+    "icons_per_row_desktop" : 3,
+    "icons_per_row_in_slider" : 4,
+    "show_pagination" : true
+  }
+}, {
+  "id" : "7b97af72-27e1-02da-43ef-ae0051bda202",
+  "name" : "heading",
+  "display_width" : null,
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8781a7f1-a757-1883-a0e5-fcbce62b99b2",
+    "name" : "title_tag",
+    "display_width" : null,
+    "label" : "Title Tag",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "h1", "Heading 1" ], [ "h2", "Heading 2" ], [ "h3", "Heading 3" ], [ "h4", "Heading 4" ], [ "h5", "Heading 5" ], [ "h6", "Heading 6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "default" : "h3"
+  }, {
+    "id" : "1b831415-6bb4-dd9e-6acd-72828db8dc3c",
+    "name" : "title",
+    "display_width" : null,
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Tech out our stack"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title_tag" : "h3",
+    "title" : "Tech out our stack"
+  }
+}, {
+  "id" : "9d94ae61-b781-8967-2038-4d55677782bc",
+  "name" : "content",
+  "display_width" : null,
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "367c6586-ef14-f5c1-a71a-c3147ae731ff",
+    "name" : "content",
+    "display_width" : null,
+    "label" : "Copy",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e3661c0a-8a15-d558-c6ad-a4ffe32c5b6a",
+      "name" : "copy",
+      "display_width" : null,
+      "label" : "Copy",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : { }
+  }, {
+    "id" : "494e05b8-0a5f-ec0c-1b1b-79cbb51a31c1",
+    "name" : "body_text",
+    "display_width" : null,
+    "label" : "Body Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>We ensure our engineers have the tools they need to excel, and our business has the necessary resources to connect and build relationships with our merchants.</p>"
+  }, {
+    "id" : "7e8b6b6e-2ed6-4b43-1523-5dcf4bb4993c",
+    "name" : "icons",
+    "display_width" : null,
+    "label" : "Icons",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 9,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "bf8102f8-ecba-f639-4423-31ba6bf3e226",
+      "name" : "icon_title",
+      "display_width" : null,
+      "label" : "Icon Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "7b405b38-ed09-f9f8-f751-57ac2769eef2",
+      "name" : "icon_image",
+      "display_width" : null,
+      "label" : "Icon Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : true,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }, {
+      "id" : "content.icons.disabled_link",
+      "name" : "disabled_link",
+      "display_width" : null,
+      "label" : "Disable link",
+      "inline_help_text" : "Switch off Links",
+      "required" : false,
+      "locked" : false,
+      "display" : "toggle",
+      "type" : "boolean",
+      "default" : true
+    }, {
+      "id" : "content.icons.link",
+      "name" : "link",
+      "display_width" : null,
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false,
+        "sponsored" : false,
+        "user_generated_content" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "icon_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    }
+  }, {
+    "id" : "11f043ae-8150-105c-eb86-97b4875d069c",
+    "name" : "buttons",
+    "display_width" : null,
+    "label" : "Buttons",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 2,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "d83d7353-bf9e-6216-fa57-4b8bb2ef1b25",
+      "name" : "button_type",
+      "display_width" : null,
+      "label" : "Button Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "standard", "Standard" ], [ "cta", "CTA" ], [ "link", "Link" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "standard"
+    }, {
+      "id" : "6afc8204-5e2e-4073-3495-5e19c546bd50",
+      "name" : "button_cta",
+      "display_width" : null,
+      "label" : "Button CTA",
+      "required" : false,
+      "locked" : false,
+      "type" : "cta"
+    }, {
+      "id" : "2c9a5cec-df22-e863-d4fe-1642f0379275",
+      "name" : "button_link",
+      "display_width" : null,
+      "label" : "Button link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "a35d858a-eed3-fd2b-f7bb-c3d18ea4170b",
+      "name" : "button_text",
+      "display_width" : null,
+      "label" : "Button Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Read More"
+    }, {
+      "id" : "d76e14a1-2861-db03-0667-a89aa8d76d23",
+      "name" : "link_type",
+      "display_width" : null,
+      "label" : "Link Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "d83d7353-bf9e-6216-fa57-4b8bb2ef1b25",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "link",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "link", "Link (Default)" ], [ "theme-link-icon-r-arrow", "Link with Right Arrow" ], [ "theme-link-icon-l-arrow", "Link with Left Arrow" ], [ "theme-link-icon-r-circle", "Link with Right Circle" ], [ "theme-link-icon-l-circle", "Link with Left Circle" ], [ "theme-link-icon-r-arrow-i", "Link with Right Arrow on Hover" ], [ "theme-link-icon-l-arrow-i", "Link with Left Arrow on Hover" ], [ "theme-link-icon-r-circle-i", "Link with Right Circle on Hover" ], [ "theme-link-icon-l-circle-i", "Link with Left Circle on Hover" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "link"
+    }, {
+      "id" : "a74c0204-e132-0e53-397d-f8fae3053840",
+      "name" : "button_color",
+      "display_width" : null,
+      "label" : "Button Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "d83d7353-bf9e-6216-fa57-4b8bb2ef1b25",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "standard",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null,
+        "hidden_subfields" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "theme-btn-iK-Yellow", "Primary" ], [ "theme-btn-iK-White", "Secondary" ], [ "theme-btn-iK-Black", "Dark" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "default" : "theme-btn-iK-Yellow"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "button_type" : "standard",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "button_text" : "Read More",
+      "link_type" : "link",
+      "button_color" : "theme-btn-iK-Yellow"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "content" : { },
+    "body_text" : "<p>We ensure our engineers have the tools they need to excel, and our business has the necessary resources to connect and build relationships with our merchants.</p>",
+    "icons" : {
+      "icon_image" : {
+        "size_type" : "auto",
+        "src" : "",
+        "alt" : null,
+        "loading" : "lazy"
+      }
+    },
+    "buttons" : {
+      "button_type" : "standard",
+      "button_link" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "button_text" : "Read More",
+      "link_type" : "link",
+      "button_color" : "theme-btn-iK-Yellow"
+    }
+  }
+}, {
+  "id" : "96b8e3dd-2f57-6731-dcf5-612317693d2f",
+  "name" : "slider_container",
+  "display_width" : null,
+  "label" : "Slider Container",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "1a2d6ec2-2efe-9c11-6d76-3b86eb37a392",
+    "name" : "slider",
+    "display_width" : null,
+    "label" : "Slider",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "aef98041-4c23-3192-786a-d227caa5eefb",
+      "name" : "section_title",
+      "display_width" : null,
+      "label" : "Section Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Dev Ops"
+    }, {
+      "id" : "29de92e2-4861-0ee1-13bd-4d324a418f02",
+      "name" : "intro_copy",
+      "display_width" : null,
+      "label" : "Intro Copy",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text"
+    }, {
+      "id" : "5bcb6bd3-a1e9-50bd-518d-59be6e942f9c",
+      "name" : "icons",
+      "display_width" : null,
+      "label" : "Icons",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : 16,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "afb16b47-fda9-98d4-9705-69479c428a6d",
+        "name" : "icon_title",
+        "display_width" : null,
+        "label" : "Icon Title",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "Github"
+      }, {
+        "id" : "3e2d4998-1e74-2bb0-9b3b-d7ca01884936",
+        "name" : "icon_image",
+        "display_width" : null,
+        "label" : "Icon Image",
+        "required" : false,
+        "locked" : false,
+        "responsive" : true,
+        "resizable" : true,
+        "show_loading" : false,
+        "type" : "image",
+        "default" : {
+          "size_type" : "auto",
+          "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60226317fbe0849ce9eba133_git-1.png",
+          "alt" : "60226317fbe0849ce9eba133_git-1",
+          "loading" : "lazy",
+          "width" : 200,
+          "height" : 200,
+          "max_width" : 200,
+          "max_height" : 200
+        }
+      }, {
+        "id" : "slider_container.slider.icons.disabled_link",
+        "name" : "disabled_link",
+        "display_width" : null,
+        "label" : "Disable link",
+        "inline_help_text" : "Switch off Links",
+        "required" : false,
+        "locked" : false,
+        "display" : "toggle",
+        "type" : "boolean",
+        "default" : true
+      }, {
+        "id" : "slider_container.slider.icons.link",
+        "name" : "link",
+        "display_width" : null,
+        "label" : "Link",
+        "required" : false,
+        "locked" : false,
+        "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+        "show_advanced_rel_options" : false,
+        "type" : "link",
+        "default" : {
+          "url" : {
+            "content_id" : null,
+            "type" : "EXTERNAL",
+            "href" : ""
+          },
+          "open_in_new_tab" : false,
+          "no_follow" : false,
+          "sponsored" : false,
+          "user_generated_content" : false
+        }
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "icon_title" : "Github",
+        "icon_image" : {
+          "size_type" : "auto",
+          "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60226317fbe0849ce9eba133_git-1.png",
+          "alt" : "60226317fbe0849ce9eba133_git-1",
+          "loading" : "lazy",
+          "width" : 200,
+          "height" : 200,
+          "max_width" : 200,
+          "max_height" : 200
+        }
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "section_title" : "Dev Ops",
+      "icons" : {
+        "icon_title" : "Github",
+        "icon_image" : {
+          "size_type" : "auto",
+          "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60226317fbe0849ce9eba133_git-1.png",
+          "alt" : "60226317fbe0849ce9eba133_git-1",
+          "loading" : "lazy",
+          "width" : 200,
+          "height" : 200,
+          "max_width" : 200,
+          "max_height" : 200
+        }
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "slider" : {
+      "section_title" : "Dev Ops",
+      "icons" : {
+        "icon_title" : "Github",
+        "icon_image" : {
+          "size_type" : "auto",
+          "src" : "https://20686580.fs1.hubspotusercontent-na1.net/hubfs/20686580/60226317fbe0849ce9eba133_git-1.png",
+          "alt" : "60226317fbe0849ce9eba133_git-1",
+          "loading" : "lazy",
+          "width" : 200,
+          "height" : 200,
+          "max_width" : 200,
+          "max_height" : 200
+        }
+      }
+    }
+  }
+} ]

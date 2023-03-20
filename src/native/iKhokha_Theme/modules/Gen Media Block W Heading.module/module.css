@@ -1,0 +1,181 @@
+
+.mbwh-section .page-center, .mbwh-section .content-wrapper {
+  max-width: 1010px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.mbwh-section .img-desktop {
+  display: inline-block;
+  vertical-align: middle;
+} 
+.mbwh-section .img-mobile {
+  vertical-align: middle;
+  display: none;
+  margin: auto;
+}
+.mbwh-section .mbwh-content {
+  margin-bottom: 40px;
+}
+
+
+.theme-bg-primary .mbwh-content .heading, 
+.theme-bg-primary .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-secondary .mbwh-content .heading, 
+.theme-bg-secondary .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-tertiary .mbwh-content .heading, 
+.theme-bg-tertiary .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-dark .mbwh-content .heading, 
+.theme-bg-dark .mbwh-content .sub-title {
+  color: #fff;
+}
+
+.theme-bg-charcoal .mbwh-content .heading, 
+.theme-bg-charcoal .mbwh-content .sub-title {
+  color: #fff;
+}
+
+.theme-bg-white .mbwh-content .heading, 
+.theme-bg-white .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-apple_white .mbwh-content .heading, 
+.theme-bg-apple_white .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-light_grey .mbwh-content .heading, 
+.theme-bg-light_grey .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-primary_gradient .mbwh-content .heading,
+.theme-bg-primary_gradient .mbwh-content .sub-title {
+  color: #201e1e;
+}
+
+.theme-bg-dark_gradient .mbwh-content .heading,
+.theme-bg-dark_gradient .mbwh-content .sub-title {
+  color: #fff;
+}
+
+.mbwh-section .mbwh-content h1.heading, 
+.mbwh-section .mbwh-content h2.heading, 
+.mbwh-section .mbwh-content h3.heading, 
+.mbwh-section .mbwh-content h4.heading, 
+.mbwh-section .mbwh-content h5.heading, 
+.mbwh-section .mbwh-content h6.heading {
+  font-family: 'Baloo 2', sans-serif !important;
+}
+
+.align-text-left {
+  text-align: left;
+}
+.align-text-right {
+  text-align: right;
+}
+.align-text-center {
+  text-align: center;
+}
+
+.theme-py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.theme-py-4 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.theme-py-5 {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.theme-py-6 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.theme-py-7 {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.theme-py-8 {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.theme-py-9 {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+.theme-py-10 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (max-width:991px) {
+  .align-text-left-mobile {
+    text-align: left;
+  }
+  .align-text-right-mobile {
+    text-align: right;
+  }
+  .align-text-center-mobile {
+    text-align: center;
+  }
+  .mbwh-section .img-desktop {
+    display: none;
+  } 
+  .mbwh-section .img-mobile {
+    display: inline-block;
+  }
+  .theme-px-2-mobile {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  .theme-px-0-mobile {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .theme-py-0-mobile {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .theme-py-4-mobile {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .theme-py-5-mobile {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .theme-py-6-mobile {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .theme-py-7-mobile {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+  .theme-py-8-mobile {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .theme-py-9-mobile {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+  .theme-py-10-mobile {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}

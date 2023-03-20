@@ -1,0 +1,227 @@
+<section class="complex-product-card-section {{ module.settings.background_color }} version1.1">
+  <div class="page-center">
+    <div class="page-center-inner {{ module.product.content_background_color }}">
+        <div class="complex-product-card-wrapper">
+            <div class="complex-product-card-item">
+              <div class="complex-product-card-item-image">
+                {% if !module.product.call_out_label.hide && module.product.call_out_label.title != "" && module.product.call_out_label.title %}
+                  <div class="complex-product-card-item-label-wrapper mt-xs-3 {{ module.product.call_out_label.position == "right" ? "complex-product-card-right" : "" }}">
+                    <div class="complex-product-card-item-label {{ module.product.call_out_label.background_color }}  {{ module.product.call_out_label.title_color }}">
+                      {{ module.product.call_out_label.title }}
+                    </div>
+                  </div>
+                {% endif %}
+                
+                {% if module.product.image.image.src %}
+                  {% set sizeAttrs = 'width="{{ module.product.image.image.width }}" height="{{ module.product.image.image.height }}"' %}
+
+                  {% if module.product.image.image.size_type == 'auto' %}
+                    {% set sizeAttrs = 'width="{{ module.product.image.image.width }}" height="{{ module.product.image.image.height }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif module.product.image.image.size_type == 'auto_custom_max' %}
+                    {% set sizeAttrs = 'width="{{ module.product.image.image.max_width }}" height="{{ module.product.image.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+
+                  {% set loadingAttr = module.product.image.image.loading != 'disabled' ? 'loading="{{ module.product.image.image.loading }}"' : '' %}
+                  <img src="{{ module.product.image.image.src }}" alt="{{ module.product.image.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+              </div>
+              <div class="complex-product-card-item-content {{ module.product.card_background_color }}">
+                <h4 class="complex-product-card-item-content-title">
+                  {{ module.product.content.title }}
+                </h4>
+
+                {% if module.product.content.price > 0 %}
+                  <h3 class="complex-product-card-item-content-price  py-2">
+                     {{ module.product.content.price|format_currency("en-ZA", "ZAR", true) }}
+
+                    {% if module.product.content.discount_price > 0 %}
+                      <span>{{ module.product.content.discount_price|format_currency("en-ZA", "ZAR", true) }}</span>
+                    {% endif %}
+                  </h3>
+                {% endif %}
+
+                {% if module.product.content.body_text != "" %}
+                  <div class="complex-product-card-item-content-copy mt-3">
+                     {{module.product.content.body_text}}
+                  </div>
+                {% endif %}
+
+                {% if module.product.content.features.features|length > 0 %}
+                  <div class="complex-product-card-item-content-features {{ module.product.content.features.stack_features ? "complex-product-card-stack" : ""}}">
+                    {% for feature in module.product.content.features.features %}
+                      <div class="complex-product-card-item-content-features-feature {{ feature.hide_container ? "complex-product-card-hide" : "theme-bg-white" }}  {{ module.product.content.features.stack_features ? "complex-product-card-stack" : ""}}">
+                          {% if feature.image.src %}
+                            {% set sizeAttrs = 'width="{{ feature.image.width }}" height="{{ feature.image.height }}"' %}
+
+                            {% if feature.image.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ feature.image.width }}" height="{{ feature.image.height }}" style="max-width: 100%; height: auto;"' %}
+                            {% elif feature.image.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ feature.image.max_width }}" height="{{ feature.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                            {% endif %}
+
+                            {% set loadingAttr = feature.image.loading != 'disabled' ? 'loading="{{ feature.image.loading }}"' : '' %}
+                            <img src="{{ feature.image.src }}" alt="{{ feature.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                          {% endif %}
+                        
+                          {% if feature.detail != "" %}
+                            <span>
+                              {{ feature.detail }}
+                            </span>
+                          {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                {% if module.product.content.processes.logos|length > 0 && module.product.content.processes.logos is iterable %}
+                  <div class="complex-product-card-item-content-processes">
+                    <div class="complex-product-card-item-content-processes-title">
+                      <p>
+                        {{ module.product.content.processes.title }}
+                      </p>
+                    </div>
+                    <div class="complex-product-card-item-content-processes-process-wrapper">
+                      {% for logo in module.product.content.processes.logos %}
+                          {% if logo.logo.src %}
+                            <div class="complex-product-card-item-content-processes-process-wrapper-process theme-bg-white">
+                              {% set sizeAttrs = 'width="{{ logo.logo.width }}" height="{{ logo.logo.height }}"' %}
+
+                              {% if logo.logo.size_type == 'auto' %}
+                                {% set sizeAttrs = 'width="{{ logo.logo.width }}" height="{{ logo.logo.height }}" style="max-width: 100%; height: auto;"' %}
+                              {% elif logo.logo.size_type == 'auto_custom_max' %}
+                                {% set sizeAttrs = 'width="{{ logo.logo.max_width }}" height="{{ logo.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+                              {% endif %}
+
+                              {% set loadingAttr = logo.logo.loading != 'disabled' ? 'loading="{{ logo.logo.loading }}"' : '' %}
+                              <img src="{{ logo.logo.src }}" alt="{{ logo.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                            </div>
+                          {% endif %}
+                        
+                      {% endfor %}
+                    </div>    
+                  </div>
+                {% endif %}
+                
+                {% if !module.product.content.services.hide %}
+                  <div class="complex-product-card-item-content-services">
+                    <p>{{ module.product.content.services.title }}</p>
+                    <span class="complex-product-card-item-content-services-tooltips">
+                      {% if module.product.content.services.tooltip_icon.src %}
+                        <div class="complex-product-card-item-content-services-tooltips-icon">
+                          {% set sizeAttrs = 'width="{{ module.product.content.services.tooltip_icon.width }}" height="{{ module.product.content.services.tooltip_icon.height }}"' %}
+                          {% if module.product.content.services.tooltip_icon.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ module.product.content.services.tooltip_icon.width }}" height="{{ module.product.content.services.tooltip_icon.height }}" style="max-width: 100%; height: auto;"' %}
+                          {% elif module.product.content.services.tooltip_icon.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ module.product.content.services.tooltip_icon.max_width }}" height="{{ module.product.content.services.tooltip_icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                           {% set loadingAttr = module.product.content.services.tooltip_icon.loading != 'disabled' ? 'loading="{{ module.product.content.services.tooltip_icon.loading }}"' : '' %}
+                          <img src="{{ module.product.content.services.tooltip_icon.src }}" alt="{{ module.product.content.services.tooltip_icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                      </div>
+                     {% endif %}
+
+                      {% if module.product.content.services.tooltip_body_text != "" %}
+                        <span class="complex-product-card-item-content-services-tooltips-text {{ module.product.card_background_color }}">
+                          {{ module.product.content.services.tooltip_body_text }}
+                        </span>
+                      {% endif %}
+                    </span>
+                  </div>
+                {% endif %}
+                
+                {% if module.product.content.buttons|length > 0 %}
+                  <div class="complex-product-card-item-content-buttons">
+                    {% for button in module.product.content.buttons %}
+                      <div class="complex-product-card-item-content-buttons-button">
+                        {% if button.button_type == "standard" %}
+                          {% set href = button.button_link.url.href %}
+                          {% if button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+
+                          {% set rel = [] %}
+                          {% if button.button_link.no_follow %}
+                            {% do rel.append("nofollow") %}
+                          {% endif %}
+
+                          {% if button.button_link.open_in_new_tab %}
+                            {% do rel.append("noopener") %}
+                          {% endif %}
+
+                          <a href="{{ href }}"
+                            {% if button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if button.button_link.rel %}rel="{{ button.button_link.rel }}"{% endif %}
+                            class="{{ button.button_color }}">
+                              {{ button.button_text }}
+                          </a>
+                        {% endif %}
+
+                        {% if button.button_type == "cta" %}
+                          {% cta guid="{{ button.button_cta }}" %}
+                        {% endif %}        
+
+                        {% if button.button_type == "link" %}
+                          {% set href = button.button_link.url.href %}
+                          {% if button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                            {% set href = "mailto:" + href %}
+                          {% endif %}
+
+                          {% set rel = [] %}
+                          {% if button.button_link.no_follow %}
+                            {% do rel.append("nofollow") %}
+                          {% endif %}
+
+                          {% if button.button_link.open_in_new_tab %}
+                            {% do rel.append("noopener") %}
+                          {% endif %}
+
+                          <a href="{{ button.button_link.url }}" class="theme-btn theme-link link-text theme-arrow-right 
+                         {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} link-text {{ button.button_color }}" data-id="custom-{{ loop.index }}"
+                            {% if button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if button.button_link.rel %}rel="{{ button.button_link.rel }}"{% endif %}>
+                            {{ button.button_text }}
+                          </a>
+                        {% endif %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+              </div>
+              
+              <div class="complex-product-card-item-toc">
+                {% if module.product.table_of_contents.title != "" %}
+                  <h4 class="complex-product-card-item-toc-title">
+                    {{ module.product.table_of_contents.title }}
+                  </h4>
+                {% endif %}
+                
+                {% if module.product.table_of_contents.content|length > 0 %}
+                  {% for item in module.product.table_of_contents.content %}
+                    <div class="complex-product-card-item-toc-item">
+                      {% if item.image.src %}
+                        <div class="complex-product-card-item-toc-item-image theme-bg-white">
+                          {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                          {% if item.image.size_type == 'auto' %}
+                              {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                          {% elif item.image.size_type == 'auto_custom_max' %}
+                              {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                          {% endif %}
+                           {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                          <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                        </div>
+                      {% endif %}
+                      
+                      {% if item.detail != "" %}
+                        <div class="complex-product-card-item-toc-item-detail">
+                          {{ item.detail }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
+                {% endif %}
+              </div>
+            </div>
+        </div>
+    </div>
+  </div>    
+</section>

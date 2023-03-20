@@ -1,0 +1,130 @@
+{# Can we move styling into the head section, stylesheet #}
+<section class="simple-product-card-section {{ module.settings.background_color }} version1.1">
+  <div class="page-center">
+        <div class="simple-product-card-wrapper">
+          {% set loopCounter = {val : 0} %}
+          {% for item in module.products %}
+            <div class="simple-product-card-item" data-aos="fade-up" data-aos-delay="{{ loopCounter.val }}" >
+              <div class="simple-product-card-item-inner {{ item.background_color }}  position-relative">
+                {% if !item.call_out_label.hide && item.call_out_label.title != "" && item.call_out_label.title %}
+                  <div class="simple-product-card-item-label-wrapper {{ item.call_out_label.position == "right" ? "simple-product-card-right" : "" }}">
+                    <div class="simple-product-card-item-label {{ item.call_out_label.background_color }} {{ item.call_out_label.title_color }}">
+                      {{ item.call_out_label.title }}
+                    </div>
+                  </div>
+                {% endif %}
+                
+                <div class="simple-product-card-item-image">
+                  {% if item.image.image.src %}
+                    {% set sizeAttrs = 'width="{{ item.image.image.width }}" height="{{ item.image.image.height }}"' %}
+
+                    {% if item.image.image.size_type == 'auto' %}
+                      {% set sizeAttrs = 'width="{{ item.image.image.width }}" height="{{ item.image.image.height }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif item.image.image.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ item.image.image.max_width }}" height="{{ item.image.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% endif %}
+
+                    {% set loadingAttr = item.image.image.loading != 'disabled' ? 'loading="{{ item.image.image.loading }}"' : '' %}
+                    <img src="{{ item.image.image.src }}" alt="{{ item.image.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                  {% endif %}
+                </div>
+                <div class="simple-product-card-item-content mt-2">
+                  <h4 class="simple-product-card-item-content-title">
+                    {{ item.content.title }} 
+                  </h4>
+
+                  {% if item.content.body_text != "" %}
+                    <div class="simple-product-card-item-content-copy">
+                       {{item.content.body_text}}
+                    </div>
+                  {% endif %}
+
+                  {% if item.content.price > 0 %}
+                    <h4 class="simple-product-card-item-content-price">
+                       {{ item.content.price|format_currency("en-ZA", "ZAR", true) }}
+                    </h4>
+                  {% endif %}
+
+                  {% if item.content.processes.details|length > 0 %}
+                    <div class="simple-product-card-item-content-processes {{ item.content.processes.stack_processes ? "simple-product-card-stack" : "" }}">
+                      <div class="simple-product-card-item-content-processes-title">
+                        <p>
+                          {{ item.content.processes.title }}
+                        </p>
+                      </div>
+                      {% for detail in item.content.processes.details %}
+                        <div class="simple-product-card-item-content-processes-process {{ detail.background_color }} {{ item.content.processes.stack_processes ? "simple-product-card-stack" : "" }}">
+                            {{ detail.detail }}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                  {% if item.content.buttons|length > 0 %}
+                    <div class="simple-product-card-item-content-buttons">
+                      {% for button in item.content.buttons %}
+                        <div class="simple-product-card-item-content-buttons-button">
+                          {% if button.button_type == "standard" %}
+                            {% set href = button.button_link.url.href %}
+                            {% if button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                              {% set href = "mailto:" + href %}
+                            {% endif %}
+
+                            {% set rel = [] %}
+                            {% if button.button_link.no_follow %}
+                              {% do rel.append("nofollow") %}
+                            {% endif %}
+
+                            {% if button.button_link.open_in_new_tab %}
+                              {% do rel.append("noopener") %}
+                            {% endif %}
+
+                            <a href="{{ href }}"
+                              {% if button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                              {% if button.button_link.rel %}rel="{{ button.button_link.rel }}"{% endif %}
+                              class="theme-btn {{ button.button_color }}">
+                                {{ button.button_text }}
+                            </a>
+                          {% endif %}
+
+                          {% if button.button_type == "cta" %}
+                            {% cta guid="{{ button.button_cta }}" %}
+                          {% endif %}        
+
+                          {% if button.button_type == "link" %}
+                            {% set href = button.button_link.url.href %}
+                            {% if button.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                              {% set href = "mailto:" + href %}
+                            {% endif %}
+
+                            {% set rel = [] %}
+                            {% if button.button_link.no_follow %}
+                              {% do rel.append("nofollow") %}
+                            {% endif %}
+
+                            {% if button.button_link.open_in_new_tab %}
+                              {% do rel.append("noopener") %}
+                            {% endif %}
+
+                            <a href="{{ button.button_link.url }}" class="theme-link  {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ button.link_type }}" data-id="custom-{{ loop.index }}"
+                              {% if button.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                              {% if button.button_link.rel %}rel="{{ button.button_link.rel }}"{% endif %}>
+                              {{ button.button_text }}
+                            </a>
+                          {% endif %}
+                        </div>
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+
+                </div> 
+              </div>
+            </div>
+          
+          {% do loopCounter.update({val: loopCounter.val + 50 }) %}
+          {% endfor %}
+        </div>
+  </div>    
+</section>
+{# Can we take this into the script section at the bottom of the page #}
+{# <script src="https://6412394.fs1.hubspotusercontent-na1.net/hubfs/6412394/aos.js"></script> #}

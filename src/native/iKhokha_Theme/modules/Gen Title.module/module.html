@@ -1,0 +1,28 @@
+<section
+  class="gen-title-section version1.1 {{ module.background_colour }} {% if module.remove_bottom_space %} pb-desktop-0 {% endif %}"
+>
+  <div class="page-center">
+    <div class="content-wrapper p-0 p-xs-2">
+      <div
+        class="gen-title-content {{ text_align_ipad }} {{ module.text_align_desktop }} {{ module.text_align_mobile }}"
+      >
+        {% if module.heading.title != "" %} {% if module.heading.title_tag ==
+        "h1" %}
+        <h1 class="heading">{{ module.heading.title }}</h1>
+        {% elif module.heading.title_tag == "h2" %}
+        <h2 class="heading">{{ module.heading.title }}</h2>
+        {% elif module.heading.title_tag == "h3" %}
+        <h3 class="heading">{{ module.heading.title }}</h3>
+        {% elif module.heading.title_tag == "h4" %}
+        <h4 class="heading">{{ module.heading.title }}</h4>
+        {% elif module.heading.title_tag == "h5" %}
+        <h5 class="heading">{{ module.heading.title }}</h5>
+        {% elif module.heading.title_tag == "h6" %}
+        <h6 class="heading">{{ module.heading.title }}</h6>
+        {% endif %} {% endif %} {% if module.sub_title != "" %}
+        <p class="sub-title mt-2">{{ module.sub_title }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>

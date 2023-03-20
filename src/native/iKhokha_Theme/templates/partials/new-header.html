@@ -1,0 +1,22 @@
+<!--
+  templateType: global_partial
+  label: Header New Menu
+-->
+<div class="site-topbar">
+  {% module "module_16548503288892"
+  path="/ik_web_modules/navigation/ikhokha_mega_menu_v2/modules/app",
+  label="app" %}
+</div>
+<div id="cart-container" class="count mini-cart">
+  <span class="fa-stack fa-2x has-badge" id="cartCount" data-count="">
+    <i class="fa fa-square fa-stack-2x"></i>
+    <i class="fa fa-shopping-cart fa-stack-1x fa-color"></i>
+  </span>
+  <div class="tooltiptext">
+    {% module 'mini-cart' path='../../../ik-cart-v2/shopping-cart/modules/app',
+    label='React Cart' is_preview_mode='true'
+    cart_url="https://www.ikhokha.com/shopping-cart"
+    checkout_slug="purchase-journey" %}
+  </div>
+</div>
+<header class="header"></header>

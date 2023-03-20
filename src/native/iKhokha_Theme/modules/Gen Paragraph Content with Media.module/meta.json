@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 95313925640,
+  "label" : "Gen Paragraph Content with Media",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,256 @@
+{% if module.popup.title_popup.title != "" %}
+  <div class="about-header-popup-wrapper">
+    <div class="about-header-popup-modal {{ module.popup.background_colour }}">
+      <div class="close-modal-button">
+        <img src="https://www.ikhokha.com/hubfs/raw_assets/public/iKhokha_July2021/images/Cancel.png" alt="Close Icon">
+      </div>
+      {% if module.popup.images.image.src || module.popup.images.image_mobile.src %}
+        <div class="modal-img-holder {{ module.popup.images.image_alignment }} {{ module.popup.images.image_alignment_mobile }}">
+          {% if module.popup.images.image.src %}
+            {% set sizeAttrs = 'width="{{ module.popup.images.image.width }}" height="{{ module.popup.images.image.height }}"' %}
+            {% if module.popup.images.image.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.popup.images.image.width }}" height="{{ module.popup.images.image.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.popup.images.image.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.popup.images.image.max_width }}" height="{{ module.popup.images.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = module.popup.images.image.loading != 'disabled' ? 'loading="{{ module.popup.images.image.loading }}"' : '' %}
+            <img class="modal-img-desktop" src="{{ module.popup.images.image.src }}" alt="{{ module.popup.images.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+          {% if module.popup.images.image_mobile.src %}
+            {% set sizeAttrs = 'width="{{ module.popup.images.image_mobile.width }}" height="{{ module.popup.images.image_mobile.height }}"' %}
+            {% if module.popup.images.image_mobile.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ module.popup.images.image_mobile.width }}" height="{{ module.popup.images.image_mobile.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.popup.images.image_mobile.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.popup.images.image_mobile.max_width }}" height="{{ module.popup.images.image_mobile.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = module.popup.images.image_mobile.loading != 'disabled' ? 'loading="{{ module.popup.images.image_mobile.loading }}"' : '' %}
+            <img class="modal-img-mobile" src="{{ module.popup.images.image_mobile.src }}" alt="{{ module.popup.images.image_mobile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="modal-content {{ module.popup.text_alignment }} {{ module.popup.text_alignment_mobile }}">
+        {% if module.popup.content.lead != "" %}
+          <p class="modal-lead">{{ module.popup.content.lead }}</p>
+        {% endif %}
+        {% if module.popup.title_popup.title_tag == "h2" %}
+          <h2 class="modal-head">
+            {{ module.popup.title_popup.title }}
+          </h2>
+        {% elif module.popup.title_popup.title_tag == "h3" %}
+          <h3 class="modal-head">
+            {{ module.popup.title_popup.title }}
+          </h3>
+        {% elif module.popup.title_popup.title_tag == "h4" %}
+          <h4 class="modal-head">
+            {{ module.popup.title_popup.title }}
+          </h4>
+        {% elif module.popup.title_popup.title_tag == "h5" %}
+          <h5 class="modal-head">
+            {{ module.popup.title_popup.title }}
+          </h5>
+        {% elif module.popup.title_popup.title_tag == "h6" %}
+          <h6 class="modal-head">
+            {{ module.popup.title_popup.title }}
+          </h6>
+        {% endif %}
+        
+        {% if module.popup.content.sub_title != "" %}
+          <p>{{ module.popup.content.sub_title }}</p>
+        {% endif %}
+        {% if module.popup.content.body_text %}
+          <div>
+            {{ module.popup.content.body_text }}
+          </div>
+        {% endif %}
+        {% if module.popup.content.select_cta %}
+          <div>
+
+            {% for item in module.popup.content.select_cta %}
+              {% cta guid="{{ item }}" %}
+            {% endfor %}
+          </div>
+
+
+          
+        {% endif %}
+<div class="pop-up-form">
+        {% form
+	form_to_use="{{ module.popup.content.form.form_id }}"
+	response_response_type="{{ module.popup.content.form.response_type }}"
+	response_message="{{ module.popup.content.form.message }}"
+	response_redirect_id="{{ module.popup.content.form.redirect_id }}"
+	response_redirect_url="{{module.popup.content.form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.popup.content.form.gotowebinar_webinar_key }}"
+%}
+        </div>
+
+          
+      
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+<div class="gen-header-w-popup {{ module.section_settings.background_colour }} ">
+  
+  <div class="hero-banner-image-holder {{ module.images.banner_image_position }} {% if module.section_settings.add_shape %}added-shape{% endif %}" style="">
+    {% if module.images.banner_image.src %}
+      {% set sizeAttrs = 'width="{{ module.images.banner_image.width }}" height="{{ module.images.banner_image.height }}"' %}
+      {% if module.images.banner_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.banner_image.width }}" height="{{ module.images.banner_image.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.images.banner_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.banner_image.max_width }}" height="{{ module.images.banner_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.images.banner_image.loading != 'disabled' ? 'loading="{{ module.images.banner_image.loading }}"' : '' %}
+      <img class="about-header-banner-img-desktop d-xs-none d-block" src="{{ module.images.banner_image.src }}" alt="{{ module.images.banner_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    {% if module.images.banner_image_mobile.src %}
+      {% set sizeAttrs = 'width="{{ module.images.banner_image_mobile.width }}" height="{{ module.images.banner_image_mobile.height }}"' %}
+      {% if module.images.banner_image_mobile.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.images.banner_image_mobile.width }}" height="{{ module.images.banner_image_mobile.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.images.banner_image_mobile.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.images.banner_image_mobile.max_width }}" height="{{ module.images.banner_image_mobile.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.images.banner_image_mobile.loading != 'disabled' ? 'loading="{{ module.images.banner_image_mobile.loading }}"' : '' %}
+      <img class="about-header-banner-img-mobile d-xs-block d-none W-xs-70 m-xs-auto" src="{{ module.images.banner_image_mobile.src }}" alt="{{ module.images.banner_image_mobile.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+  </div>
+  
+  {% if module.section_settings.add_shape %}
+	  <div class="iK-shape-bottom" style="background-image: url({{ get_asset_url('../../images/iK_Shape_Neg.png') }});"></div>
+  {% endif %}
+  <div class="about-header-container content-wrapper version1.1">
+    <div class="about-header {% if module.section_settings.add_shape %}added-shape{% endif %}">
+      <div class="about-header-content W-xs-100 W-50">
+        
+        {% if module.content.heading_image.src %}
+          {% set sizeAttrs = 'width="{{ module.content.heading_image.width }}" height="{{ module.content.heading_image.height }}"' %}
+          {% if module.content.heading_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+          {% elif module.content.heading_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.content.heading_image.max_width }}" height="{{ module.content.heading_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.content.heading_image.loading != 'disabled' ? 'loading="{{ module.content.heading_image.loading }}"' : '' %}
+          <div class="about-header-image">
+            <div class="heading-image">
+                <img src="{{ module.content.heading_image.src }}" alt="{{ module.content.heading_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            </div>
+          </div>
+        {% endif %}
+        
+        <div>
+          {% if module.content.heading_lead != "" %}
+            <p class="heading-lead mb-0 my-2">{{ module.content.heading_lead }}</p>
+          {% endif %}
+          
+          {% if module.content.title.banner_heading != "" %}
+            {% if module.content.title.title_tag == "h1" %}
+              <h1 class="heading heading-title {{ module.content.title.title_color }}">
+                {{ module.content.title.banner_heading }}
+              </h1>
+            {% elif module.content.title.title_tag == "h2" %}
+              <h2 class="heading heading-title {{ module.content.title.title_color }}">
+                {{ module.content.title.banner_heading }}
+              </h2>
+            {% elif module.content.title.title_tag == "h3" %}
+              <h3 class="heading heading-title {{ module.content.title.title_color }}">
+                {{ module.content.title.banner_heading }}
+              </h3>
+            {% elif module.content.title.title_tag == "h4" %}
+              <h4 class="heading heading-title {{ module.content.title.title_color }}">
+                {{ module.content.title.banner_heading }}
+              </h4>
+            {% elif module.content.title.title_tag == "h5" %}
+              <h5 class="heading heading-title {{ module.content.title.title_color }}">
+                {{ module.content.title.banner_heading }}
+              </h5>
+            {% elif module.content.title.title_tag == "h6" %}
+              <h6 class="heading heading-title {{ module.content.title.title_color }}">
+                {{ module.content.title.banner_heading }}
+              </h6>
+            {% endif %}
+          {% endif %}
+
+          {% if module.content.banner_sub_heading != "" %}
+            <div class="content mt-2">{{ module.content.banner_sub_heading }}</div>
+          {% endif %}
+        </div>
+        
+        <div class="button-area mt-xs-3">
+      
+          {% if module.button_type == "standard" %}
+            {% set href = module.button_link.url.href %}
+            {% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+            {% endif %}
+            {% set rel = [] %}
+            {% if module.button_link.no_follow %}
+              {% do rel.append("nofollow") %}
+            {% endif %}
+            {% if module.button_link.open_in_new_tab %}
+              {% do rel.append("noopener") %}
+            {% endif %}
+              <a href="{{ href }}"
+                 {% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+                 class="about-cta w-button theme-btn my-xs-2 {{ item.button_color }}">{{ module.button_text }}</a>
+          {% endif %}
+          {% if module.button_type == "cta" %}
+            {% cta guid="{{ module.select_cta }}" %}
+          {% endif %}
+
+          {% for item in module.button_item %}
+            {% if item.button_type == "standard" %}
+              {% set href = item.button_link.url.href %}
+              {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+              {% endif %}
+              {% set rel = [] %}
+              {% if item.button_link.no_follow %}
+                {% do rel.append("nofollow") %}
+              {% endif %}
+              {% if item.button_link.open_in_new_tab %}
+                {% do rel.append("noopener") %}
+              {% endif %}
+              <a href="{{ href }}"
+                 {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+                 class="theme-btn my-xs-2 {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} theme-btn-{{ item.button_color }}">{{ item.button_text }}</a>
+            {% endif %}
+            {% if module.button_type == "cta" %}
+              {% cta guid="{{ item.select_cta }}" %}
+            {% endif %}        
+            {% if item.button_type == "popup" %}
+              <a class="home-cta w-button my-xs-2 {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} popup theme-btn-{{ item.button_color }}" data-id="custom-{{ loop.index }}">{{ item.button_text }}</a>
+            {% endif %}        
+            {% if item.button_type == "link" %}
+              <a href="{{ item.link.url.href }}" class="theme-link my-xs-2 {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ item.link_type }}" data-id="custom-{{ loop.index }}"
+                 {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}>{{ item.button_text }}</a>
+            {% endif %}
+          {% endfor %}  
+
+    {% if module.popup.popup_trigger.trigger_text %}
+            <a class="theme-btn about-header-popup-opener  my-xs-2  {{ module.popup.popup_trigger.button_color }}">{{ module.popup.popup_trigger.trigger_text }}</a>
+          {% endif %}
+          
+        </div>
+        
+        <div class="additional-logos mt-3">
+          {% for item in module.content.additional_logo %}
+            {% if item.src %}
+              {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+              {% if item.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+               {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+              <img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

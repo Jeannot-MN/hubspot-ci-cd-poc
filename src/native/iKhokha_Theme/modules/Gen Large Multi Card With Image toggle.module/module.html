@@ -1,0 +1,137 @@
+<section class="lmc-section {{ module.background_colour }} version1.1 ">
+  <div class="page-center">
+    <div class="content-wrapper">
+      {% for card_content_item in module.card_content %}
+      <div class="lmc-content-holder py-5">
+        <div
+          class="lmc-content lmc-card {{ card_content_item.card_bg_colour }} {% if card_content_item.shadow %} lmc-shadow {% endif %}"
+        >
+          <div>
+            {% if card_content_item.image_field.src %} {% set sizeAttrs =
+            'width="{{ card_content_item.image_field.width }}" height="{{
+            card_content_item.image_field.height }}"' %} {% if
+            card_content_item.image_field.size_type == 'auto' %} {% set
+            sizeAttrs = 'width="{{ card_content_item.image_field.width }}"
+            height="{{ card_content_item.image_field.height }}"
+            style="max-width: 100%; height: auto;"' %} {% elif
+            card_content_item.image_field.size_type == 'auto_custom_max' %} {%
+            set sizeAttrs = 'width="{{ card_content_item.image_field.max_width
+            }}" height="{{ card_content_item.image_field.max_height }}"
+            style="max-width: 100%; height: auto;"' %} {% endif %} {% set
+            loadingAttr = card_content_item.image_field.loading != 'disabled' ?
+            'loading="{{ card_content_item.image_field.loading }}"' : '' %}
+            <img
+              src="{{ card_content_item.image_field.src }}"
+              alt="{{ card_content_item.image_field.alt }}"
+              {{
+              loadingAttr
+              }}
+              {{
+              sizeAttrs
+              }}
+            />
+            {% endif %}
+          </div>
+          <div class="content">
+            {% if card_content_item.heading.title != "" %} {% if
+            card_content_item.heading.title_tag == "h1" %}
+            <h1 class="heading mb-3">{{ card_content_item.heading.title }}</h1>
+            {% elif card_content_item.heading.title_tag == "h2" %}
+            <h2 class="heading mb-3">{{ card_content_item.heading.title }}</h2>
+            {% elif card_content_item.heading.title_tag == "h3" %}
+            <h3 class="heading mb-3">{{ card_content_item.heading.title }}</h3>
+            {% elif card_content_item.heading.title_tag == "h4" %}
+            <h4 class="heading mb-3">{{ card_content_item.heading.title }}</h4>
+            {% elif card_content_item.heading.title_tag == "h5" %}
+            <h5 class="heading mb-3">{{ card_content_item.heading.title }}</h5>
+            {% elif card_content_item.heading.title_tag == "h6" %}
+            <h6 class="heading mb-3">{{ card_content_item.heading.title }}</h6>
+            {% endif %} {% endif %} {% for item in
+            card_content_item.card_list.card_value %}
+            <div class="lmc-list-item">
+              {% if item.card_content_label != "" %}
+              <p
+                class="lmc-label {{ card_content_item.card_list.label_colour }}"
+              >
+                {{ item.card_content_label }}
+              </p>
+              {% endif %} {% if item.card_content != "" %}
+              <p class="lmc-value">{{ item.card_content }}</p>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="Image-area">
+            <p></p>
+          </div>
+
+          <div class="button-area text-center">
+            {% if card_content_item.button.button_type == "standard" %} {% set
+            href = card_content_item.button.button_link.url.href %} {% if
+            card_content_item.button.button_link.url.type is equalto
+            "EMAIL_ADDRESS" %} {% set href = "mailto:" + href %} {% endif %} {%
+            set rel = [] %} {% if card_content_item.button.button_link.no_follow
+            %} {% do rel.append("nofollow") %} {% endif %} {% if
+            card_content_item.button.button_link.open_in_new_tab %} {% do
+            rel.append("noopener") %} {% endif %}
+            <a
+              href="{{ href }}"
+              {%
+              if
+              card_content_item.button.button_link.open_in_new_tab
+              %}target="_blank"
+              {%
+              endif
+              %}
+              {%
+              if
+              card_content_item.button.button_link.rel
+              %}rel="{{ card_content_item.button.button_link.rel }}"
+              {%
+              endif
+              %}
+              class=" {% if loop.index > 1 %}button-{{ loop.index}}{% endif %} {{ card_content_item.button.button_color }}"
+            >
+              {{ card_content_item.button.button_text }}
+            </a>
+            {% endif %} {% if card_content_item.button.button_type == "cta" %}
+            {% cta guid="{{ card_content_item.button.select_cta }}" %} {% endif
+            %} {% if card_content_item.button.button_type == "link" %} {% set
+            href = card_content_item.button.link.url.href %} {% if
+            card_content_item.button.link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %} {% endif %} {% set rel = [] %} {%
+            if card_content_item.button.link.no_follow %} {% do
+            rel.append("nofollow") %} {% endif %} {% if
+            card_content_item.button.link.open_in_new_tab %} {% do
+            rel.append("noopener") %} {% endif %}
+            <a
+              href="{{ card_content_item.button.link.url.href }}"
+              class="  {% if loop.index > 1 %} 
+              button-{{ loop.index}}{% endif %}  {{ card_content_item.button.button_color }}"
+              data-id="custom-{{ loop.index }}"
+              {%
+              if
+              card_content_item.button.link.open_in_new_tab
+              %}target="_blank"
+              {%
+              endif
+              %}
+              {%
+              if
+              card_content_item.button.link.rel
+              %}rel="{{ card_content_item.button.link.rel }}"
+              {%
+              endif
+              %}
+            >
+              {{ card_content_item.button.button_text }}
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
