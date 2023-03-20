@@ -11,6 +11,6 @@ readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
         .forEach(sub_dir => {
             let sub_dir_path = join(react_modules_folder, sub_dir.name);
             console.log('cd ' + sub_dir_path);
-            execSync(`cd ${sub_dir_path} && npm install && npm run build`);
+            execSync(`cd ${sub_dir_path} && npm install && npm run build && ls -l`);
         })
 })
