@@ -17,7 +17,7 @@ function App({ moduleData }) {
         <SpinningLogo src={reactLogo} alt="react logo" />
         <SpinningLogo
           src={sprocketLogo}
-          alt="sprocket logo"
+          alt="Sprocket logo"
           isSprocket={true}
         />
       </div>
