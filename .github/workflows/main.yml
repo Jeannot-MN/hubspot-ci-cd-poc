@@ -5,15 +5,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
+      HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }} 
     steps:
       - uses: actions/checkout@v2.3.3
       - uses: actions/setup-node@v2
         with:
           node-version: "16.x"
-      - run: yarn add minimist
 
       - name: Deploy React Modules
-        run: node ./build-react-modules.js -portal ${{ secrets.HUBSPOT_PORTAL_ID }} -access_key ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+        run: node ./build-react-modules.js $HUBSPOT_PORTAL_ID $HUBSPOT_PERSONAL_ACCESS_KEY
 
         
       - name: Deploy Native Modules
@@ -21,5 +23,5 @@ jobs:
         with:
           src_dir: src/native
           dest_dir: /
-          portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
-          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+          portal_id: $HUBSPOT_PORTAL_ID
+          personal_access_key: $secrets.HUBSPOT_PERSONAL_ACCESS_KEY
