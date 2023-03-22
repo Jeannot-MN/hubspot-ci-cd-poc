@@ -20,7 +20,7 @@ readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
             } */
             execSync(`cd ${sub_dir_path} && 
                 yarn install && yarn build && 
-                yarn hs upload dist ${sub_dir.name} --use-env HUBSPOT_PORTAL_ID=${hs_portal_id} HUBSPOT_PERSONAL_ACCESS_KEY=${hs_access_key}`);
+                yarn hs upload dist ${sub_dir.name} --use-env`);
         });
 });
 
