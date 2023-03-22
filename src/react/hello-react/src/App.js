@@ -8,7 +8,7 @@ import sprocketLogo from './images/sprocket.svg';
 function App({ moduleData }) {
   // eslint-disable-next-line no-console
   console.log(
-    'All of your data typically accessed via the "module" keyword in HubL is available as JSON here!',
+    'All of your Data typically accessed via the "module" keyword in HubL is available as JSON here!',
     moduleData,
   );
   return (
