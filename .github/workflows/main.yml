@@ -11,8 +11,8 @@ jobs:
         with:
           node-version: "16.x"
 
-      - name: Build React Modules
-        run: node ./build-react-modules.js
+      - name: Deploy React Modules
+        run: node ./build-react-modules.js -portal ${{ secrets.HUBSPOT_PORTAL_ID }} -access_key ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
 
         
       - name: Deploy Native Modules
