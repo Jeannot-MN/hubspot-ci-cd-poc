@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: "16.x"
-      - run: npm install minimist
+      - run: yarn add minimist
 
       - name: Deploy React Modules
         run: node ./build-react-modules.js -portal ${{ secrets.HUBSPOT_PORTAL_ID }} -access_key ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
