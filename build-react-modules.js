@@ -4,13 +4,10 @@ const { execSync } = require("child_process");
 
 const react_modules_folder = join('./src', 'react');
 
-console.log(react_modules_folder);
-
 readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
     files.filter(file => file.isDirectory())
         .forEach(sub_dir => {
             let sub_dir_path = join(react_modules_folder, sub_dir.name);
-            console.log('cd ' + sub_dir_path);
             execSync(`cd ${sub_dir_path} && npm install && npm run build && ls -l`);
         })
 })
