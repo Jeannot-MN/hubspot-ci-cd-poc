@@ -1,7 +1,6 @@
 const { join, resolve } = require("path");
 const { readdir } = require("fs");
 const { execSync } = require("child_process");
-const minimist = require("minimist");
 
 const react_modules_folder = join("./src", "react");
 const [hs_portal_id, hs_access_key] = process.argv.slice(2);
