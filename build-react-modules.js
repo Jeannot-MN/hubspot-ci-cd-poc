@@ -17,9 +17,10 @@ readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
             } else {
               console.log(sub_dir_path + " was not changed");
             } */
-            execSync(`cd ${sub_dir_path} && 
-                yarn install && yarn build && 
-                yarn hs upload dist ${sub_dir.name} --use-env`);
+            process.chdir(sub_dir_path);
+            execSync("yarn install");
+            execSync("yarn build");
+            execSync(`yarn hs upload dist ${sub_dir.name} --use-env`);
         });
 });
 
