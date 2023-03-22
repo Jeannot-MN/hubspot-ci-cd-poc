@@ -10,17 +10,18 @@ readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
         .forEach((sub_dir) => {
             let sub_dir_path = join(react_modules_folder, sub_dir.name);
             /* if (moduleWasModified(sub_dir_path)) {
-              console.log(sub_dir_path + " was changed");
-              execSync(`cd ${sub_dir_path} && 
-                      npm install && npm run build && 
-                      hs upload dist ${sub_dir.name} --use-env HUBSPOT_PORTAL_ID=${script_args.portal} HUBSPOT_PERSONAL_ACCESS_KEY=${script_args.access_key}`);
-            } else {
-              console.log(sub_dir_path + " was not changed");
-            } */
-            process.chdir(sub_dir_path);
-            execSync("yarn install");
-            execSync("yarn build");
-            execSync(`yarn hs upload dist ${sub_dir.name} --use-env`);
+                    console.log(sub_dir_path + " was changed");
+                    execSync(`cd ${sub_dir_path} && 
+                            npm install && npm run build && 
+                            hs upload dist ${sub_dir.name} --use-env HUBSPOT_PORTAL_ID=${script_args.portal} HUBSPOT_PERSONAL_ACCESS_KEY=${script_args.access_key}`);
+                  } else {
+                    console.log(sub_dir_path + " was not changed");
+                  } 
+              */
+            execSync(`
+                cd ${sub_dir_path} && 
+                yarn install && yarn build && 
+                yarn hs upload dist ${sub_dir.name} --use-env`);
         });
 });
 
