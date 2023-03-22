@@ -15,7 +15,7 @@ jobs:
           node-version: "16.x"
 
       - name: Deploy React Modules
-        run: node ./build-react-modules.js $HUBSPOT_PORTAL_ID $HUBSPOT_PERSONAL_ACCESS_KEY
+        run: node ./build-react-modules.js
 
         
       - name: Deploy Native Modules
@@ -24,4 +24,4 @@ jobs:
           src_dir: src/native
           dest_dir: /
           portal_id: $HUBSPOT_PORTAL_ID
-          personal_access_key: $secrets.HUBSPOT_PERSONAL_ACCESS_KEY
+          personal_access_key: $HUBSPOT_PERSONAL_ACCESS_KEY

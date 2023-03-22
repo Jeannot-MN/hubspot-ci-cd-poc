@@ -3,7 +3,6 @@ const { readdir } = require("fs");
 const { execSync } = require("child_process");
 
 const react_modules_folder = join("./src", "react");
-const [hs_portal_id, hs_access_key] = process.argv.slice(2);
 
 readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
     files
@@ -24,10 +23,10 @@ readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
         });
 });
 
-function moduleWasModified(module_dir) {
+/* function moduleWasModified(module_dir) {
     const moduleChanged = execSync(
         `git diff --quiet HEAD^ ${module_dir} || ${true}`
     ).toString();
     console.log({ moduleChanged });
     return !!moduleChanged;
-}
+} */
