@@ -1,10 +1,10 @@
 const { join, resolve } = require("path");
 const { readdir } = require("fs");
 const { execSync } = require("child_process");
-
-const script_args = require("minimist")(process.argv.slice(2));
+const minimist = require("minimist");
 
 const react_modules_folder = join("./src", "react");
+const script_args = minimist(process.argv.slice(2));
 
 readdir(react_modules_folder, { withFileTypes: true }, (_, files) => {
     files
