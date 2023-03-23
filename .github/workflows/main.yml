@@ -46,4 +46,5 @@ jobs:
       run:
         working-directory: ${{matrix.dir}}
     steps:
+      - uses: actions/checkout@v2
       - run: echo ${{matrix.dir}}
