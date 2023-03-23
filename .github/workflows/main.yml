@@ -3,25 +3,42 @@ on:
     branches:
     - main
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    env:
-      HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
-      HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }} 
-    steps:
-      - uses: actions/checkout@v2.3.3
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "16.x"
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   env:
+  #     HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
+  #     HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }} 
+  #   steps:
+  #     - uses: actions/checkout@v2.3.3
+  #     - uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "16.x"
 
-      - name: Deploy React Modules
-        run: node ./build-react-modules.js
+  #     - name: Deploy React Modules
+  #       run: node ./build-react-modules.js
 
         
-      - name: Deploy Native Modules
-        uses: HubSpot/hubspot-cms-deploy-action@v1.6
-        with:
-          src_dir: src/native
-          dest_dir: /
-          portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
-          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+  #     - name: Deploy Native Modules
+  #       uses: HubSpot/hubspot-cms-deploy-action@v1.6
+  #       with:
+  #         src_dir: src/native
+  #         dest_dir: /
+  #         portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
+  #         personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+  directories:
+    runs-on: ubuntu-latest
+    outputs:
+      dir: ${{ steps.set-dirs.outputs.dir }}
+    steps:
+      - uses: actions/checkout@v2
+      - id: set-dirs
+        run: echo "::set-output name=dir::$(ls -d */src/react | jq -R -s -c 'split("\n")[:-1]')"
+
+  loop:
+    runs-on: ubuntu-latest
+    needs: [directories]
+    strategy:
+      matrix:
+        dir: ${{fromJson(needs.directories.outputs.dir)}}
+    steps:
+      - run: echo ${{matrix.dir}}
