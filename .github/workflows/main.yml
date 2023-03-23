@@ -42,5 +42,8 @@ jobs:
     strategy:
       matrix:
         dir: ${{fromJson(needs.directories.outputs.dir)}}
+    defaults:
+      run:
+        working-directory: ${{matrix.dir}}
     steps:
       - run: echo ${{matrix.dir}}
