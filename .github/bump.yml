@@ -1,0 +1,48 @@
+release:
+  title-prefix: "v"
+  initial-version: "0.0.1"
+  tag-prefix: "v"
+  pull-request-commit: 'include'
+  commit-note-replacers:
+    - replace-prefix: "feat: "
+      new-prefix: ""
+    - replace-prefix: "fix: "
+      new-prefix: ""
+branch:
+  base-branch: 'main'
+  create-major-version-branch: false
+  create-minor-version-branch: false
+categories:
+  - title: 'New Features'
+    labels:
+      - 'Feature'
+    commits:
+      - 'feat: '
+    changes-prefix: ':gift: '
+  - title: 'Bug Fixes'
+    labels:
+      - 'Fixes'
+    commits:
+      - 'fix: '
+    changes-prefix: ':warning: '
+bump:
+  default: 'patch'
+  major:
+    labels:
+      - 'Feature'
+      - 'Fixes'
+    commits:
+      - 'feat: '
+      - 'fix: '
+  minor:
+    labels:
+      - 'Feature'
+      - 'Fixes'
+    commits:
+      - 'feat: '
+      - 'fix: '
+  patch:
+    labels:
+      - 'Fixes'
+    commits:
+      - 'fix: '
