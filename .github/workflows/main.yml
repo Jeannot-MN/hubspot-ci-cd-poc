@@ -3,7 +3,7 @@ on:
     branches:
     - main
 jobs:
-  Deploy native modules:
+  Deploy_Native_Modules:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2      
@@ -14,7 +14,7 @@ jobs:
           portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
           personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
 
-  Get all react modules:
+  Get_All_React_Modules:
     runs-on: ubuntu-latest
     outputs:
       dir: ${{ steps.set-dirs.outputs.dir }}
@@ -25,12 +25,12 @@ jobs:
           cd src/react
           echo "::set-output name=dir::$(ls -d */ | jq -R -s -c 'split("\n")[:-1]')"
 
-  Deploy react module:
+  Deploy_React_Module:
     runs-on: ubuntu-latest
     env:
       HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
       HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
-    needs: [Get all react modules]
+    needs: [Get_All_React_Modules]
     strategy:
       matrix:
         dir: ${{fromJson(needs.directories.outputs.dir)}}
