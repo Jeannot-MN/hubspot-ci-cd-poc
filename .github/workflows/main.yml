@@ -33,7 +33,7 @@ jobs:
     needs: [Get_All_React_Modules]
     strategy:
       matrix:
-        dir: ${{fromJson(needs.directories.outputs.dir)}}
+        dir: ${{fromJson(needs.Get_All_React_Modules.outputs.dir)}}
     steps:
       - uses: actions/checkout@v2
       - run: |
