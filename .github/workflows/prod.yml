@@ -10,6 +10,7 @@ on:
 
 jobs:
   Create_Release:
+    runs-on: ubuntu-latest
     outputs:
       version: ${{ steps.tag.outputs.next_version }}
     env:
@@ -32,6 +33,7 @@ jobs:
   
   Deploy_Native_Modules:
     runs-on: ubuntu-latest
+    needs: [Create_Release]
     steps:
       - uses: actions/checkout@v2      
       - uses: HubSpot/hubspot-cms-deploy-action@v1.6
@@ -43,6 +45,7 @@ jobs:
 
   Get_All_React_Modules:
     runs-on: ubuntu-latest
+    needs: [Create_Release]
     outputs:
       dir: ${{ steps.set-dirs.outputs.dir }}
     steps:
