@@ -37,7 +37,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-        cd src/react/${{matrix.dir}}
-        yarn install
-        yarn build
-        yarn hs upload dist ${{matrix.dir}} --use-env
+          cd src/react/${{matrix.dir}}
+          yarn install
+          yarn build
+          yarn hs upload dist ${{matrix.dir}} --use-env
