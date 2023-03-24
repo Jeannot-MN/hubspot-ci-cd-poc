@@ -23,7 +23,7 @@ jobs:
       - id: set-dirs
         run: |
           cd src/react
-          echo "::set-output name=dir::$(ls -d */ | jq -R -s -c 'split("\n")[:-1]')"
+          echo "dir=$(ls -d */ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
 
   Deploy_React_Module:
     runs-on: ubuntu-latest
