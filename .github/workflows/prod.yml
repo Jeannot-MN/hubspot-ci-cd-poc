@@ -1,8 +1,35 @@
+name: Deploy Production
+
 on:
-  push:
-    branches:
-    - main
+  workflow_dispatch:
+    inputs:
+      bump:
+        description: 'bump type, major or minor or patch or empty string'
+        default: 'patch'
+        required: true
+
 jobs:
+  Create_Release:
+    outputs:
+      version: ${{ steps.tag.outputs.next_version }}
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Create release
+        id: tag
+        uses: MeilCli/bump-release-action@v1
+        with:
+          config_path: '.github/bump.yml'
+          bump: ${{ github.event.inputs.bump }}
+          dry_run: 'false'
+          draft: 'false'
+          pre_release: 'false'
+  
   Deploy_Native_Modules:
     runs-on: ubuntu-latest
     steps:
@@ -41,3 +68,10 @@ jobs:
           yarn install
           yarn build
           yarn hs upload dist ${{matrix.dir}} --use-env
+
+  Print_Deployed_Version:
+    needs: [Create_Release, Deploy_Native_Modules, Deploy_React_Module]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo version
+        run: echo ${{ needs.Create_Release.outputs.version }}

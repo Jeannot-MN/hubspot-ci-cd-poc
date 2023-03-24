@@ -1,43 +1,45 @@
-on:
-  push:
-    branches:
-    - main
-jobs:
-  Deploy_Native_Modules:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2      
-      - uses: HubSpot/hubspot-cms-deploy-action@v1.6
-        with:
-          src_dir: src/native
-          dest_dir: /
-          portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
-          personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+# NOTE: This is to be re-enabled and deploys to preprod account
+# 
+# on:
+#   push:
+#     branches:
+#     - main
+# jobs:
+#   Deploy_Native_Modules:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2      
+#       - uses: HubSpot/hubspot-cms-deploy-action@v1.6
+#         with:
+#           src_dir: src/native
+#           dest_dir: /
+#           portal_id: ${{ secrets.HUBSPOT_PORTAL_ID }}
+#           personal_access_key: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
 
-  Get_All_React_Modules:
-    runs-on: ubuntu-latest
-    outputs:
-      dir: ${{ steps.set-dirs.outputs.dir }}
-    steps:
-      - uses: actions/checkout@v2
-      - id: set-dirs
-        run: |
-          cd src/react
-          echo "dir=$(ls -d */ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
+#   Get_All_React_Modules:
+#     runs-on: ubuntu-latest
+#     outputs:
+#       dir: ${{ steps.set-dirs.outputs.dir }}
+#     steps:
+#       - uses: actions/checkout@v2
+#       - id: set-dirs
+#         run: |
+#           cd src/react
+#           echo "dir=$(ls -d */ | jq -R -s -c 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
 
-  Deploy_React_Module:
-    runs-on: ubuntu-latest
-    env:
-      HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
-      HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
-    needs: [Get_All_React_Modules]
-    strategy:
-      matrix:
-        dir: ${{fromJson(needs.Get_All_React_Modules.outputs.dir)}}
-    steps:
-      - uses: actions/checkout@v2
-      - run: |
-          cd src/react/${{matrix.dir}}
-          yarn install
-          yarn build
-          yarn hs upload dist ${{matrix.dir}} --use-env
+#   Deploy_React_Module:
+#     runs-on: ubuntu-latest
+#     env:
+#       HUBSPOT_PORTAL_ID: ${{ secrets.HUBSPOT_PORTAL_ID }}
+#       HUBSPOT_PERSONAL_ACCESS_KEY: ${{ secrets.HUBSPOT_PERSONAL_ACCESS_KEY }}
+#     needs: [Get_All_React_Modules]
+#     strategy:
+#       matrix:
+#         dir: ${{fromJson(needs.Get_All_React_Modules.outputs.dir)}}
+#     steps:
+#       - uses: actions/checkout@v2
+#       - run: |
+#           cd src/react/${{matrix.dir}}
+#           yarn install
+#           yarn build
+#           yarn hs upload dist ${{matrix.dir}} --use-env
