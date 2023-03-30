@@ -22,7 +22,7 @@ function App({ moduleData }) {
         />
       </div>
       <p>
-        Edit <code>src/App.js</code> and save to reload.
+        Edit <code>src/App.js</code> SIya is the man!.
       </p>
       <Card initialClickCount={moduleData.initial_count} />
     </div>
