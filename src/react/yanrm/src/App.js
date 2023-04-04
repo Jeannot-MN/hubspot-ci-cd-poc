@@ -23,6 +23,7 @@ function App({ moduleData }) {
       </div>
       <p>
         Edit <code>src/App.js</code> SIya is the man!.
+        Edit <code>src/App.js</code> Siya the man of the hour, Oops we made a mistake😅😅
       </p>
       <Card initialClickCount={moduleData.initial_count} />
     </div>
