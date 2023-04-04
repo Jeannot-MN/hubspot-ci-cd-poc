@@ -7,7 +7,7 @@
         "start": "webpack --watch --env autoupload --mode production",
         "try": "echo ${npm_config_product_version}",
         "build": "rm -Rf dist && webpack --mode production",
-        "deploy": "rm -Rf dist && webpack --mode production && hs upload dist hello-react",
+        "deploy": "rm -Rf dist && webpack --mode production && hs upload dist hello-react --use-env",
         "lint": "eslint src && prettier --list-different 'src/**/*.js' 'src/**/*.json'",
         "prettier:write": "prettier --write 'src/**/*.js' 'src/**/*.json'"
     },
